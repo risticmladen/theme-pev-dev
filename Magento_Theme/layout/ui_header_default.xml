@@ -1,0 +1,83 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- Header TopBar -->
+        <referenceContainer name="header.container">
+            <container name="header.top.bar.wrapper" htmlTag="div" htmlClass="header-top-bar-wrapper">
+                <container name="header.top.bar" htmlTag="div" htmlClass="header-top-bar container">
+                    <block class="Magento\Cms\Block\Block"
+                           name="header-customer-service">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">customer-service</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Cms\Block\Block"
+                           name="header-about-us-links">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">about_us_links</argument>
+                        </arguments>
+                    </block>
+                </container>
+            </container>
+        </referenceContainer>
+
+        <referenceContainer name="page.top">
+            <referenceBlock name="catalog.topnav" remove="true" />
+
+            <referenceBlock name="store.menu">
+                <block name="cms.navigation.block" as="cmsNavigationBlock" class="Magento\Framework\View\Element\Template"
+                       template="Magento_Theme::html/header/links/main-navigation.phtml">
+                    <block class="Magento\Cms\Block\Block" name="main.store.navigation.soft.top.products" as="headerNavigationSoftTopProducts">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">product_category-soft_top_products</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Cms\Block\Block" name="main.store.navigation.jeep.accessories" as="headerNavigationJeepAccessories">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">product_category-jeep_accessories</argument>
+                        </arguments>
+                    </block>
+                </block>
+            </referenceBlock>
+        </referenceContainer>
+
+        <move element="header.top.bar.wrapper" destination="header.container"  before="-"/>
+        <move element="top-links-wrapper" destination="header.top.bar"  after="-"/>
+
+        <referenceContainer name="skip_to_content" remove="true" />
+        <move element="navigation.sections" destination="header.panel"  after="logo" />
+
+        <referenceContainer name="top-links-wrapper">
+            <block class="Magento\Framework\View\Element\Template"
+                   template="Magento_Theme::html/header/links/top-links-js.phtml"
+                   name="top.links.js"  />
+        </referenceContainer>
+
+        <!--    Sign in blocks remove    -->
+        <referenceBlock name="header">
+            <arguments>
+                <argument name="show_part" xsi:type="string">other</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="my-account-link">
+            <arguments>
+                <argument name="class" xsi:type="string" translate="true">icon-account-icon header__links__icon</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="wish-list-link">
+            <arguments>
+                <argument name="class" xsi:type="string" translate="true">icon-whishlist header__links__icon</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="register-link">
+            <arguments>
+                <argument name="class" xsi:type="string" translate="true">icon-create-account header__links__icon</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="authorization-link">
+            <arguments>
+                <argument name="class" xsi:type="string" translate="true">icon-sign-out header__links__icon</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

@@ -1,0 +1,89 @@
+.action {
+    padding: 0;
+    border: none;
+    color: inherit;
+    font: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.action {
+    &.primary,
+    &.secondary,
+    &.call-to-action {
+        display: inline-block;
+        text-transform: uppercase;
+        padding-left: pxtorem(24px, 12);
+        padding-right: pxtorem(24px, 12);
+        text-align: center;
+        font-family: BebasNeueBold;
+    }
+
+    &.primary {
+        color: var(--color__button-primary);
+        background: var(--color__button-primary-bg);
+        border-color: var(--color__button-primary-border);
+        @mixin adjustFontSize 16px, 1;
+        height: pxtorem(40px, 12);
+
+        &:hover {
+            color: var(--color__button-primary-hover);
+            background: var(--color__button-primary-bg-hover);
+        }
+
+        @media (--large) {
+            height: pxtorem(48px, 14);
+            @mixin adjustFontSize 18px, 1, $breakpoint-1024px;
+        }
+    }
+
+    &.secondary {
+        color: var(--color__button-secondary);
+        background: var(--color__button-secondary-bg);
+        border: 2px solid var(--color__button-secondary-border);
+        @mixin adjustFontSize 16px, 1;
+        height: pxtorem(40px, 12);
+
+
+        &:hover {
+            color: var(--color__button-secondary-hover);
+            background: var(--color__button-secondary-bg-hover);
+            border: 2px solid var(--color__button-secondary-border-hover);
+        }
+
+        @media (--large) {
+            height: pxtorem(48px, 14);
+            @mixin adjustFontSize 18px, 1, $breakpoint-1024px;
+        }
+    }
+
+    &.call-to-action {
+        color: var(--color__button-cta);
+        background: var(--color__button-cta-bg);
+        border: 2px solid var(--color__button-cta-border);
+        @mixin adjustFontSize 18px, 2;
+        @mixin marginLeader 16px;
+        @mixin marginTrailer 16px;
+        height: pxtorem(48px, 12);
+
+        &:hover {
+            color: var(--color__button-cta-hover);
+            background: var(--color__button-cta-bg-hover);
+            border: 2px solid var(--color__button-cta-border-hover);
+        }
+
+        @media (--medium) {
+            height: pxtorem(48px, 12);
+        }
+
+        @media (--large) {
+            height: pxtorem(56px, 14);
+            @mixin adjustFontSize 24px, 1, $breakpoint-1024px;
+        }
+    }
+
+}
+
+.secondary-btn-icon {
+    padding-right: 16px;
+}

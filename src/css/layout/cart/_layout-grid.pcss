@@ -1,0 +1,28 @@
+.cart-container {
+    @media (--large) {
+        display: grid;
+        align-items: start;
+        grid-template-columns: 2fr 1fr;
+        column-gap: var(--gutter);
+    }
+
+    & .form-cart {
+        @media (--large) {
+            order: 0;
+            grid-row: 1;
+        }
+    }
+
+    & .cart-summary {
+        @media (--large) {
+            order: 1;
+            grid-row: 1;
+        }
+    }
+
+    & .gift-options-cart {
+        @media (--large) {
+            grid-row: 2;
+        }
+    }
+}

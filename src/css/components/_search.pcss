@@ -1,0 +1,100 @@
+.block-search {
+    border: 2px solid var(--theme__color__primary);
+    width: pxtorem(40px, 12);
+    height: pxtorem(40px, 12);
+    margin-right: pxtorem(8px, 12);
+    margin-left: auto;
+
+    &:focus,
+    &:hover {
+        background-color: var(--theme__color__primary);
+        color: var(--theme__color__primary__white);
+
+        @media (--large) {
+            background-color: transparent;
+            color: var(--theme__color__primary);
+        }
+    }
+
+    @media (--large) {
+        @mixin flex row, center, center, wrap;
+        width: pxtorem(358, 14);
+        height: pxtorem(48, 14);
+        position: relative;
+    }
+}
+
+.block-search__title {
+    font-size: pxtorem(16, 12);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @media (--large) {
+        font-size: pxtorem(16, 14);
+        position: absolute;
+        z-index: 3;
+        top: pxtorem(24px, 14);
+        left: unset;
+        right: 0;
+        pointer-events: none;
+    }
+}
+
+.block-search__content {
+    position: fixed;
+    z-index: 1;
+    top: pxtorem(104px, 12);
+    left: 0;
+    width: 100%;
+    background-color: var(--theme__color__primary);
+
+    @media (--medium) {
+        top: pxtorem(145px, 12);
+    }
+
+    @media (--large) {
+        position: static;
+        visibility: visible;
+        opacity: 1;
+        background-color: transparent;
+    }
+}
+
+.block-search__control {
+    position: relative;
+    background-color: var(--theme__color__primary__white);
+    width: 100%;
+}
+
+.minisearch {
+    padding: pxtorem(12px, 12);
+
+    @media (--large) {
+        padding: 0;
+    }
+}
+
+.minisearch__input {
+    display: inline-block;
+    @mixin adjustFontSize 12px, 1;
+    font-family: var(--font-stack__base);
+    width: 100%;
+    color: var(--theme__color__primary__light);
+    border-color: transparent;
+    background: transparent;
+    padding: pxtorem(12px, 12) 0;
+    padding-left: pxtorem(12, 12);
+
+    &::placeholder {
+        color: var(--theme__color__primary__light);
+        padding-left: pxtorem(12, 14);
+    }
+
+    @media (--large) {
+        padding: pxtorem(8, 14) 0;
+        padding-left: pxtorem(12, 14);
+        @mixin adjustFontSize 14px, 1, $breakpoint-1024px;
+    }
+}

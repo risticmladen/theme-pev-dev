@@ -1,0 +1,61 @@
+.fieldset {
+    border: none;
+    padding: 0;
+}
+
+.label {
+    display: block;
+    @mixin adjustFontSize 14px, 1;
+    font-family: "Titillium Web";
+    font-weight: 700;
+    color: var(--theme__color__primary);
+}
+
+.input {
+    display: block;
+    padding-left: pxtorem(16px, 12);
+    @mixin adjustFontSize 14px, 1;
+    width: pxtorem(426px, 12);
+    height: pxtorem(48px, 12);
+    border: 2px solid var(--theme__color__primary__light);
+    margin: pxtorem(24px, 12) 0;
+}
+
+.checkbox {
+    position: relative;
+    height: pxtorem(13px, 12);
+    width: pxtorem(13px, 12);
+    padding: 0;
+    appearance: none;
+    @mixin icon-font-display var(--icon__checkbox_empty);
+
+    &:checked {
+        &:after {
+            @mixin icon-font-display var(--icon__checkbox_filled);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: pxtorem(13px, 12);
+            height: pxtorem(13px, 12);
+        }
+    }
+}
+
+.select {
+    width: pxtorem(426px, 12);
+    height: pxtorem(48px, 12);
+    padding-left: pxtorem(16px, 12);
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid var(--color__field-border);
+    position: relative;
+
+    &:after {
+        @mixin icon-font-display var(--icon__arrow_dropdow_up);
+        position: absolute;
+        right: pxtorem(10px, 12);
+        left: pxtorem(10px, 12);
+        width: pxtorem(13px, 12);
+        height: pxtorem(13px, 12);
+    }
+}

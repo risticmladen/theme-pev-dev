@@ -1,0 +1,13 @@
+.action {
+    &.skip {
+        &:not(:focus) {
+            @mixin no-display;
+        }
+    }
+}
+
+.price-wrapper {
+    & .price {
+        @mixin section-title;
+    }
+}

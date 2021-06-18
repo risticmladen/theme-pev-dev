@@ -1,0 +1,28 @@
+.switcher-option {
+    @mixin flex row, center, flex-start, nowrap;
+    position: relative;
+    padding-left: pxtorem(12, 14);
+
+    @media (--medium) {
+        padding-left: pxtorem(12, 15);
+    }
+
+    @media (--large) {
+        padding-left: pxtorem(12, 16);
+    }
+}
+
+.switcher-option--active-indicator {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.switcher-option--default {
+    color: var(--theme__color__primary);
+}
+
+.switcher-option--active {
+    color: var(--theme__color__secondary);
+}

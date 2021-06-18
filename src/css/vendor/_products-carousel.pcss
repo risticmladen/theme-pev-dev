@@ -1,0 +1,39 @@
+.is-loading {
+    & .swiper-button-next,
+    & .swiper-button-prev {
+        display: none;
+    }
+}
+
+.swiper-carousel {
+    &.is-loading {
+        height: pxtorem(269, 14);
+
+        @media (--medium) {
+            height: pxtorem(275, 15);
+        }
+
+        @media (--large) {
+            height: pxtorem(288, 16);
+        }
+    }
+
+    & .swiper-pagination {
+        position: relative;
+    }
+
+    & .product-image-container {
+        @mixin marginTrailer 1;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+
+        @media (--medium) {
+            @mixin marginTrailer 1, $breakpoint-768px;
+        }
+
+        @media (--large) {
+            @mixin marginTrailer 1, $breakpoint-1024px;
+        }
+    }
+}

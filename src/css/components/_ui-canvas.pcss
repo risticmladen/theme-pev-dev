@@ -1,0 +1,56 @@
+.ui-canvas {
+    @mixin ui-default-transition transform;
+    @mixin rhythm 1, 1, 0, 0;
+    position: fixed;
+    z-index: 4;
+    top: pxtorem(55px, 12);
+    width: pxtorem(304px, 12);
+    height: pxtorem(396px, 12);
+    padding-right: var(--gutter);
+    padding-left: var(--gutter);
+    background: var(--theme__color__primary__white);
+    overflow: auto;
+
+    &.active {
+        position: absolute;
+    }
+
+    @media (--medium) {
+        @mixin rhythm 1, 1, 0, 0;
+        top: pxtorem(62px, 12);
+        right: 0;
+    }
+
+    @media (--large) {
+        @mixin rhythm 1, 1, 0, 0, $breakpoint-1024px;
+        width: pxtorem(436px, 14);
+        height: pxtorem(483px ,14);
+        top: pxtorem(62px, 14)
+    }
+}
+
+.ui-canvas--side {
+    @media (--medium) {
+        @mixin rhythm 1, 1, 0, 0;
+    }
+
+    @media (--large) {
+        @mixin rhythm 1, 1, 0, 0, $breakpoint-1024px;
+    }
+}
+
+.ui-canvas--right {
+    right: pxtorem(-8px, 12);
+    left: auto;
+    transform: translate3D(0, -150%, 0);
+
+    &.active {
+        transform: translate3D(0, 0, 0);
+    }
+}
+
+.active {
+    & .ui-canvas--right {
+        transform: translate3D(0, 0, 0);
+    }
+}

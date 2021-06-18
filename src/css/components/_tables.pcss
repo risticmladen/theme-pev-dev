@@ -1,0 +1,180 @@
+/**
+ * 1. Ensure tables fill up as much space as possible.
+ */
+
+table {
+    width: 100%; /* [1] */
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+/**
+ *  Size Guide Table
+ */
+
+.data-table,
+.data.table {
+    text-align: left;
+
+    @media (--medium) {
+        & tr {
+            & th:last-of-type,
+            & td:last-of-type {
+                text-align: right;
+            }
+        }
+    }
+
+    @media (--medium__max) {
+        & colgroup,
+        & thead {
+            display: none;
+        }
+    }
+
+    & .table-caption {
+        @mixin section-title;
+        @mixin trailingBorder 1px, 0.5, solid;
+        width: 100%;
+        text-align: left;
+        border-color: var(--theme__color__primary__lighter);
+
+        @media (--medium) {
+            @mixin trailingBorder 1px, 0.5, solid, $breakpoint-768px;
+        }
+
+        @media (--large) {
+            @mixin trailingBorder 1px, 0.5, solid, $breakpoint-1024px;
+        }
+    }
+
+    & thead {
+        & tr {
+            border-bottom: 1px solid var(--theme__color__primary__lighter);
+        }
+
+        & th {
+            @mixin adjustFontSize 12px, 1;
+            @mixin paddingTrailer 1;
+            @mixin section-title;
+            padding-right: pxtorem(12, 14);
+            padding-left: pxtorem(12, 14);
+
+            @media (--medium) {
+                @mixin adjustFontSize 13px, 1, $breakpoint-768px;
+                @mixin paddingTrailer 1, $breakpoint-768px;
+                padding-right: pxtorem(12, 15);
+                padding-left: pxtorem(12, 15);
+            }
+
+            @media (--large) {
+                @mixin adjustFontSize 14px, 1, $breakpoint-1024px;
+                @mixin paddingTrailer 1, $breakpoint-1024px;
+                padding-right: pxtorem(12, 16);
+                padding-left: pxtorem(12, 16);
+            }
+        }
+    }
+
+    & tbody {
+        @mixin adjustFontSize 12px, 1;
+        @mixin paddingTrailer 1;
+
+        @media (--medium) {
+            @mixin adjustFontSize 13px, 1, $breakpoint-768px;
+            @mixin paddingTrailer 1, $breakpoint-768px;
+        }
+
+        @media (--large) {
+            @mixin adjustFontSize 14px, 1, $breakpoint-1024px;
+            @mixin paddingTrailer 1, $breakpoint-1024px;
+        }
+
+        & tr:nth-child(even) {
+            background: var(--theme__color__primary__xlight);
+        }
+
+        & tr {
+            @media (--medium__max) {
+                @mixin trailingBorder 1px, 0.5, solid;
+                display: flex;
+                flex: 1 1 auto;
+                flex-direction: column;
+                border-color: var(--theme__color__primary__lighter);
+            }
+        }
+
+        & td {
+            padding-right: pxtorem(12, 14);
+            padding-left: pxtorem(12, 14);
+
+            @media (--medium__max) {
+                @mixin rhythm .5, .5, 0, 0;
+                text-align: left;
+                border: none;
+
+                &[data-th] {
+                    &:before {
+                        font-weight: 700;
+                        margin-right: pxtorem(6, 15);
+                        content: attr(data-th) ":";
+                        text-transform: uppercase;
+                    }
+                }
+            }
+
+            @media (--medium) {
+                @mixin rhythm .5, .5, 0, 0, $breakpoint-768px;
+                padding-right: pxtorem(12, 15);
+                padding-left: pxtorem(12, 15);
+            }
+
+            @media (--large) {
+                @mixin rhythm 1, 1, 0, 0, $breakpoint-1024px;
+                padding-right: pxtorem(12, 16);
+                padding-left: pxtorem(12, 16);
+            }
+        }
+    }
+
+    & tfoot {
+        background: var(--theme__color__primary__xlight);
+
+        @media (--medium__max) {
+            display: block;
+        }
+
+        & tr {
+            & th,
+            & td {
+                padding: pxtorem(12, 14);
+
+                @media (--medium) {
+                    padding: pxtorem(12, 15);
+                }
+
+                @media (--large) {
+                    padding: pxtorem(12, 16);
+                }
+            }
+        }
+    }
+}
+
+.data.table {
+    & th {
+        font-weight: normal;
+    }
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.table-wrapper {
+    @media (--off__canvas) {
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        -webkit-overflow-scrolling: touch;
+    }
+}

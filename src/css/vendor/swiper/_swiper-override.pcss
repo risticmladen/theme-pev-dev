@@ -1,0 +1,26 @@
+:root {
+    --swiper-navigation-color: var(--theme__color__secondary);
+    --swiper-pagination-color: var(--theme__color__secondary);
+    --swiper-preloader-color: var(--theme__color__secondary);
+    --swiper-navigation-size: 24px;
+}
+
+.swiper-lazy-preloader {
+    margin-top: initial;
+    top: 50%;
+}
+
+@keyframes swiper-preloader-spin {
+    0% {
+        transform: translateY(-50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+div.swiper-button-disabled[aria-disabled=true] {
+    pointer-events: unset;
+    cursor: not-allowed;
+}

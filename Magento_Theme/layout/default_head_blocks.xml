@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <link src="fonts/titillium-web/titillium-web-v9-latin-regular.woff2" as="font" type="font/woff2" />
+        <link src="fonts/titillium-web/titillium-web-v9-latin-regular.woff" as="font" type="font/woff" />
+        <link src="fonts/titillium-web/titillium-web-v9-latin-700.woff2" as="font" type="font/woff2" />
+        <link src="fonts/titillium-web/titillium-web-v9-latin-700.woff" as="font" type="font/woff" />
+        <link src="fonts/bebas-neue/bebas-neue-v2-latin-regular.woff2" as="font" type="font/woff2" />
+        <link src="fonts/bebas-neue/bebas-neue-v2-latin-regular.woff" as="font" type="font/woff" />
+        <link src="fonts/bebas-neue/bebas-neue-v2-latin-regular.ttf" as="font" type="font/truetype" />
+        <remove src="fonts/open-sans/open-sans-400.woff2" />
+        <remove src="fonts/open-sans/open-sans-700.woff2"  />
+        <remove src="fonts/raleway/raleway-600.woff" />
+        <remove src="fonts/icomoon/icomoon.woff2" />
+    </head>
+</page>
