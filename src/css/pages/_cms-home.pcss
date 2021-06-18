@@ -1,0 +1,383 @@
+.installation-videos__banner {
+    position: relative;
+}
+
+.installation-videos__banner__container{
+    display: flex;
+
+    & .banner__img {
+        left: 0;
+
+        @media (--large) {
+            right: 50%;
+        }
+    }
+
+    & .banner__description {
+        @mixin flex column, flex-end, center, wrap;
+        right: 0;
+        text-align: right;
+
+        &::after {
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 45% 100%);
+        }
+
+        @media (--medium) {
+            &::after {
+                clip-path: polygon(22% 0, 100% 0%, 100% 100%, 42% 100%);
+            }
+        }
+
+        @media (--large) {
+            &::after {
+                clip-path: polygon(30% 0, 100% 0%, 100% 100%, 35% 100%);
+            }
+        }
+    }
+}
+
+.catalog-products__banner {
+    position: relative;
+}
+
+.catalog-products__banner__container{
+    display: flex;
+
+    & .banner__img {
+        right: 0;
+
+        @media (--large) {
+            left: 50%;
+        }
+    }
+
+    & .banner__description {
+        @mixin flex column, flex-start, center, wrap;
+        left: 0;
+        text-align: left;
+        max-width: pxtorem(550px, 12);
+
+        &::after {
+            clip-path: polygon(0 0, 75% 0, 45% 100%, 0% 100%);
+        }
+
+        @media (--medium) {
+            &::after {
+                clip-path: polygon(0 0, 55% 0, 40% 100%, 0% 100%);
+            }
+        }
+
+        @media (--large) {
+            &::after {
+                clip-path: polygon(0 0, 65% 0, 60% 100%, 0% 100%);
+            }
+        }
+    }
+}
+
+.banner__img {
+    position: absolute;
+    height: 100%;
+
+    & img {
+        display: block;
+        height: 100%;
+        @mixin aspect-ratio-calc 460, 1926;
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--theme__color__primary__lighter);
+        opacity: 0.7;
+    }
+}
+
+.banner__description {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    padding: pxtorem(33px, 12) pxtorem(16px, 12) pxtorem(32px, 12);
+
+    &::after {
+        z-index: -1;
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--theme__color__primary__lighter);
+    }
+
+    @media (--medium) {
+        padding: pxtorem(64px, 12) pxtorem(26px, 12) pxtorem(48px, 12);
+    }
+
+    @media (--large) {
+        padding: pxtorem(64px, 14) pxtorem(26px, 14) pxtorem(64px, 14);
+    }
+}
+
+.banner__title {
+    @mixin adjustFontSize 50px, 3;
+    font-family: var(--font-stack__headings);
+
+    @media (--medium) {
+        @mixin adjustFontSize 72px, 4;
+    }
+
+    @media (--large) {
+        @mixin adjustFontSize 108px, 4, $breakpoint-1024px;
+    }
+}
+
+.banner__label {
+    @mixin adjustFontSize 26px, 2;
+    font-family: var(--font-stack__base);
+    text-transform: uppercase;
+    word-break: break-word;
+    font-weight: bold;
+    color: var(--theme__color__secondary);
+    padding-bottom: 24px;
+
+    @media (--medium) {
+        @mixin adjustFontSize 32px, 2;
+    }
+
+    @media (--large) {
+        @mixin adjustFontSize 50px, 2, $breakpoint-1024px;
+    }
+}
+
+.banner__text {
+    width: pxtorem(396px, 12);
+    padding-bottom: pxtorem(36px,12);
+
+    @media (--large) {
+        width: pxtorem(625px, 14);
+        padding-bottom: pxtorem(64px,14);
+    }
+}
+
+.most-popular__banner {
+    @mixin flex column, center, center, nowrap;
+    padding-top: pxtorem(48, 12);
+    padding-bottom: pxtorem(48, 12);
+
+    @media (--medium) {
+        padding-top: pxtorem(65, 12);
+        padding-bottom: pxtorem(63, 12);
+    }
+
+    @media (--large) {
+        padding-top: pxtorem(128, 14);
+        padding-bottom: pxtorem(128, 14);
+    }
+
+    & .most-popular__banner__title {
+        @mixin flex column, center, center, nowrap;
+        font-family: var(--font-stack__headings);
+        @mixin adjustFontSize 35px, 3;
+
+        @media (--medium) {
+            @mixin adjustFontSize 72px, 4;
+        }
+
+        @media (--large) {
+            @mixin adjustFontSize 90px, 4, $breakpoint-1024px;
+        }
+
+        & span {
+            font-family: var(--font-stack__base);
+            @mixin adjustFontSize 12px, 1;
+            text-transform: unset;
+
+            @media (--large) {
+                @mixin adjustFontSize 14px, 1, $breakpoint-1024px;
+            }
+        }
+    }
+}
+
+.most-popular__banner__content {
+    width: 100%;
+
+    & .product-items {
+        padding-bottom: 32px;
+    }
+
+    & .swiper-button {
+        top: 32%;
+
+        &::before {
+            color: var(--theme__color__primary);
+            font-size: pxtorem(16px, 12);
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    & .swiper-button-next {
+        right: 0;
+    }
+
+    & .swiper-button-prev {
+        left: 0;
+    }
+
+    & .swiper-pagination-bullets {
+        bottom: 0;
+    }
+
+    & .swiper-pagination-bullet {
+        background-color: transparent;
+        border: 1px solid var(--black);
+        opacity: 1;
+    }
+
+    & .swiper-pagination-bullet-active {
+        background-color: var(--theme__color__cta__light);
+        border: none;
+    }
+
+    & .widget-product-grid {
+        @mixin flex row, center, space-between, nowrap;
+    }
+
+    & .product-item {
+        @mixin flex column, center, space-between, nowrap;
+        min-width: pxtorem(228px, 12);
+        padding-top: pxtorem(25px, 12);
+        @mixin adjustFontSize 16px, 1;
+
+        @media (--medium) {
+            max-width: pxtorem(228px, 12);
+            padding-top: pxtorem(43px, 12);
+        }
+
+        @media (--large) {
+            max-width: pxtorem(408px, 14);
+            padding-top: pxtorem(67px, 14);
+        }
+    }
+
+    & .product-item-photo {
+        width: pxtorem(296px, 12);
+
+        @media (--medium) {
+            width: pxtorem(228px, 12);
+
+        }
+
+        @media (--large) {
+            width: pxtorem(404px, 14);
+        }
+    }
+
+    & .product-item-details {
+        width: 100%;
+        min-height: pxtorem(168px, 12);
+        @mixin flex column, flex-start, space-between, nowrap;
+
+        @media (--large) {
+            min-height: pxtorem(200px, 14);
+        }
+    }
+
+    & .product-item-inner {
+        width: 100%;
+    }
+
+    & .product-item-name {
+        & a {
+            font-family: var(--font-stack__headings);
+            @mixin adjustFontSize 16px, 1;
+            color: var(--color__text);
+
+            @media (--large) {
+                @mixin adjustFontSize 18px, 1, $breakpoint-1024px;
+            }
+        }
+    }
+
+    & .price-box {
+        @mixin adjustFontSize 24px, 2;
+        margin-top: auto;
+        color: var(--theme__color__cta);
+
+        @media (--large) {
+            @mixin adjustFontSize 30px, 2, $breakpoint-1024px;
+        }
+    }
+
+    & .product-item-actions {
+        @mixin flex row, center, space-between, nowrap;
+    }
+
+    & .actions-primary {
+        width: 65%;
+
+        & button {
+            margin: pxtorem(16px, 12) 0 0;
+            width: 100%;
+
+            @media (--large) {
+                margin: pxtorem(16px, 14) 0 0;
+            }
+        }
+
+        @media (--medium) {
+            width: auto;
+        }
+    }
+
+    & .actions-secondary {
+        padding: 0 pxtorem(24px, 12);
+        margin-top: pxtorem(16px, 12);
+
+        & .icon-whishlist {
+            padding-right: pxtorem(24px, 12);
+
+            @media (--large) {
+                padding-right: pxtorem(16px, 14);
+            }
+        }
+
+        @media (--large) {
+            @mixin flex row, center, space-between, nowrap;
+            padding: pxtorem(16px, 14) 0 0 pxtorem(24px, 14);
+            @mixin adjustFontSize 13px, 0.5, $breakpoint-1024px;
+            font-weight: bold;
+
+            & i {
+                @mixin adjustFontSize 16px, 0.5, $breakpoint-1024px;
+                padding-right: pxtorem(16px, 14);
+            }
+
+            & .action {
+                &:first-child {
+                    padding-right: pxtorem(16px, 14);
+                }
+            }
+        }
+
+        & a {
+            @media (--large) {
+                @mixin flex row, center, center, nowrap;
+            }
+        }
+
+        & span {
+            width: pxtorem(63px, 14);
+            text-transform: uppercase;
+        }
+    }
+}

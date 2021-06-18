@@ -1,0 +1,59 @@
+@import '_icons.pcss';
+@import '_layout.pcss';
+@import 'slick/_slick.pcss';
+@import 'content-type/_import.pcss';
+@import 'jarallax/_jarallax.pcss';
+
+.cms-content-important {
+    background-color: var(--theme__color__primary__xlight);
+    color: var(--theme__color__primary__lighter);
+    font-family: var(--font-stack__base);
+    @mixin adjustFontSize 22px, 1;
+    font-style: normal;
+    font-weight: 300;
+    margin: 0 0 35px -20px;
+    padding: 24px;
+
+    @media (--medium) {
+        @mixin adjustFontSize 22px, 1, $breakpoint-768px;
+    }
+
+    @media (--large) {
+        @mixin adjustFontSize 22px, 1, $breakpoint-1024px;
+    }
+}
+
+.pagebuilder-full-width {
+    float: left;
+    width: 100%;
+}
+
+.pagebuilder-content-type {
+    @mixin marginTrailer 1;
+
+    @media (--medium) {
+        @mixin marginTrailer 1, $breakpoint-768px;
+    }
+
+    @media (--large) {
+        @mixin marginTrailer 1, $breakpoint-1024px;
+    }
+}
+
+.pagebuilder-accordion {
+
+    /*.lib-data-accordion();*/
+
+}
+
+@media (--medium) {
+    .pagebuilder-mobile-hidden {
+        display: none !important;
+    }
+}
+
+@media (--medium__max) {
+    .pagebuilder-mobile-only {
+        display: none !important;
+    }
+}

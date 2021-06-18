@@ -1,0 +1,39 @@
+div[data-content-type='slider'] {
+    visibility: hidden;
+
+    &.slick-initialized {
+        visibility: visible;
+    }
+
+    & .slick-list,
+    & .slick-track,
+    & .slick-slide {
+        min-height: inherit;
+
+        & > div {
+            min-height: inherit;
+            overflow: hidden;
+            width: 100%;
+        }
+    }
+
+    & a.button {
+        -moz-appearance: button;
+        -webkit-appearance: button;
+        appearance: button;
+        color: initial;
+        padding: pxtorem(12, 14);
+        @mixin rhythm 0, 0, 1, 1;
+        text-decoration: none;
+
+        @media (--medium) {
+            padding: pxtorem(12, 15);
+            @mixin rhythm 0, 0, 1, 1, $breakpoint-768px;
+        }
+
+        @media (--large) {
+            padding: pxtorem(12, 16);
+            @mixin rhythm 0, 0, 1, 1, $breakpoint-1024px;
+        }
+    }
+}

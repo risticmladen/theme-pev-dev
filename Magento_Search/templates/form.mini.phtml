@@ -1,0 +1,36 @@
+<?php $helper = $this->helper(\Magento\Search\Helper\Data::class); // @codingStandardsIgnoreLine - no alternative at the moment ?>
+<div class="block block-search js-toggle__wrapper">
+    <button type="button" class="action block-search__title js-toggle__title drawer">
+        <span class="icon-search"></span>
+    </button>
+    <div class="block-search__content js-toggle__content">
+        <form class="form minisearch" id="search_mini_form" action="<?= /** @noEscape */
+        $helper->getResultUrl() ?>" method="get">
+            <div class="field search">
+                <div class="control block-search__control">
+                    <input id="search"
+                           data-mage-init='{"quickSearch":{
+                              "formSelector":"#search_mini_form",
+                              "url":"<?= /** @noEscape */
+                           $helper->getSuggestUrl() ?>",
+                              "destinationSelector":"#search_autocomplete"}
+                         }'
+                           type="text"
+                           name="<?= /** @noEscape */
+                           $helper->getQueryParamName() ?>"
+                           value="<?= /** @noEscape */
+                           $helper->getEscapedQueryText() ?>"
+                           placeholder="<?= /** @noEscape */
+                           __('Search entire store here...') ?>"
+                           class="input-text minisearch__input"
+                           maxlength="<?= /** @noEscape */
+                           $helper->getMaxQueryLength() ?>"
+                           role="combobox"
+                           aria-haspopup="false"
+                           aria-autocomplete="both"
+                           autocomplete="off"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="page.main.title" remove="true" />
+
+        <referenceContainer name="main.content" htmlClass="page-main">
+            <block class="Magento\Cms\Block\Block" name="banner-installation-videos" as="banner-installation-videos">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">banner_installation-videos</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Cms\Block\Block" name="banner-bestsellers" as="banner-bestsellers" before="banner-installation-videos" >
+                <arguments>
+                    <argument name="block_id" xsi:type="string">banner_bestsellers</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Cms\Block\Block" name="banner-catalog" as="banner-catalog" before="banner-bestsellers" >
+                <arguments>
+                    <argument name="block_id" xsi:type="string">banner_catalog</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

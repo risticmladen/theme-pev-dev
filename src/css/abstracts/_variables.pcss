@@ -1,0 +1,154 @@
+:root {
+
+    --white: #fff;
+    --black: #000;
+    --theme__color__red: hsla(359, 77%, 44%, 1);    /*#C81A1C*/
+;
+
+    /** Primary Colors **/
+
+    --theme__color__primary: hsla(0, 0%, 18%, 1);    /*#2F2F2F*/
+    --theme__color__primary__light: hsla(0, 0%, 51%, 1);    /*#828282*/
+    --theme__color__primary__lighter: hsla(0, 0%, 96%, 1);  /*#F5F5F5*/
+    --theme__color__primary__xlight: hsl(0,0%,94.9%);   /*#F2F2F2*/
+    --theme__color__primary__white: hsla(0, 0%, 100%, 1);   /*#FFFFFF*/
+
+    /** Secondary Colors **/
+
+    --theme__color__secondary: hsla(30, 75%, 53%, 1);   /*#E0872C*/
+    --theme__color__secondary__light: hsla(30, 100%, 50%, 1);   /*#FF8000*/
+    --theme__color__secondary__lighter: hsla(37, 100%, 72%, 1);    /*#FFC871*/
+
+    /** CTA Colors **/
+
+    --theme__color__cta: hsla(135, 100%, 26%, 1); /*#008421*/
+    --theme__color__cta__light: hsla(135, 100%, 32%, 1); /*#00A228*/
+    --theme__color__cta__lighter: hsla(135, 32%, 68%, 1);  /*#93C7A0*/
+
+    /** Text Colors **/
+
+    --color__text: var(--theme__color__primary); /*#5A5A5A*/
+    --color__text__light: var(--theme__color__primary__light);
+    --color__text-red: var(--theme__color__red);  /*#C81A1C*/
+
+    /** Backgrounds & Separators Colors **/
+
+    --color__page-background: var(--theme__color__primary__xlight);
+    --color__separator: var(--theme__color__primary__lighter); /* for content separation, eg. top and bottom borders & hr elements */
+
+
+    /** Button Colors **/
+
+    /* Primary Button */
+    --color__button-primary: var(--theme__color__primary__lighter);
+    --color__button-primary-bg: var(--theme__color__primary);
+    --color__button-primary-border: var(--theme__color__primary);
+    --color__button-primary-hover: var(--theme__color__primary);
+    --color__button-primary-bg-hover: var(--theme__color__primary__lighter);
+    --color__button-primary-border-hover: var(--theme__color__primary__lighter);
+
+    /* Secondary Button */
+    --color__button-secondary: var(--theme__color__primary);
+    --color__button-secondary-bg: transparent;
+    --color__button-secondary-border: var(--black);
+    --color__button-secondary-hover: var(--theme__color__primary__lighter);
+    --color__button-secondary-bg-hover: var(--theme__color__primary);
+    --color__button-secondary-border-hover: trasparent;
+
+    /* CTA Button */
+    --color__button-cta: var(--theme__color__primary__lighter);
+    --color__button-cta-bg: var(--theme__color__cta);
+    --color__button-cta-border: var(--theme__color__cta);
+    --color__button-cta-hover: var(--theme__color__cta__light);
+    --color__button-cta-bg-hover: var(--white);
+    --color__button-cta-border-hover: var(--theme__color__cta__light);
+
+
+    /* Ghost Button */
+    --color__button-ghost-primary: var(--theme__color__primary__lighter);
+    --color__button-ghost-primary-bg: var(--theme__color__primary__light);
+    --color__button-ghost-primary-background: var(--theme__color__primary__light);
+    --color__button-ghost-secondary: var(--theme__color__primary__light);
+    --color__button-ghost-secondary-bg: var(--white);
+    --color__button-ghost-secondary-border: var(--theme__color__primary__light);
+    --color__button-ghost-cta: var(--theme__color__primary__lighter);
+    --color__button-ghost-cta-bg: var(--theme__color__cta__lighter);
+    --color__button-ghost-cta-border: var(--theme__color__cta__lighter);
+
+    /** Notifications Colors **/
+
+    --color__notification-success: var(--theme__color__cta);
+    --color__notification-success-border: var(--theme__color__cta);
+    --color__notification-error-: var(--theme__color__red);
+    --color__notification-error-border: var(--theme__color__red);
+
+    /** Links Colors  **/
+
+    --color__link: var(--theme__color__primary);
+
+    /** Forms **/
+
+    /* Input Field */
+    --color__field-text: var(--color__text);
+    --color__field-bg: var(--white);
+    --color__field-border: var(--theme__color__primary__light);
+    --color__field-border-focus: var(--theme__color__primary);
+    --color__field-border-error: var(--theme__color__red);
+    --color__field-bg-error: var(--white);
+    --color__field-label: var(--color__text);
+    --color__field-placeholder: var(--theme__color__primary__light);
+    --color__field-required: var(--theme__color__red);
+
+    /* Radio & Checkbox */
+    --color__field-checked-bg: var(--theme__color__primary__xlight);
+
+
+    /* ======================================== *
+     * TYPOGRAPHY                               *
+    * ======================================== */
+
+
+    --font-stack__base: "Titillium Web";
+    --font-stack__headings: "BebasNeueBold";
+    --font-weight__normal: 400;
+    --font-weight__medium: 500;
+    --font-weight__bold: 700;
+
+
+    /* ======================================== *
+     * LAYOUT                                   *
+     * ======================================== */
+
+
+    /** Containers **/
+
+    --container__initial: 320px;
+    --container__s: 640px;
+    --container__m: 960px;
+    --container__l: 1240px;
+    --container__xxl: 1920px;
+
+    /** Container Max Width  **/
+    --container--max-width: 1320px;
+
+    /** Spacing System  **/
+
+    --space-factor: 8; /* Set it in config */
+    --gutter: calc(var(--space-factor) * 1px);
+}
+
+/** Tablet Up **/
+
+@media (--medium) {
+    :root {
+        --gutter: calc(var(--space-factor) * 1.5 * 1px);
+    }
+}
+
+/** Desktop Up **/
+
+@media (--large) {
+    :root {
+        --gutter: calc(var(--space-factor) * 2 * 1px);
+    }
+}

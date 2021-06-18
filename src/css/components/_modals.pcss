@@ -1,0 +1,120 @@
+.modal-popup {
+    @mixin flex row, flex-start, center, nowrap;
+    @mixin ui-default-transition all;
+    position: absolute;
+    z-index: 2;
+    top: 20%;
+    left: 10%;
+    visibility: hidden;
+    width: 80%;
+    opacity: 0;
+
+    &._show {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    @media (--large) {
+        left: 20%;
+        width: 60%;
+    }
+}
+
+.modal-inner-wrap {
+    @mixin paddingLeader 1;
+    @mixin paddingTrailer 1;
+    width: 100%;
+    padding-right: pxtorem(24, 14);
+    padding-left: pxtorem(24, 14);
+    background-color: var(--theme__color__white);
+
+    @media (--medium) {
+        @mixin paddingLeader 1, $breakpoint-768px;
+        @mixin paddingTrailer 1, $breakpoint-768px;
+        padding-right: pxtorem(24, 15);
+        padding-left: pxtorem(24, 15);
+    }
+
+    @media (--large) {
+        @mixin paddingLeader 1, $breakpoint-1024px;
+        @mixin paddingTrailer 1, $breakpoint-1024px;
+        padding-right: pxtorem(24, 16);
+        padding-left: pxtorem(24, 16);
+    }
+}
+
+.modal-header {
+    @mixin flex row, flex-start, space-between, nowrap;
+    @mixin trailingBorder 1px, 0.5, solid;
+    @mixin marginTrailer 1;
+    border-color: var(--theme__color__primary__lighter);
+
+    @media (--medium) {
+        @mixin marginTrailer 1, $breakpoint-768px;
+        @mixin trailingBorder 1px, 0.5, $breakpoint-768px;
+        border-color: var(--theme__color__primary__lighter);
+    }
+
+    @media (--large) {
+        @mixin marginTrailer 1, $breakpoint-1024px;
+        @mixin trailingBorder 1px, 0.5, $breakpoint-1024px;
+        border-color: var(--theme__color__primary__lighter);
+    }
+
+    & .action {
+        margin-left: pxtorem(6, 14);
+
+        @media (--medium) {
+            margin-left: pxtorem(6, 15);
+        }
+
+        @media (--large) {
+            margin-left: pxtorem(6, 16);
+        }
+    }
+}
+
+.modal-footer {
+    @mixin leadingBorder 1px, 1, solid;
+    @mixin marginLeader 1;
+    @mixin flex row, center, space-between, nowrap;
+    border-color: var(--theme__color__primary__lighter);
+
+    @media (--medium) {
+        @mixin leadingBorder 1px, 1, solid, $breakpoint-768px;
+        @mixin marginLeader 1, $breakpoint-768px;
+        border-color: var(--theme__color__primary__lighter);
+    }
+
+    @media (--large) {
+        @mixin leadingBorder 1px, 1, solid, $breakpoint-1024px;
+        @mixin marginLeader 1, $breakpoint-1024px;
+        border-color: var(--theme__color__primary__lighter);
+    }
+}
+
+._inner-scroll {
+    & .modal-content {
+        overflow-y: auto;
+        max-height: pxtorem(300, 14);
+
+        @media (--medium) {
+            max-height: pxtorem(300, 15);
+        }
+
+        @media (--large) {
+            max-height: pxtorem(300, 16);
+        }
+    }
+}
+
+.modals-overlay {
+    @mixin ui-default-transition all;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    background: rgba(16, 21, 35, 0.68);
+}

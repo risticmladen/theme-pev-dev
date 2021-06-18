@@ -1,0 +1,59 @@
+:root {
+    --icons-pagebuilder__font-name: 'pagebuilder-icons';
+    --icon-pagebuilder-caret-up__content: '\f104';
+    --icon-pagebuilder-caret-down__content: '\f101';
+    --icon-pagebuilder-caret-next__content: '\f102';
+    --icon-pagebuilder-caret-prev__content: '\f103';
+}
+
+@font-face {
+    font-family: var(--icons-pagebuilder__font-name);
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/pagebuilder-icons/pagebuilder-icons.eot');
+    src: url('../fonts/pagebuilder-icons/pagebuilder-icons.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/pagebuilder-icons/pagebuilder-icons.woff') format('woff'),
+    url('../fonts/pagebuilder-icons/pagebuilder-icons.ttf') format('truetype');
+}
+
+.pagebuilder-icon {
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--icons-pagebuilder__font-name);
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    speak: none;
+}
+
+[class^='pagebuilder-icon-']:before,
+[class*=' pagebuilder-icon-']:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-family: var(--icons-pagebuilder__font-name);
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    speak: none;
+    text-decoration: inherit;
+    text-rendering: auto;
+    text-transform: none;
+    vertical-align: middle;
+}
+
+.pagebuilder-icon-down:before {
+    content: var(--icon-pagebuilder-caret-down__content);
+}
+
+.pagebuilder-icon-next:before {
+    content: var(--icon-pagebuilder-caret-next__content);
+}
+
+.pagebuilder-icon-prev:before {
+    content: var(--icon-pagebuilder-caret-prev__content);
+}
+
+.pagebuilder-icon-up:before {
+    content: var(--icon-pagebuilder-caret-up__content);
+}
+

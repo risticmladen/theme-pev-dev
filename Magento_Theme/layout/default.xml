@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <move element="nav.overlay" destination="header.panel"  after="-"/>
+        <referenceBlock name="form.subscribe" remove="true" />
+
+        <referenceContainer name="footer-container">
+            <referenceContainer name="footer">
+                <referenceBlock name="report.bugs" remove="true" />
+                <referenceBlock name="footer_links" remove="true" />
+
+                <container name="footer.nav.logo.wrapper" htmlTag="div" htmlClass="footer-nav-logo-wrapper">
+                    <block name="footer.cms.navigation.block" as="footerCmsNavigationBlock"
+                           template="Magento_Theme::html/footer/links/footer-navigation.phtml" before="footer-logo">
+                        <block class="Magento\Cms\Block\Block" name="footer.main.store.navigation.soft.top.products" as="footerNavigationSoftTopProducts">
+                            <arguments>
+                                <argument name="block_id" xsi:type="string">product_category-soft_top_products</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Cms\Block\Block" name="footer.main.store.navigation.jeep.accessories" as="footerNavigationJeepAccessories">
+                            <arguments>
+                                <argument name="block_id" xsi:type="string">product_category-jeep_accessories</argument>
+                            </arguments>
+                        </block>
+                    </block>
+                    <container name="footer.logo.wrapper" htmlTag="div" htmlClass="footer-logo-wrapper">
+                        <block class="Magento\Theme\Block\Html\Header\Logo" name="footer-logo" before="copyright" />
+                    </container>
+                </container>
+
+                <block class="Magento\Cms\Block\Block"
+                       name="footer-about-us-links">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">about_us_links</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block"
+                       name="footer-customer-service">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">customer-service</argument>
+                    </arguments>
+                </block>
+            </referenceContainer >
+        </referenceContainer>
+
+        <move element="copyright" destination="footer.logo.wrapper"  after="footer-logo" />
+    </body>
+</page>
