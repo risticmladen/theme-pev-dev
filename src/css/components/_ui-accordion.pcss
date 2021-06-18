@@ -1,0 +1,29 @@
+.ui-accordion {
+
+}
+
+.ui-accordion-title {
+
+}
+
+.ui-accordion-content {
+    overflow: hidden;
+    color: var(--color__primary-white);
+    height: 0;
+    padding: 0;
+
+    &.active {
+        height: auto;
+        @mixin rhythm 0.5, 0.5, 0, 0;
+        @media (--medium) {
+            @mixin rhythm 0.5, 0.5, 0, 0, $breakpoint-1024px;
+        }
+        @media (--large) {
+            @mixin rhythm 0.5, 0.5, 0, 0, $breakpoint-1024px;
+        }
+    }
+}
+
+.ui-accordion-content--animated {
+    transition: padding 0.25s ease;
+}

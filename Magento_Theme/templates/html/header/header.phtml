@@ -1,0 +1,36 @@
+    <script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "customer": {
+                        "component": "Magento_Customer/js/view/customer"
+                    }
+                }
+            }
+        }
+    }
+    </script>
+<?php elseif ($block->getShowPart() == 'other') : ?>
+    <?= $block->getChildHtml() ?>
+<?php endif; ?>
+<script type="text/x-magento-init">
+{
+    "*": {
+        "ui-toggle": {
+            "trigger":      ".js-toggle__title",
+            "target":       ".js-toggle__content",
+            "triggerEvent": "click",
+            "UIUpdateable": "false",
+            "overlay":      "true",
+            "overlayElem":  ".js-toggle__overlay",
+            "closeEnabled": "true",
+            "close":        ".block-search__close"
+        },
+        "form-labels": {}
+    },
+    ".page-header": {
+        "sticky-header": ""
+    }
+}
+</script>

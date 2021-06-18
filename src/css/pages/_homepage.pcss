@@ -1,0 +1,915 @@
+.section__soft-top-products {
+    overflow: hidden;
+}
+
+.soft-top-products__text {
+    display: none;
+
+    @media (--medium) {
+        display: block;
+        width: pxtorem(380, 12);
+    }
+
+    @media (--large) {
+        width: auto;
+    }
+}
+
+.soft-top-products__text--bold {
+
+    @media (--medium) {
+        font-weight: var(--font-weight__bold);
+    }
+}
+
+.soft-top-products__banner-wrapper {
+    position: relative;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    z-index: 2;
+
+    &::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: var(--color__button-primary);
+        transform: skewX(-25deg);
+        z-index: 1;
+        left: -40%;
+
+        @media (--medium) {
+            left: -35%;
+        }
+    }
+
+    @media (--medium) {
+        z-index: 1;
+    }
+}
+
+.soft-top-products__description {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
+    z-index: 1;
+
+    @media (--medium) {
+        left: 5%;
+    }
+
+    @media (--large) {
+        left: 17%;
+    }
+}
+
+.soft-top-products__title {
+    font-family: var(--font-stack__headings);
+    @mixin adjustFontSize 35, 2;
+    color: var(--theme__color__secondary);
+    word-break: break-word;
+    width: pxtorem(200, 12);
+
+    @media (--medium) {
+        @mixin adjustFontSize 72, 2;
+        word-break: normal;
+        width: auto;
+        padding-bottom: pxtorem(4, 12);
+    }
+
+    @media (--large) {
+        @mixin adjustFontSize 90, 4, $breakpoint-1024px;
+        padding-bottom: pxtorem(8, 14);
+    }
+}
+
+.soft-top-products__cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: pxtorem(16, 12);
+    margin: 0 pxtorem(8, 12);
+    position: relative;
+    z-index: 1;
+
+    @media (--medium) {
+        flex-direction: row;
+        justify-content: center;
+        margin-top: pxtorem(-14, 12);
+    }
+
+    @media (--large) {
+        gap: pxtorem(45, 14);
+        max-width: pxtorem(1320, 14);
+        margin: pxtorem(-16, 14) auto 0;
+    }
+}
+
+.soft-top-products__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: pxtorem(29, 12);
+    background: var(--color__primary-white);
+    box-shadow: inset 0px 13px 39px rgb(0 0 0 / 8%);
+    padding-top: pxtorem(19, 12);
+
+    @media (--medium) {
+        gap: pxtorem(9, 12);
+        max-width: pxtorem(230, 12);
+    }
+
+    @media (--large) {
+        max-width: pxtorem(408, 14);
+    }
+}
+
+.soft-top-products__image-wrapper {
+    background: var(--theme__color__secondary);
+    transform: translateX(45%);
+
+    @media (--medium) {
+        transform: translateX(55%);
+    }
+}
+
+.soft-top-products__image {
+    mix-blend-mode: multiply;
+}
+
+.soft-top-products__card-image-wrapper {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: linear-gradient(184.62deg, #FFFFFF 28.04%, #5B5B5B 62.04%);
+        mix-blend-mode: normal;
+        opacity: 0.65;
+        filter: blur(22.7133px);
+    }
+
+    @media (--medium) {
+        height: pxtorem(150, 12);
+    }
+}
+
+.soft-top-products__info-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-bottom: pxtorem(16, 12);
+
+    @media (--medium) {
+        flex-direction: column;
+        gap: pxtorem(16, 12);
+        height: pxtorem(150, 12);
+    }
+}
+
+.soft-top-products__card-text {
+    display: none;
+
+    @media (--medium) {
+        display: block;
+        position: relative;
+        padding: 0 pxtorem(17, 12);
+
+        &::before {
+            content: "";
+            position: absolute;
+            border: 2px solid;
+            top: pxtorem(6, 12);
+            left: pxtorem(10, 12);
+        }
+    }
+
+    @media (--large) {
+        padding: 0 pxtorem(33, 14);
+
+        &::before {
+            left: pxtorem(24, 14);
+            top: pxtorem(10, 14);
+        }
+    }
+}
+
+.soft-top-products__card-title {
+    position: relative;
+    top: pxtorem(2, 12);
+    @mixin adjustFontSize 22, 1.5;
+    color: var(--color__text-header-links);
+
+    @media (--large) {
+        @mixin adjustFontSize 40, 1.67, $breakpoint-1024px;
+    }
+}
+
+.soft-top-products__title-wrapper {
+    background: var(--theme__color__secondary);
+    width: pxtorem(120, 12);
+    height: pxtorem(31, 12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: pxtorem(-4, 12);
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: var(--theme__color__secondary);
+        top: 0;
+        left: pxtorem(6, 12);
+        transform: skewX(20deg);
+    }
+
+    @media (--large) {
+        height: auto;
+        min-width: pxtorem(230, 14);
+        padding: pxtorem(8, 14) pxtorem(24, 14);
+        padding-right: 0;
+        justify-content: flex-start;
+
+        &::before {
+            left: pxtorem(12, 14);
+        }
+    }
+}
+
+.soft-top-products__card-view-more {
+    @mixin adjustFontSize 11, 1;
+    font-weight: var(--font-weight__bold);
+    text-decoration-line: underline;
+    color: var(--color__cta-dark-green);
+    width: pxtorem(125, 12);
+    position: relative;
+
+    @media (--medium) {
+        width: auto;
+        padding-left: pxtorem(11, 12);
+    }
+
+    @media (--large) {
+        padding-left: pxtorem(68, 14);
+        @mixin adjustFontSize 13, 0.67, $breakpoint-1024px;
+    }
+}
+
+.soft-top-products__the-replay::after {
+    font-family: "icomoon" !important;
+    content: "\e902";
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: pxtorem(5, 12);
+    left: pxtorem(78, 12);
+    font-size: pxtorem(4, 12);
+
+    @media (--medium) {
+        left: pxtorem(210, 12);
+    }
+
+    @media (--large) {
+        bottom: pxtorem(4, 14);
+        left: pxtorem(303, 14);
+    }
+}
+
+.soft-top-products__the-flip-top::after {
+    font-family: "icomoon" !important;
+    content: "\e902";
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: pxtorem(5, 12);
+    left: pxtorem(57, 12);
+    font-size: pxtorem(4, 12);
+
+    @media (--medium) {
+        left: pxtorem(159, 12);
+    }
+
+    @media (--large) {
+        bottom: pxtorem(4, 14);
+        left: pxtorem(242, 14);
+    }
+}
+
+.soft-top-products__the-sprint-top::after {
+    font-family: "icomoon" !important;
+    content: "\e902";
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: pxtorem(5, 12);
+    left: pxtorem(57, 12);
+    font-size: pxtorem(4, 12);
+
+    @media (--medium) {
+        left: pxtorem(174, 12);
+    }
+
+    @media (--large) {
+        bottom: pxtorem(4, 14);
+        left: pxtorem(259, 14);
+    }
+}
+
+.section__jeep-accessories {
+    overflow: hidden;
+    margin-top: pxtorem(32, 12);
+
+    @media (--medium) {
+        margin-top: pxtorem(64, 12);
+    }
+
+    @media (--large) {
+        margin-top: pxtorem(126, 14);
+    }
+}
+
+.jeep-accessories__text {
+    display: none;
+
+    @media (--medium) {
+        display: block;
+        width: pxtorem(380, 12);
+        color: var(--color__text-header-links);
+    }
+
+    @media (--large) {
+        width: auto;
+    }
+}
+
+.jeep-accessories__text--bold {
+
+    @media (--medium) {
+        font-weight: var(--font-weight__bold);
+    }
+}
+
+.jeep-accessories__banner-wrapper {
+    position: relative;
+    z-index: 1;
+
+    &::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: var(--theme__color__primary);
+        transform: skewX(25deg);
+        z-index: 1;
+        right: -25%;
+
+        @media (--medium) {
+            right: -35%;
+        }
+    }
+
+    @media (--medium) {
+        z-index: 1;
+    }
+}
+
+.jeep-accessories__description {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+    z-index: 1;
+
+    @media (--medium) {
+        right: 5%;
+    }
+
+    @media (--large) {
+        right: 17%;
+    }
+}
+
+.jeep-accessories__title {
+    font-family: var(--font-stack__headings);
+    @mixin adjustFontSize 35, 2;
+    color: var(--color__text-header-links);
+    word-break: break-word;
+    width: pxtorem(200, 12);
+    text-align: right;
+
+    @media (--medium) {
+        @mixin adjustFontSize 72, 4;
+        word-break: normal;
+        width: 425px;
+    }
+
+    @media (--large) {
+        @mixin adjustFontSize 90, 4, $breakpoint-1024px;
+        padding-bottom: pxtorem(8, 14);
+        width: auto;
+    }
+}
+
+.jeep-accessories__cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: pxtorem(16, 12);
+    margin: 0 pxtorem(8, 12) pxtorem(64, 12) pxtorem(8, 12);
+    position: relative;
+    z-index: 1;
+
+    @media (--medium) {
+        display: block;
+        margin-top: pxtorem(-14, 12);
+    }
+
+    @media (--large) {
+        gap: pxtorem(45, 14);
+        max-width: pxtorem(1320, 14);
+        margin: pxtorem(-16, 14) auto pxtorem(64, 12);
+    }
+}
+
+.jeep-accessories__top-cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: pxtorem(16, 12);
+
+    @media (--medium) {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    @media (--large) {
+        gap: pxtorem(48, 14);
+    }
+
+    & .jeep-accessories__card {
+
+        @media (--medium) {
+            height: pxtorem(316, 12);
+        }
+
+        @media (--large) {
+            max-width: pxtorem(636, 14);
+            flex-direction: row-reverse;
+            align-items: flex-start;
+            padding-top: pxtorem(40, 14);
+            justify-content: flex-end;
+            gap: pxtorem(70, 14);
+        }
+    }
+
+    & .jeep-accessories__card-image-wrapper {
+
+        @media (--medium) {
+            width: auto;
+            height: pxtorem(180, 12);
+            clip-path: unset;
+
+            &::before {
+                top: pxtorem(35, 12);
+                height: 50%;
+            }
+
+            & img {
+                transform: scale(1.2);
+            }
+        }
+
+        @media (--large) {
+            & img {
+                transform: scale(2);
+                margin-top: pxtorem(70, 14);
+            }
+        }
+    }
+
+    & .jeep-accessories__card-title {
+
+        @media (--large) {
+            @mixin adjustFontSize 40, 2, $breakpoint-1024px;
+        }
+    }
+
+    & .jeep-accessories__card-title-wrapper--sun-cap-plus {
+
+        @media (--large) {
+            width: pxtorem(240, 14);
+        }
+    }
+
+    & .jeep-accessories__info-wrapper {
+
+        @media (--large) {
+            width: 50%;
+        }
+    }
+
+    & .jeep-accessories__card-view-more {
+
+        @media (--large) {
+            padding-left: pxtorem(58, 14);
+        }
+    }
+}
+
+.jeep-accessories__bottom-cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: pxtorem(16, 12);
+
+    @media (--medium) {
+        margin-top: pxtorem(14, 12);
+        flex-flow: row wrap;
+    }
+
+    @media (--large) {
+        margin-top: pxtorem(103, 14);
+        gap: pxtorem(47, 14);
+    }
+
+    & .jeep-accessories__card {
+
+        @media (--medium) {
+            flex-direction: row-reverse;
+        }
+
+        @media (--large) {
+            flex: 1;
+            flex-flow: column wrap;
+        }
+    }
+
+    & .jeep-accessories__card-image-wrapper {
+
+        @media (--medium) {
+            &::before {
+                top: pxtorem(-24, 12);
+            }
+        }
+
+        @media (--large) {
+            & img {
+                transform: scale(1.6);
+            }
+        }
+    }
+
+    & .jeep-accessories__card-image {
+
+        @media (--medium) {
+            margin-top: 0;
+        }
+    }
+
+    & .jeep-accessories__title-wrapper {
+
+        @media (--medium) {
+            margin-top: pxtorem(12, 12);
+        }
+
+        @media (--large) {
+            min-height: pxtorem(44, 14);
+        }
+    }
+
+    & .jeep-accessories__card-title {
+
+        @media (--large) {
+            @mixin adjustFontSize 24, 1, $breakpoint-1024px;
+        }
+    }
+
+    & .jeep-accessories__card-view-more {
+
+        @media (--large) {
+            padding-left: pxtorem(31, 14);
+        }
+    }
+}
+
+.jeep-accessories__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: pxtorem(29, 12);
+    background: var(--color__primary-white);
+    box-shadow: 0px 13px 39px rgb(0 0 0 / 8%);
+    margin-top: pxtorem(-8, 12);
+    margin-bottom: pxtorem(10, 12);
+
+
+    @media (--medium) {
+        gap: pxtorem(9, 12);
+        max-width: pxtorem(230, 12);
+        max-width: unset;
+        flex-basis: 49%;
+    }
+
+    @media (--large) {
+        max-width: pxtorem(408, 14);
+    }
+}
+
+.jeep-accessories__image-wrapper {
+    background: var(--color__primary-grey);
+    opacity: .65;
+    transform: translateX(-45%);
+
+    @media (--medium) {
+        transform: translateX(-25%);
+    }
+
+    @media (--large) {
+        transform: translateX(0);
+    }
+}
+
+.jeep-accessories__image {
+    mix-blend-mode: multiply;
+}
+
+.jeep-accessories__card-image-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: pxtorem(110, 12);
+    clip-path: polygon(0 -10px, 100% -10px, 100% 100%, 0 100%);
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: linear-gradient(184.62deg, #FFFFFF 28.04%, #5B5B5B 62.04%);
+        mix-blend-mode: normal;
+        opacity: 0.65;
+        filter: blur(22.7133px);
+        top: pxtorem(60, 12);
+    }
+
+    @media (--medium) {
+        height: pxtorem(150, 12);
+        width: auto;
+        clip-path: unset;
+
+        &::before {
+            top: pxtorem(20, 12);
+        }
+    }
+}
+
+.jeep-accessories__card-image {
+    margin: 0 auto;
+    margin-top: -10px;
+}
+
+.jeep-accessories__sun-cap-image {
+    margin-top: pxtorem(-10, 12);
+}
+
+.jeep-accessories__info-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-bottom: pxtorem(16, 12);
+
+    @media (--medium) {
+        flex-direction: column;
+        gap: pxtorem(16, 12);
+        height: pxtorem(150, 12);
+    }
+
+    @media (--large) {
+        margin-bottom: pxtorem(34, 14);
+    }
+}
+
+.jeep-accessories__card-text {
+    display: none;
+
+    @media (--medium) {
+        display: block;
+        position: relative;
+        padding: 0 pxtorem(17, 12);
+
+        &::before {
+            content: "";
+            position: absolute;
+            border: 2px solid;
+            top: pxtorem(6, 12);
+            left: pxtorem(10, 12);
+        }
+    }
+
+    @media (--large) {
+        padding: 0 pxtorem(33, 14);
+
+        &::before {
+            left: pxtorem(24, 14);
+            top: pxtorem(10, 14);
+        }
+    }
+}
+
+.jeep-accessories__card-title {
+    position: relative;
+    top: pxtorem(2, 12);
+    @mixin adjustFontSize 22, 1.5;
+    color: var(--color__text-header-links);
+}
+
+.jeep-accessories__title-wrapper {
+    background: var(--theme__color__primary);
+    min-width: pxtorem(120, 12);
+    height: pxtorem(31, 12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: pxtorem(-4, 12);
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: var(--theme__color__primary);
+        top: 0;
+        left: pxtorem(6, 12);
+        transform: skewX(20deg);
+    }
+
+    @media (--medium) {
+        width: pxtorem(120, 12);
+        justify-content: flex-start;
+        padding-left: pxtorem(14, 12);
+    }
+
+    @media (--large) {
+        width: pxtorem(160, 14);
+        height: pxtorem(60, 14);
+        padding-left: pxtorem(24, 14);
+
+        &::before {
+            left: pxtorem(16, 14);
+        }
+    }
+}
+
+.jeep-accessories__card-title-wrapper--sun-cap-plus {
+    @media (--medium) {
+        width: pxtorem(180, 12);
+    }
+}
+
+.jeep-accessories__title-wrapper--narrow {
+    min-width: pxtorem(84, 12);
+
+    @media (--medium) {
+        min-width: unset;
+        width: pxtorem(96, 12);
+    }
+}
+
+.jeep-accessories__title-wrapper--wide {
+    min-width: pxtorem(156, 12);
+}
+
+.jeep-accessories__card-view-more {
+    @mixin adjustFontSize 11, 1;
+    font-weight: var(--font-weight__bold);
+    text-decoration-line: underline;
+    color: var(--color__cta-dark-green);
+    width: pxtorem(125, 12);
+    position: relative;
+
+    @media (--medium) {
+        width: auto;
+        padding-left: pxtorem(11, 12);
+    }
+
+    @media (--large) {
+        padding-left: pxtorem(68, 14);
+        @mixin adjustFontSize 13, 0.67, $breakpoint-1024px;
+    }
+}
+
+.jeep-accessories__sun_cap::after {
+    font-family: "icomoon" !important;
+    content: "\e902";
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: pxtorem(5, 12);
+    left: pxtorem(57, 12);
+    font-size: pxtorem(4, 12);
+
+    @media (--medium) {
+        left: pxtorem(174, 12);
+    }
+
+    @media (--large) {
+        bottom: pxtorem(4, 14);
+        left: pxtorem(259, 14);
+    }
+}
+
+.jeep-accessories__sun_cap_plus::after {
+    font-family: "icomoon" !important;
+    content: "\e902";
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: pxtorem(5, 12);
+    left: pxtorem(57, 12);
+    font-size: pxtorem(4, 12);
+
+    @media (--medium) {
+        left: pxtorem(174, 12);
+    }
+
+    @media (--large) {
+        bottom: pxtorem(4, 14);
+        left: pxtorem(259, 14);
+    }
+}
+
+.jeep-accessories__the_emergency_top::after {
+    font-family: "icomoon" !important;
+    content: "\e902";
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: pxtorem(5, 12);
+    left: pxtorem(78, 12);
+    font-size: pxtorem(4, 12);
+
+    @media (--medium) {
+        left: pxtorem(174, 12);
+    }
+
+    @media (--large) {
+        bottom: pxtorem(4, 14);
+        left: pxtorem(259, 14);
+    }
+}
+
+.jeep-accessories__cargo_cover::after {
+    font-family: "icomoon" !important;
+    content: "\e902";
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: pxtorem(5, 12);
+    left: pxtorem(57, 12);
+    font-size: pxtorem(4, 12);
+
+    @media (--medium) {
+        left: pxtorem(174, 12);
+    }
+
+    @media (--large) {
+        bottom: pxtorem(4, 14);
+        left: pxtorem(259, 14);
+    }
+}
+
+.jeep-accessories__canopy_cover::after {
+    font-family: "icomoon" !important;
+    content: "\e902";
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: pxtorem(5, 12);
+    left: pxtorem(57, 12);
+    font-size: pxtorem(4, 12);
+
+    @media (--medium) {
+        left: pxtorem(174, 12);
+    }
+
+    @media (--large) {
+        bottom: pxtorem(4, 14);
+        left: pxtorem(259, 14);
+    }
+}
+
+.jeep-accessories__cab_curtain::after {
+    font-family: "icomoon" !important;
+    content: "\e902";
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: pxtorem(5, 12);
+    left: pxtorem(57, 12);
+    font-size: pxtorem(4, 12);
+
+    @media (--medium) {
+        left: pxtorem(174, 12);
+    }
+
+    @media (--large) {
+        bottom: pxtorem(4, 14);
+        left: pxtorem(259, 14);
+    }
+}

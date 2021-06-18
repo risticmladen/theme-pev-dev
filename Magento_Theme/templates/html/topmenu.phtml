@@ -1,0 +1,9 @@
+<?php $columnsLimit = $block->getColumnsLimit() ?: 0; ?>
+<?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
+
+<nav class="navigation" data-action="navigation">
+    <ul class="ui-menu" data-mage-init='{"menu-medellin":{}}'>
+        <?= /** @noEscape */ $_menu ?>
+        <?= /** @noEscape */ $block->getChildHtml() ?>
+    </ul>
+</nav>

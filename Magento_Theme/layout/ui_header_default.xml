@@ -1,0 +1,82 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+        <referenceContainer name="page.top">
+            <referenceBlock name="catalog.topnav" remove="true" />
+            <referenceBlock name="store.menu">
+                <block name="cms.navigation.block" as="cmsNavigationBlock"
+                       class="Magento\Framework\View\Element\Template"
+                       template="Magento_Theme::html/header/links/navigation.phtml">
+                    <block class="Magento\Cms\Block\Block" name="soft-top-products" as="softTopProducts">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">soft-top-products</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Cms\Block\Block" name="jeep-accessories" as="jeepAccessories">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">jeep-accessories</argument>
+                        </arguments>
+                    </block>
+                </block>
+            </referenceBlock>
+        </referenceContainer>
+
+       <move element="navigation.sections" destination="header.panel"  after="logo" />
+
+
+        <referenceContainer name="header.container">
+            <container name="header.top.wrapper" htmlTag="div" htmlClass="header-top-wrapper">
+                <container name="header.top.customer.service" htmlTag="div" htmlClass="header-top__customer-service">
+                    <container name="customer.service.contact.us" htmlTag="div" htmlClass="customer-service__contact-us">
+                        <block class="Magento\Cms\Block\Block" name="customer-service">
+                            <arguments>
+                                <argument name="block_id" xsi:type="string">customer-service</argument>
+                            </arguments>
+                        </block>
+                    </container>
+
+                    <container name="customer.service.account.info" htmlTag="div" htmlClass="customer-service-account-info" />
+                </container>
+            </container>
+        </referenceContainer>
+
+        <container name="header.mainbar.wrapper" htmlTag="div" htmlClass="header-mainbar-wrapper" />
+
+        <referenceBlock name="top.links">
+
+            <referenceBlock name="register-link" remove="true"/>
+
+            <referenceBlock name="my-account-link">
+                <arguments>
+                    <argument name="class" xsi:type="string">header-dropdown-my-account</argument>
+                </arguments>
+            </referenceBlock>
+            <referenceBlock name="wish-list-link">
+                <arguments>
+                    <argument name="class" xsi:type="string">header-dropdown-wishlist</argument>
+                </arguments>
+            </referenceBlock>
+            <referenceBlock name="authorization-link">
+                <arguments>
+                    <argument name="class" xsi:type="string">header-dropdown-auth</argument>
+                </arguments>
+            </referenceBlock>
+        </referenceBlock>
+
+        <referenceContainer name="top-links-wrapper">
+            <block class="Magento\Framework\View\Element\Template"
+                   template="Magento_Theme::html/header/links/top-links-js.phtml"
+                   name="top.links.js"  />
+        </referenceContainer>
+
+
+
+        <move element="top-links-wrapper" destination="customer.service.account.info"  before="-"/>
+        <move element="header.panel" destination="header.mainbar.wrapper" before="-" />
+        <move element="header.top.wrapper" destination="header.container"  before="-"/>
+        <move element="header.mainbar.wrapper" destination="header.container" after="header.top.wrapper" />
+
+        <referenceContainer name="skip_to_content" remove="true" />
+    </body>
+</page>

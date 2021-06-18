@@ -1,0 +1,514 @@
+.header-dropdown-my-account {
+    padding-left: pxtorem(18,12);
+    position: relative;
+    display: inline-block;
+    margin-bottom: pxtorem(8, 12);
+
+    &::before {
+        font-family: "icomoon" !important;
+        content: "\e901";
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: black;
+    }
+}
+
+.header-dropdown-wishlist {
+    padding-left: pxtorem(18,12);
+    position: relative;
+    display: inline-block;
+    margin-bottom: pxtorem(8, 12);
+
+    &::before {
+        font-family: "icomoon" !important;
+        content: "\e921";
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: black;
+    }
+}
+
+.header-dropdown-auth {
+    padding-left: pxtorem(18,12);
+    position: relative;
+    display: inline-block;
+    margin-bottom: pxtorem(8, 12);
+
+    &::before {
+        font-family: "icomoon" !important;
+        content: "\e91a";
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: black;
+    }
+}
+
+.greet {
+    display: none;
+}
+
+.nav-sections-item-title {
+
+    @media (--medium) {
+        display: none;
+    }
+}
+
+.nav-sections {
+    @media (--medium) {
+        margin: 0 auto;
+        min-height: pxtorem(85, 12);
+    }
+
+    @media (--large) {
+        min-height: pxtorem(85, 14);
+    }
+}
+
+.ui-menu {
+    margin-left: pxtorem(24, 12);
+    margin-top: pxtorem(33, 12);
+    list-style: none;
+
+    @media (--medium) {
+        display: flex;
+        margin: 0;
+    }
+}
+
+.parent {
+    padding-bottom: pxtorem(24, 12);
+
+    @media (--medium) {
+        height: pxtorem(96, 12);
+        padding: 0;
+    }
+
+    @media (--large) {
+        height: pxtorem(96, 14);
+    }
+}
+
+.level-top {
+    font-family: var(--font-stack__headings);
+    @mixin adjustFontSize 22, 1.5;
+    text-transform: uppercase;
+    color: var(--color__text);
+
+    & a {
+        position: relative;
+
+    }
+
+    &.opened a {
+        color: var(--theme__color__secondary);
+    }
+
+    &::after {
+        position: absolute;
+        top: pxtorem(3, 12);
+        left: pxtorem(177, 12);
+        font-family: "icomoon" !important;
+        content: "\e908";
+        transform: rotate(45deg);
+        font-size: pxtorem(17, 12);
+        transition: transform 500ms;
+
+        @media (--medium) {
+            display: none;
+        }
+    }
+
+    &.opened a::after {
+        transform: rotate(0deg);
+    }
+}
+
+.level0.nav-1, .level0.nav-2 {
+
+    @media (--medium) {
+        &:hover a[class="level-top"]{
+            color: var(--color__text-header-links);
+        }
+
+        & a[class="level-top"]::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-left: 2px solid;
+            position: absolute;
+            left: pxtorem(-25, 12);
+            transform: skewX(-25deg);
+        }
+    }
+
+    @media (--large) {
+        & a::before {
+            left: pxtorem(-25, 14);
+        }
+    }
+}
+
+.level0.nav-1 a[class="level-top"] {
+
+    @media (--medium) {
+        color: var(--theme__color__secondary);
+        display: inline-block;
+        margin-top: pxtorem(23, 12);
+        width: pxtorem(120, 12);
+    }
+
+    @media (--large) {
+        margin-top: pxtorem(23, 14);
+        width: pxtorem(150, 14);
+    }
+}
+
+.level0.nav-1 a[class="level-top"]::before {
+
+    @media (--medium) {
+        border-left-color: var(--theme__color__secondary) ;
+    }
+}
+
+.level0.nav-1 a[class="level-top"]:hover::before {
+
+    @media (--medium) {
+        position: absolute;
+        top: pxtorem(-23, 12);
+        width: 101%;
+        height: 200%;
+        background-color: var(--theme__color__secondary);
+        z-index: -1;
+    }
+
+    @media (--large) {
+        position: absolute;
+        top: pxtorem(-23, 14);
+        width: 101%;
+        height: 170%;
+        background-color: var(--theme__color__secondary);
+        z-index: -1;
+    }
+}
+
+
+.level0.nav-1::before {
+
+    @media (--medium) {
+        content: "";
+        width: 100%;
+        position: absolute;
+        left: pxtorem(-26, 12);
+        transform: skewX(-25deg);
+    }
+
+    @media (--large) {
+        left: pxtorem(-28, 14);
+    }
+}
+
+.level0.nav-1:hover {
+    &::before {
+        background-color: var(--theme__color__secondary);
+    }
+}
+
+.level0.nav-2 a[class="level-top"] {
+    @media (--medium) {
+        color: var(--theme__color__primary);
+        display: inline-block;
+        margin-top: pxtorem(23, 12);
+        width: pxtorem(120, 12);
+    }
+
+    @media (--large) {
+        margin-top: pxtorem(23, 14);
+        width: pxtorem(139, 14);
+    }
+}
+
+.level0.nav-2 a[class="level-top"]::before {
+    @media (--medium) {
+        border-left-color: var(--color__button-secondary-border) ;
+    }
+}
+
+.level0.nav-2 a[class="level-top"]:hover::before {
+
+    @media (--medium) {
+        position: absolute;
+        top: pxtorem(-23, 12);
+        width: 110%;
+        height: 200%;
+        background-color: var(--theme__color__primary);
+        z-index: -1;
+    }
+
+    @media (--large) {
+        position: absolute;
+        top: pxtorem(-23, 14);
+        width: 110%;
+        height: 170%;
+        background-color: var(--theme__color__primary);
+        z-index: -1;
+    }
+}
+
+.level0.nav-2::before {
+
+    @media (--medium) {
+        content: "";
+        width: 110%;
+        position: absolute;
+        left: pxtorem(-26, 12);
+        transform: skewX(-25deg);
+    }
+
+    @media (--large) {
+        left: pxtorem(-28, 14);
+    }
+
+}
+
+.level0.nav-2:hover {
+    &::before {
+        background-color: var(--theme__color__primary);
+    }
+}
+
+.level0 .level1 {
+    font-size: pxtorem(12, 12);
+    line-height: pxtorem(40, 12);;
+    text-transform: uppercase;
+
+    & .level-top-item-link {
+        color: var(--color__text);
+        position: relative;
+
+        @media (--medium) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: pxtorem(35, 12);
+        }
+
+        @media (--large) {
+            gap: pxtorem(35, 14);
+        }
+    }
+}
+
+.soft-top-products-list .level1 {
+    & .level-top-item-link {
+        &:hover::before {
+            content: "";
+            position: absolute;
+            height: 10%;
+            border-bottom: 10px solid var(--theme__color__secondary);
+            left: 0;
+            bottom: -24px;
+            border-left: 115px solid transparent;
+            border-right: 115px solid transparent;
+            opacity: 1;
+        }
+    }
+}
+
+.jeep-accessories-list .level1 {
+    & .level-top-item-link {
+        &:hover::before {
+            content: "";
+            position: absolute;
+            height: 10%;
+            border-bottom: 10px solid var(--color__button-secondary);
+            left: 0;
+            bottom: -24px;
+            border-left: 115px solid transparent;
+            border-right: 115px solid transparent;
+        }
+    }
+}
+
+.soft-top-products-list {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+
+    @media (--medium) {
+        flex-direction: row;
+        gap: pxtorem(24, 12);
+    }
+
+    @media (--large) {
+        gap: pxtorem(40, 14);
+    }
+}
+
+.soft-top-products-list-item > a > img {
+    display: none;
+
+    @media (--medium) {
+        display: block;
+        max-width: 100%;
+    }
+}
+
+.jeep-accessories-list {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+
+    @media (--medium) {
+        flex-direction: row;
+        gap: pxtorem(24, 12);
+    }
+
+    @media (--large) {
+        gap: pxtorem(40, 14);
+    }
+}
+
+.jeep-accessories-list-item > a > img {
+    display: none;
+
+    @media (--medium) {
+        display: block;
+        max-width: 100%;
+    }
+}
+
+.submenu {
+    list-style: none;
+    display: none;
+    padding: pxtorem(16, 12);
+
+    @media (--medium) {
+        padding: 0;
+        display: flex;
+    }
+}
+
+@media (--medium) {
+    .level-top.parent {
+        & .level0.submenu {
+            position: absolute;
+            z-index: 3;
+            left: 0;
+            top: pxtorem(76, 12);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(60px);
+            transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1) 0s;
+        }
+
+        &.opened {
+            & .level0.submenu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(60px);
+                background: white;
+                height: pxtorem(320, 12);
+                padding-top: 50px;
+                display: flex;
+                align-items: baseline;
+                justify-content: space-around;
+            }
+        }
+    }
+}
+
+@media (--large) {
+    .level-top.parent {
+        & .level0.submenu {
+            top: pxtorem(86, 14);
+        }
+
+        &.opened {
+            & .level0.submenu {
+                height: pxtorem(320, 14);
+            }
+        }
+    }
+}
+
+.soft-top-products-list-item > a > p {
+
+    @media (--medium) {
+        @mixin adjustFontSize 16, 1.5;
+        font-family: var(--font-stack__headings);
+        text-transform: uppercase;
+        color: var(--color__text);
+    }
+
+    @media (--large) {
+        @mixin adjustFontSize 18, 1;
+    }
+}
+
+.soft-top-products-list-item .level-top-item-image {
+
+    @media (--medium) {
+        position: relative;
+    }
+}
+
+.image-shadow {
+    display: none;
+
+    @media (--medium) {
+        display: block;
+    }
+}
+
+.image-shadow::before {
+    content: "";
+    position: absolute;
+    top: pxtorem(35, 12);
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(186.17deg, #FFFFFF 28.57%, #5B5B5B 50.55%);
+    mix-blend-mode: normal;
+    opacity: 0.35;
+    filter: blur(18.1706px);
+    transform: matrix(0.95, 0.31, 0.31, -0.95, 0, 0);
+}
+
+.jeep-accessories-list-item > a > p {
+
+    @media (--medium) {
+        @mixin adjustFontSize 16, 1.5;
+        font-family: var(--font-stack__headings);
+        text-transform: uppercase;
+        color: var(--color__text);
+    }
+
+    @media (--large) {
+        @mixin adjustFontSize 18, 1;
+    }
+}
+
+.level-top-item-title::before {
+    content: "";
+
+    &:hover::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        z-index: -1;
+        bottom: pxtorem(-17, 12);
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 64px solid transparent;
+        border-right: 64px solid transparent;
+        border-bottom: 8px solid var(--theme__color__secondary);
+    }
+}

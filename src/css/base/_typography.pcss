@@ -1,0 +1,346 @@
+@import "_font-face.pcss";
+
+:root {
+    --medium: 768px;
+    --large: $breakpoint-1024px;
+    --off__canvas: 1023px;
+    --icomoon__font__family: "icomoon";
+    --icon__checkbox_empty: "\e900";
+    --icon__account_icon: "\e901";
+    --icon__arrow_dropbown: "\e902;";
+    --icon__arrow_dropdow_up: "\e903";
+    --icon__arrow_link: "\e904";
+    --icon__call: "\e905";
+    --icon__cart: "\e906";
+    --icon__checkbox_filled: "\e907";
+    --icon__close: "\e908";
+    --icon__compare: "\909";
+    --icon__confirm: "\e90a";
+    --icon__create_account: "\e90b";
+    --icon__download: "\e90c";
+    --icon__edit: "\e90d";
+    --icon__information: "\e90e";
+    --icon__left_indicator: "\e90f";
+    --icon__left: "\e910";
+    --icon__manu: "\e911";
+    --icon__open: "\e912";
+    --icon__order_summary: "\e913";
+    --icon__pdf: "\e914";
+    --icon__radio_button_filled: "\e915";
+    --icon__radiobutton: "\e916";
+    --icon__remove: "\e917";
+    --icon__right_indicator: "\e918";
+    --icon__search: "\e919";
+    --icon__sign_out: "\e91a";
+    --icon__star1: "\e91b";
+    --icon__star2: "\e91c";
+    --icon__star3: "\e91d";
+    --icon__to_top: "\e91e";
+    --icon__video: "\e91f";
+    --icon__warning: "\e920";
+    --icon__whishlist: "\e921";
+}
+
+@font-face {
+    font-family: "icomoon";
+    src: url("../fonts/icomoon/icomoon.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+
+    /* use !important to prevent issues with browser extensions that change fonts */
+
+    font-family: "icomoon" !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1.5;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-checkbox-empty:before {
+    content: "\e900";
+}
+
+.icon-account-icon:before {
+    content: "\e901";
+}
+
+.icon-arrow-dropbown:before {
+    content: "\e902";
+}
+
+.icon-arrow-dropdow-up:before {
+    content: "\e903";
+}
+
+.icon-arrow-link:before {
+    content: "\e904";
+}
+
+.icon-call:before {
+    content: "\e905";
+}
+
+.icon-cart:before {
+    content: "\e906";
+}
+
+.icon-checkbox-filled:before {
+    content: "\e907";
+}
+
+.icon-close:before {
+    content: "\e908";
+}
+
+.icon-compare:before {
+    content: "\e909";
+}
+
+.icon-confirm:before {
+    content: "\e90a";
+}
+
+.icon-create-account:before {
+    content: "\e90b";
+}
+
+.icon-download:before {
+    content: "\e90c";
+}
+
+.icon-edit:before {
+    content: "\e90d";
+}
+
+.icon-information:before {
+    content: "\e90e";
+}
+
+.icon-left-indicator:before {
+    content: "\e90f";
+}
+
+.icon-left:before {
+    content: "\e910";
+}
+
+.icon-manu:before {
+    content: "\e911";
+}
+
+.icon-open:before {
+    content: "\e912";
+}
+
+.icon-order-summary:before {
+    content: "\e913";
+}
+
+.icon-pdf:before {
+    content: "\e914";
+}
+
+.icon-radio-button-filled:before {
+    content: "\e915";
+}
+
+.icon-radiobutton:before {
+    content: "\e916";
+}
+
+.icon-remove:before {
+    content: "\e917";
+}
+
+.icon-right-indicator:before {
+    content: "\e918";
+}
+
+.icon-search:before {
+    content: "\e919";
+}
+
+.icon-sign-out:before {
+    content: "\e91a";
+}
+
+.icon-star1:before {
+    content: "\e91b";
+}
+
+.icon-star2:before {
+    content: "\e91c";
+}
+
+.icon-star3:before {
+    content: "\e91d";
+}
+
+.icon-to-top:before {
+    content: "\e91e";
+}
+
+.icon-video:before {
+    content: "\e91f";
+}
+
+.icon-warning:before {
+    content: "\e920";
+}
+
+.icon-whishlist:before {
+    content: "\e921";
+}
+
+h1 {
+    font-family: var(--font-stack__headings);
+    font-weight: var(--font-weight__bold);
+    @mixin adjustFontSize 35px, 2;
+
+    @media (--medium) {
+        @mixin adjustFontSize 72px, 4;
+    }
+
+    @media (--large) {
+        @mixin adjustFontSize 90px, 3, $breakpoint-1024px;
+    }
+}
+
+h2 {
+    font-family: var(--font-stack__headings);
+    font-weight: var(--font-weight__bold);
+    @mixin adjustFontSize 22px, 2;
+
+    @media (--medium) {
+        @mixin adjustFontSize 28px, 2;
+    }
+
+    @media (--large) {
+        @mixin adjustFontSize 40px, 1, $breakpoint-1024px;
+    }
+}
+
+h3 {
+    font-family: var(--font-stack__headings);
+    font-weight: var(--font-weight__bold);
+    @mixin adjustFontSize 18px, 1;
+
+    @media (--medium) {
+        @mixin adjustFontSize 20px, 2;
+    }
+
+    @media (--large) {
+        @mixin adjustFontSize 24px, 1, $breakpoint-1024px;
+    }
+}
+
+h4 {
+    font-family: var(--font-stack__headings);
+    font-weight: var(--font-weight__bold);
+    @mixin adjustFontSize 16px, 1;
+
+    @media (--medium) {
+        @mixin adjustFontSize 16px, 1;
+    }
+
+    @media (--large) {
+        @mixin adjustFontSize 18px, 1, $breakpoint-1024px;
+    }
+}
+
+h5 {
+    font-family: var(--font-stack__headings);
+    font-weight: var(--font-weight__bold);
+    @mixin adjustFontSize 16px, 1.25;
+
+    @media (--medium) {
+        @mixin adjustFontSize 14px, 1;
+    }
+
+    @media (--large) {
+        @mixin adjustFontSize 16px, 1, $breakpoint-1024px;
+    }
+}
+
+p {
+    font-family: var(--font-stack__base);
+    font-weight: var(--font-weight__normal);
+    @mixin adjustFontSize 12px, 1;
+
+    @media (--medium) {
+        @mixin adjustFontSize 12px, 1;
+    }
+
+    @media (--large) {
+        @mixin adjustFontSize 14px, 1, $breakpoint-1024px;
+    }
+}
+
+.small-text {
+    font-family: var(--font-stack__base);
+    font-weight: var(--font-weight__normal);
+    @mixin adjustFontSize 11px, 1;
+
+    @media (--medium) {
+        @mixin adjustFontSize 12px, 1;
+    }
+
+    @media (--large) {
+        @mixin adjustFontSize 12px, 1, $breakpoint-1024px;
+    }
+}
+
+a {
+    font-family: var(--font-stack__base);
+    font-weight: var(--font-weight__normal);
+    color: var(--color__button-primary);
+    @mixin adjustFontSize 11px, 1;
+
+    @media (--medium) {
+        @mixin adjustFontSize 13px, 1;
+    }
+
+    @media (--large) {
+        @mixin adjustFontSize 13px, 1, $breakpoint-1024px;
+    }
+}
+
+ul > li, ol > li {
+    font-family: var(--font-stack__base);
+    font-weight: var(--font-weight__normal);
+    @mixin adjustFontSize 12px, 1;
+
+    @media (--medium) {
+        @mixin adjustFontSize 14px, 2;
+    }
+
+    @media (--large) {
+        @mixin adjustFontSize 14px, 1, $breakpoint-1024px;
+    }
+}
+
+li {
+    font-family: var(--font-stack__base);
+    font-weight: var(--font-weight__normal);
+    @mixin adjustFontSize 12px, 2;
+
+    @media (--medium) {
+        @mixin adjustFontSize 14px, 1;
+    }
+
+    @media (--large) {
+        @mixin adjustFontSize 14px, 2, $breakpoint-1024px;
+    }
+}
+

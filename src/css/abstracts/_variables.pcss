@@ -1,0 +1,214 @@
+:root {
+
+    /* =============================================
+     * COLOR SYSTEM
+     * ---------------------------------------------
+     * Color variables are defined in three levels:
+     * 1. Palette Level
+     * 2. Functional Level
+     * 3. Component Level
+     * ============================================= */
+
+
+    /*
+     * Palette Level i.e. Human Friendly Color Names
+     * ---------------------------------------------------
+     * These variables are used for specifying functional
+     * level variables and should never be used in styles.
+     * ---------------------------------------------------
+     * Basic colors can also be set in config.json. In that
+     * case all of the palette level color variables in
+     * _variables.pcss should be removed and gulp automation
+     * task should be used instead
+     * (gulp frontend:frofrontend:color:system).
+     * See read.me for more details about color system
+     * and css variables generation
+     * ---------------------------------------------------
+     */
+
+
+    /** Basic Color Palette **/
+
+    /* COLOR PRIMARY */
+    --color__primary-dark-grey: hsla(0, 0%, 18%, 1);                                /* #2F2F2F */
+    --color__primary-grey: hsla(0, 0%, 51%, 1);                                     /* #828282 */
+    --color__primary-light-grey: hsla(0, 0%, 96%, 1);                               /* #F5F5F5 */
+    --color__primary-white: hsla(0, 0%, 100%, 1);                                   /* #FFFFFF */
+
+    /* COLOR SECONDARY */
+    --color__secondary-dark-orange: hsla(30, 75%, 53%, 1);                          /* #E0872C */
+    --color__secondary-orange: hsla(30, 100%, 50%, 1);                              /* #FF8000 */
+    --color__secondary-light-orange: hsla(37, 100%, 72%, 1);                        /* #FFC871 */
+
+    /* COLOR CTA */
+    --color__cta-dark-green: hsla(135, 100%, 26%, 1);                               /* #008421 */
+    --color__cta-green: hsla(135, 100%, 32%, 1);                                    /* #00A228 */
+    --color__cta-light-green: hsla(135, 32%, 68%, 1);                               /* #93C7A0 */
+
+    /* COLOR WARNING - ERROR */
+
+    --color_error-red: hsla(359, 77%, 44%, 1);                                      /* #C81A1C */
+
+
+    /*
+     * Component Level
+     * ----------------------------------------------------------
+     * This level defines color roles in actual project.
+     * Color variables are actually used for styling UI elements.
+     * ----------------------------------------------------------
+     */
+
+    /** Theme Colors **/
+
+    --theme__color__primary: var(--color__primary-dark-grey);                       /* #2F2F2F */
+    --theme__color__secondary: var(--color__secondary-dark-orange);                 /* #E0872C */
+
+    /** Text Colors **/
+
+    --color__text: var(--color__primary-dark-grey);                                 /* #2F2F2F */
+    --color__text-white: var(--color__primary-white);                               /* #FFFFFF */
+    --color__text-red: var(--color_error-red);                                      /* #C81A1C */
+    --color__text-header-links: var(--color__primary-light-grey);                   /* #F5F5F5 */
+    --color__text-cart-subtotal-price: var(--color__cta-dark-green);                 /* #008421 */
+
+    /** Button Colors **/
+
+    /* Button */
+
+    --color__button-bg: var(--color__primary-white);                                /* #FFFFFF */
+    --color__button-text: var(--color__text);                                       /* #2F2F2F */
+
+    /* Primary Button */
+    --color__button-primary: var(--color__primary-light-grey);                      /* #F5F5F5 */
+    --color__button-primary-border: transparent;
+    --color__button-primary-bg: var(--color__primary-dark-grey);                    /* #2F2F2F */
+    --color__button-primary-bg-hover: var(--color__primary-light-grey);             /* #F5F5F5 */
+
+    /* Secondary Button */
+    --color__button-secondary: var(--color__text);                                  /* #2F2F2F */
+    --color__button-secondary-hover: var(--color__primary-light-grey);              /* #F5F5F5 */
+    --color__button-secondary-border: var(--color__primary-dark-grey);              /* #2F2F2F */
+    --color__button-secondary-bg-hover: var(--color__primary-dark-grey);            /* #2F2F2F */
+
+    /* CTA Button */
+    --color__button-cta: var(--color__primary-light-grey);                          /* #F5F5F5 */
+    --color__button-cta-hover: var(--color__cta-green);                             /* #00A228 */
+    --color__button-cta-border: var(--color__cta-green);                            /* #00A228 */
+    --color__button-cta-bg: var(--color__cta-dark-green);                           /* #008421 */
+
+    /* Ghost Primary Button */
+    --color__button-primary-ghost: var(--color__primary-light-grey);                /* #F5F5F5 */
+    --color__button-primary-ghost-border: var(--color__primary-grey);               /* #828282 */
+    --color__button-primary-ghost-bg: var(--color__primary-grey);                   /* #828282 */
+    --color__button-primary-ghost-border-hover: var(--color__primary-grey);         /* #828282 */
+    --color__button-primary-ghost-bg-hover: var(--color__primary-grey);             /* #828282 */
+
+    /* Ghost Secondary Button */
+    --color__button-secondary-ghost: var(--color__text);                            /* #828282 */
+    --color__button-secondary-ghost-border: var(--color__text);                     /* #828282 */
+    --color__button-secondary-ghost-border-hover: var(--color__primary-grey);       /* #828282 */
+
+    /* Ghost CTA Button */
+    --color__button-cta-ghost: var(--color__primary-light-grey);                    /* #F5F5F5 */
+    --color__button-cta-ghost-border: var(--color__cta-light-green);                /* #93C7A0 */
+    --color__button-cta-ghost-bg: var(--color__cta-light-green);                    /* #93C7A0 */
+    --color__button-cta-ghost-border-hover: var(--color__cta-light-green);          /* #93C7A0 */
+    --color__button-cta-ghost-bg-hover: var(--color__cta-light-green);              /* #93C7A0 */
+
+
+    /** Notifications Colors **/
+
+    --color__notification-success: var(--color__cta-dark-green);                    /* #008421 */
+    --color__notification-success-bg: var(--color__primary-white);                  /* #FFFFFF */
+    --color__notification-success-border: var(--color__cta-dark-green);             /* #008421 */
+    --color__notification-error: var(--color__text-red);                            /* #C81A1C */
+    --color__notification-error-bg: var(--color__primary-white);                    /* #FFFFFF */
+    --color__notification-error-border: var(--color_error-red);                     /* #C81A1C */
+
+
+    /** Links Colors  **/
+
+    --color__link: var(--color__text);                                              /* #2F2F2F */
+    --color__link-visited: inherit;
+    --color__link-hover: var(--color__text);                                        /* #2F2F2F */
+    --color__link-active: var(--color__text);                                       /* #2F2F2F */
+
+
+    /** Forms **/
+
+    /* Input Field */
+    --color__field-text: var(--color__text);                                        /* #2F2F2F */
+    --color__field-bg: var(--color__primary-white);                                 /* #FFFFFF */
+    --color__field-bg-focus: var(--color__primary-white);                           /* #FFFFFF */
+    --color__field-border: var(--color__primary-grey);                              /* #828282 */
+    --color__field-border-focus: var(--color__primary-dark-grey);                   /* #2F2F2F */
+    --color__field-border-error: var(--color_error-red);                            /* #C81A1C */
+    --color__field-bg-error: var(--color__primary-white);                           /* #FFFFFF */
+    --color__field-label: var(--color__text);                                       /* #2F2F2F */
+    --color__field-placeholder: var(--color__primary-grey);                         /* #828282 */
+    --color__field-required: var(--color_error-red);                                /* #C81A1C */
+
+    /* Select Box */
+    --color__selectbox-text: var(--color__primary-grey);                            /* #828282 */
+    --color__selectbox-text-focus: var(--color__primary-dark-grey);                 /* #2F2F2F */
+    --color__selectbox-border: var(--color__primary-grey);                          /* #828282 */
+    --color__selectbox-border-focus: var(--color__primary-dark-grey);               /* #2F2F2F */
+    --color__selectbox-label: var(--color__text);                                   /* #2F2F2F */
+    --color__selectbox-placeholder: var(--color__primary-grey);                     /* #828282 */
+
+    /* Text Area */
+    --color__textarea-text: var(--color__text);                                     /* #2F2F2F */
+    --color__textarea-label: var(--color__text);                                    /* #2F2F2F */
+    --color__textarea-border: var(--color__primary-grey);                           /* #828282 */
+
+    /* Search Header Desktop */
+
+    --color__searchheaderdesktop-text: var(--color__text);                          /* #2F2F2F */
+    --color__searchheaderdesktop-placeholder: var(--color__primary-grey);           /* #828282 */
+    --color__searchheaderdesktop-border: var(--color__primary-dark-grey);           /* #2F2F2F */
+
+
+    /* Radio & Checkbox */
+    --color__form-checked-bg: var(--color__text);                                   /* #2F2F2F */
+    --color__field-checked-bg: var(--color__cta-dark-green);                        /* #008421 */
+
+
+    /* ======================================== *
+     * TYPOGRAPHY                               *
+     * ======================================== */
+
+    /* Fonts */
+
+    --font-stack__base: "Titillium Web";
+    --font-stack__headings: "Bebas Neue";
+    --font-weight__normal: 400;
+    --font-weight__bold: 700;
+
+
+    /* ======================================== *
+     * LAYOUT                                   *
+     * ======================================== */
+
+    /** Spacing System  **/
+
+    --space-factor: 10; /* Set it in config */
+    --gutter: calc(var(--space-factor) * 1px);
+
+    /** Tablet Up **/
+
+    @media (--medium) {
+        :root {
+            --gutter: calc(var(--space-factor) * 1.5 * 1px);
+        }
+    }
+
+    /** Desktop Up **/
+
+    @media (--large) {
+        :root {
+            --gutter: calc(var(--space-factor) * 2 * 1px);
+        }
+    }
+
+}
+
