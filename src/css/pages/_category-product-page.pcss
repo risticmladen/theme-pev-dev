@@ -1,0 +1,107 @@
+.page-title {
+    @mixin adjustFontSize 22, 1.5;
+}
+
+.product-info-main {
+    min-width: pxtorem(320, 12);
+    padding: 0 pxtorem(16, 12);
+
+    & .field.qty {
+        @mixin flex column, center, normal, nowrap;
+        width: 10%;
+
+        & .label {
+            font-weight: var(--font-weight__bold);
+        }
+
+        & .input-text.qty {
+            text-align: center;
+        }
+    }
+}
+
+.product.info.detailed {
+    display: none;
+}
+
+.page-title-wrapper.product {
+    padding-bottom: pxtorem(24, 12);
+}
+
+.product-info-price {
+    @mixin flex row, center, space-between, wrap;
+    gap: pxtorem(15, 12);
+    border-bottom: 1px solid var(--color__button-primary-ghost-border);
+    padding-bottom: pxtorem(10, 12);
+
+}
+
+.product-reviews-summary {
+    order: 0;
+    flex-basis: 100%;
+    text-align: right;
+}
+
+.price-box {
+    order: 1;
+}
+
+.product-info-stock-sku {
+    order: 2;
+    font-style: normal;
+    @mixin adjustFontSize 10, 1;
+
+    & .stock.available {
+        font-weight: var(--font-weight__bold);
+        text-transform: uppercase;
+    }
+
+    & .product.attribute.sku {
+        display: flex;
+        gap: pxtorem(5, 12);
+    }
+}
+
+.reviews-actions > .action.add {
+    font-weight: var(--font-weight__bold);
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    color: var(--color__text);
+}
+
+.price-container {
+    @mixin adjustFontSize 30, 2;
+    color: var(--color__text-cart-subtotal-price);
+}
+
+.product-add-form {
+    padding-top: pxtorem(16, 12);
+
+    & .fieldset {
+        @mixin flex row, flex-end, flex-start, nowrap;
+        gap: pxtorem(24, 12);
+    }
+
+    & .control {
+        box-sizing: border-box;
+        border: 2px solid var(--color__text);
+        width: pxtorem(48, 12);
+        height: pxtorem(48, 12);
+    }
+
+    & .actions {
+        width: 100%;
+
+        & .action.primary.tocart {
+            width: 100%;
+            height: pxtorem(48, 12);
+            background-color: var(--color__cta-dark-green);
+            @mixin adjustFontSize 18, 1.5;
+            text-align: center;
+            text-transform: uppercase;
+            color: var(--color__text-header-links);
+            font-family: var(--font-stack__headings);
+            border: none;
+        }
+    }
+}

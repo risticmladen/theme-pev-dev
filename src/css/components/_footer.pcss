@@ -148,8 +148,8 @@
 
             & .jeep-accessories-list {
                 display: grid;
-                grid-template-columns: 115px 1fr;
-                grid-column-gap: 92px;
+                grid-template-columns: pxtorem(115, 12) 1fr;
+                grid-column-gap: pxtorem(92, 12);
             }
         }
 
@@ -196,8 +196,8 @@
 
         @media (--medium) {
             flex-direction: column;
-            padding-top: 16px;
-            padding-bottom: 24px;
+            padding-top: pxtorem(16, 12);
+            padding-bottom: pxtorem(24, 12);
         }
     }
 
@@ -252,6 +252,14 @@
     & .image-shadow {
         display: none;
     }
+
+    & .soft-top-products-list .level1 {
+        & .level-top-item-link {
+            &:hover::before {
+                display: none;
+            }
+        }
+    }
 }
 
 .footer-navigation {
@@ -267,6 +275,8 @@
         order: 1;
         margin: 0;
         border-bottom: none;
+        margin-left: pxtorem(64, 14);
+        margin-right: pxtorem(64, 14);
     }
 }
 
@@ -324,9 +334,9 @@
         flex-direction: column;
         align-items: flex-start;
         gap: pxtorem(16, 14);
-        margin-right: 87px;
+        margin-right: pxtorem(87, 14);
         border-right: 1px solid;
-        padding-left: 230px;
+        padding-left: pxtorem(230, 14);
     }
 }
 

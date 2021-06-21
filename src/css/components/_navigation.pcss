@@ -7,9 +7,7 @@
     &::before {
         font-family: "icomoon" !important;
         content: "\e901";
-        position: absolute;
-        top: 0;
-        left: 0;
+        @mixin absolute 0, auto, auto, 0;
         color: black;
     }
 }
@@ -23,9 +21,7 @@
     &::before {
         font-family: "icomoon" !important;
         content: "\e921";
-        position: absolute;
-        top: 0;
-        left: 0;
+        @mixin absolute 0, auto, auto, 0;
         color: black;
     }
 }
@@ -39,9 +35,7 @@
     &::before {
         font-family: "icomoon" !important;
         content: "\e91a";
-        position: absolute;
-        top: 0;
-        left: 0;
+        @mixin absolute 0, auto, auto, 0;
         color: black;
     }
 }
@@ -53,7 +47,7 @@
 .nav-sections-item-title {
 
     @media (--medium) {
-        display: none;
+        @mixin no-display
     }
 }
 
@@ -108,9 +102,8 @@
     }
 
     &::after {
-        position: absolute;
-        top: pxtorem(3, 12);
-        left: pxtorem(177, 12);
+
+        @mixin absolute pxtorem(3, 12), unset, unset, pxtorem(177, 12);
         font-family: "icomoon" !important;
         content: "\e908";
         transform: rotate(45deg);
@@ -134,13 +127,12 @@
             color: var(--color__text-header-links);
         }
 
-        & a[class="level-top"]::before {
+        & > a[class="level-top"]::before {
             content: "";
             width: 100%;
             height: 100%;
             border-left: 2px solid;
-            position: absolute;
-            left: pxtorem(-25, 12);
+            @mixin absolute unset, unset, unset, pxtorem(-25, 12);
             transform: skewX(-25deg);
         }
     }
@@ -152,7 +144,7 @@
     }
 }
 
-.level0.nav-1 a[class="level-top"] {
+a[class="level-top"] {
 
     @media (--medium) {
         color: var(--theme__color__secondary);
@@ -177,8 +169,7 @@
 .level0.nav-1 a[class="level-top"]:hover::before {
 
     @media (--medium) {
-        position: absolute;
-        top: pxtorem(-23, 12);
+        @mixin absolute pxtorem(-23, 12), unset, unset, pxtorem(-28, 12);
         width: 101%;
         height: 200%;
         background-color: var(--theme__color__secondary);
@@ -186,10 +177,9 @@
     }
 
     @media (--large) {
-        position: absolute;
-        top: pxtorem(-23, 14);
+        @mixin absolute pxtorem(-23, 12), unset, unset, pxtorem(-28, 14);
         width: 101%;
-        height: 170%;
+        height: 175%;
         background-color: var(--theme__color__secondary);
         z-index: -1;
     }
@@ -201,8 +191,7 @@
     @media (--medium) {
         content: "";
         width: 100%;
-        position: absolute;
-        left: pxtorem(-26, 12);
+        @mixin absolute unset, unset, unset, pxtorem(-26, 12);
         transform: skewX(-25deg);
     }
 
@@ -240,8 +229,8 @@
 .level0.nav-2 a[class="level-top"]:hover::before {
 
     @media (--medium) {
-        position: absolute;
-        top: pxtorem(-23, 12);
+
+        @mixin absolute pxtorem(-23, 12), unset, unset, pxtorem(-28, 12);
         width: 110%;
         height: 200%;
         background-color: var(--theme__color__primary);
@@ -249,8 +238,7 @@
     }
 
     @media (--large) {
-        position: absolute;
-        top: pxtorem(-23, 14);
+        @mixin absolute pxtorem(-23, 14), unset, unset, pxtorem(-28, 14);
         width: 110%;
         height: 170%;
         background-color: var(--theme__color__primary);
@@ -263,8 +251,7 @@
     @media (--medium) {
         content: "";
         width: 110%;
-        position: absolute;
-        left: pxtorem(-26, 12);
+        @mixin absolute unset, unset, unset, pxtorem(-26, 12);
         transform: skewX(-25deg);
     }
 
@@ -306,14 +293,20 @@
     & .level-top-item-link {
         &:hover::before {
             content: "";
-            position: absolute;
+            @mixin absolute unset, unset, pxtorem(-24, 12), 0;
             height: 10%;
-            border-bottom: 10px solid var(--theme__color__secondary);
-            left: 0;
-            bottom: -24px;
-            border-left: 115px solid transparent;
-            border-right: 115px solid transparent;
+            border-bottom: pxtorem(10, 12) solid var(--theme__color__secondary);
+            border-left: pxtorem(115, 12) solid transparent;
+            border-right: pxtorem(115, 12) solid transparent;
             opacity: 1;
+
+            @media (--large) {
+                @mixin absolute unset, unset, pxtorem(-24, 14), 0;
+                border-bottom: pxtorem(10, 14) solid var(--theme__color__secondary);
+                border-left: pxtorem(115, 14) solid transparent;
+                border-right: pxtorem(115, 14) solid transparent;
+            }
+
         }
     }
 }
@@ -322,23 +315,24 @@
     & .level-top-item-link {
         &:hover::before {
             content: "";
-            position: absolute;
+            @mixin absolute unset, unset, pxtorem(-24, 12), 0;
             height: 10%;
             border-bottom: 10px solid var(--color__button-secondary);
-            left: 0;
-            bottom: -24px;
-            border-left: 115px solid transparent;
-            border-right: 115px solid transparent;
+            border-left: pxtorem(115, 12) solid transparent;
+            border-right: pxtorem(115, 12) solid transparent;
+
+            @media (--large) {
+                @mixin absolute unset, unset, pxtorem(-24, 14), 0;
+                border-left: pxtorem(115, 14) solid transparent;
+                border-right: pxtorem(115, 14) solid transparent;
+            }
         }
     }
 }
 
 .soft-top-products-list {
-    display: flex;
+    @mixin flex column, flex-start, space-around, nowrap;
     width: 100%;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-direction: column;
 
     @media (--medium) {
         flex-direction: row;
@@ -360,11 +354,8 @@
 }
 
 .jeep-accessories-list {
-    display: flex;
+    @mixin flex column, flex-start, space-around, nowrap;
     width: 100%;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-direction: column;
 
     @media (--medium) {
         flex-direction: row;
@@ -399,10 +390,8 @@
 @media (--medium) {
     .level-top.parent {
         & .level0.submenu {
-            position: absolute;
+            @mixin absolute pxtorem(76, 12), unset, unset, 0;
             z-index: 3;
-            left: 0;
-            top: pxtorem(76, 12);
             opacity: 0;
             visibility: hidden;
             transform: translateY(60px);
@@ -420,6 +409,7 @@
                 display: flex;
                 align-items: baseline;
                 justify-content: space-around;
+
             }
         }
     }
@@ -439,7 +429,7 @@
     }
 }
 
-.soft-top-products-list-item > a > p {
+.level-top-item-title {
 
     @media (--medium) {
         @mixin adjustFontSize 16, 1.5;
@@ -470,8 +460,7 @@
 
 .image-shadow::before {
     content: "";
-    position: absolute;
-    top: pxtorem(35, 12);
+    @mixin absolute pxtorem(35, 12), unset, unset, unset;
     width: 100%;
     height: 100%;
     background: linear-gradient(186.17deg, #FFFFFF 28.57%, #5B5B5B 50.55%);
@@ -481,34 +470,25 @@
     transform: matrix(0.95, 0.31, 0.31, -0.95, 0, 0);
 }
 
-.jeep-accessories-list-item > a > p {
-
-    @media (--medium) {
-        @mixin adjustFontSize 16, 1.5;
-        font-family: var(--font-stack__headings);
-        text-transform: uppercase;
-        color: var(--color__text);
-    }
-
-    @media (--large) {
-        @mixin adjustFontSize 18, 1;
-    }
-}
-
 .level-top-item-title::before {
     content: "";
 
     &:hover::before {
         content: "";
-        position: absolute;
+        @mixin absolute unset, unset, pxtorem(-17, 12), 50%;
         width: 0;
         height: 0;
         z-index: -1;
-        bottom: pxtorem(-17, 12);
-        left: 50%;
         transform: translateX(-50%);
-        border-left: 64px solid transparent;
-        border-right: 64px solid transparent;
-        border-bottom: 8px solid var(--theme__color__secondary);
+        border-left: pxtorem(64, 12) solid transparent;
+        border-right: pxtorem(64, 12) solid transparent;
+        border-bottom: pxtorem(8, 12) solid var(--theme__color__secondary);
+
+        @media (--large) {
+            @mixin absolute unset, unset, pxtorem(-17, 14), 50%;
+            border-left: pxtorem(64, 14) solid transparent;
+            border-right: pxtorem(64, 14) solid transparent;
+            border-bottom: pxtorem(8, 14) solid var(--theme__color__secondary);
+        }
     }
 }

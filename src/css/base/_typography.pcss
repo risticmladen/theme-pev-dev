@@ -330,17 +330,3 @@ ul > li, ol > li {
     }
 }
 
-li {
-    font-family: var(--font-stack__base);
-    font-weight: var(--font-weight__normal);
-    @mixin adjustFontSize 12px, 2;
-
-    @media (--medium) {
-        @mixin adjustFontSize 14px, 1;
-    }
-
-    @media (--large) {
-        @mixin adjustFontSize 14px, 2, $breakpoint-1024px;
-    }
-}
-

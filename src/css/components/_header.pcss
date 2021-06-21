@@ -116,15 +116,15 @@
 }
 
 .header-top__customer-service .customer__service--search-terms {
-    display: none;
+    @mixin no-display;
 }
 
 .header-top__customer-service .customer__service--privacy-policy {
-    display: none;
+    @mixin no-display;
 }
 
 .header-top__customer-service .customer__service--installation-videos {
-    display: none;
+    @mixin no-display;
 }
 
 .customer-service-account-info {
@@ -301,5 +301,5 @@
 }
 
 .page-header {
-    z-index: 3;
+    z-index: elevation(page-header);
 }
