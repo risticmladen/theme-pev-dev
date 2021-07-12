@@ -28,9 +28,7 @@
 }
 
 #minicart-content-wrapper {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    @mixin flex row, normal, space-between, wrap;
     padding-top: pxtorem(15, 12);
 }
 
@@ -61,14 +59,14 @@
     width: 100%;
 }
 
-.view-and-edit{
+.view-and-edit {
     order: 4;
     margin: 0 auto;
     text-decoration-line: underline;
     text-transform: uppercase;
 
     @media (--large) {
-        margin-top: pxtorem(24, 14);
+        margin-top: pxtorem(100, 14);
     }
 }
 
@@ -131,10 +129,8 @@ strong[class="subtitle"] {
 }
 
 .product-item-details {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
+    @mixin flex column, flex-start, flex-start, wrap;
+    flex: 1 0 0;
     gap: pxtorem(16, 12);
 }
 
@@ -169,10 +165,10 @@ strong[class="subtitle"] {
 
 .minicart-product-actions {
     align-self: flex-end;
-    display: flex;
+    @mixin flex row, center, normal, nowrap;
     height: pxtorem(40, 12);
-    align-items: center;
     gap: pxtorem(24, 12);
+    transform: translateY(pxtorem(-60, 12));
 
     & a {
         color: var(--color__text);

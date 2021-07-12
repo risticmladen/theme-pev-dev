@@ -1,0 +1,35 @@
+<div id="opc-sidebar" data-bind="mageInit:{
+        'ui-canvas': {
+            'trigger':'.sidebar-trigger',
+            'target':'.sidebar-content',
+            'close':'.ui-canvas-close',
+            'overlay':'.sidebar-overlay',
+            'closeOnEscape':'true'
+        },
+        'checkout-offcanvas':{
+            'buttonTrigger':'.block-summary-trigger',
+            'offcanvasTrigger':'.sidebar-trigger',
+            'offcanvasTarget':'.sidebar-content'
+        }
+    }">
+
+    <button type="button" class="action showcart sidebar-trigger secondary icon-order-summary"></button>
+
+    <div class="sidebar-content ui-canvas ui-canvas--side ui-canvas--right">
+        <button type="button" class="ui-close ui-canvas-close">
+            <span data-bind="i18n: 'Close'"></span>
+        </button>
+
+        <!-- ko foreach: getRegion('summary') -->
+        <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
+
+        <div class="opc-block-shipping-information">
+            <!-- ko foreach: getRegion('shipping-information') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </div>
+    </div>
+</div>
+
+<div class="overlay sidebar-overlay"></div>

@@ -4,6 +4,10 @@
     <body>
         <referenceContainer name="newsletter.container" display="false" />
 
+        <referenceBlock name="product.info.details">
+
+        </referenceBlock>
+        <move element="review_view" destination="product.info.details" after="product.attributes" />
     </body>
 
 </page>

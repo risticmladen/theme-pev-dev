@@ -193,6 +193,11 @@
     }
 }
 
+@define-mixin aspect-ratio-calc-old $height, $width {
+    height: 0;
+    padding-bottom: calc(($height / $width) * 100%);
+}
+
 @define-mixin style-select $color, $color-hover, $line-height {
     appearance: none;
     border-style: solid;

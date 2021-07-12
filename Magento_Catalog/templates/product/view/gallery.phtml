@@ -43,15 +43,17 @@ $galleryThumbnails = '';
 
         <!-- If we need navigation buttons -->
         <div class="swiper-button-next icon-right-indicator"></div>
+        <div class="swiper-pagination"></div>
     </div>
-    <div class="swiper-container gallery-thumbs margin b-1 is-loading">
+    <div class="swiper-container swiper-container-thumbs gallery-thumbs margin b-1 is-loading">
         <div class="swiper-wrapper swiper-wrapper--gallery-thumbs">
             <!-- Slides -->
             <?php
             $counter = 0;
             foreach ($galleryItems as $item): ?>
                 <div class="swiper-slide">
-                    <span class="icon-radiobutton"></span>
+                    <img src="<?= $block->escapeHtml($item->thumb) ?>"
+                         alt="<?= $block->escapeHtml($item->caption) ?>"/>
                 </div>
                 <?php
                 $counter ++;

@@ -27,16 +27,22 @@
             </image>
             <!--product page - used for main image-->
             <image id="product_page_image_medium" type="image">
-                <width>320</width>
-                <height>320</height>
+                <width>300</width>
+                <height>250</height>
             </image>
             <!--product page - used for thumbnail images-->
             <image id="product_page_image_small" type="image">
-                <width>80</width>
-                <height>80</height>
+                <width>100</width>
+                <height>100</height>
             </image>
-            <image id="product_page_image_large" type="image"/>
-            <image id="product_swatch_image_large" type="image"/>
+            <image id="product_page_image_large" type="image">
+                <width>130</width>
+                <height>130</height>
+            </image>
+            <image id="product_swatch_image_large" type="image">
+                <width>130</width>
+                <height>130</height>
+            </image>
             <image id="product_swatch_image_medium" type="image">
                 <width>240</width>
                 <height>300</height>
@@ -74,8 +80,8 @@
                 <height>76</height>
             </image>
             <image id="product_thumbnail_image" type="thumbnail">
-                <width>75</width>
-                <height>75</height>
+                <width>150</width>
+                <height>150</height>
             </image>
             <image id="recently_compared_products_grid_content_widget" type="small_image">
                 <width>240</width>
@@ -90,12 +96,12 @@
                 <height>76</height>
             </image>
             <image id="product_page_main_image_default" type="image">
-                <width>700</width>
-                <height>560</height>
+                <width>500</width>
+                <height>500</height>
             </image>
             <image id="product_page_main_image" type="image">
-                <width>700</width>
-                <height>560</height>
+                <width>500</width>
+                <height>500</height>
             </image>
             <image id="product_swatch_image_small" type="thumbnail">
                 <width>88</width>

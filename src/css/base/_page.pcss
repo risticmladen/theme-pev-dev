@@ -46,6 +46,7 @@ body {
     @mixin container $container-width, $container-gutter;
     width: 100%;
     flex: 1;
+    max-width: unset;
 }
 
 .action {
@@ -170,5 +171,13 @@ body {
 .price-wrapper {
     & .price {
         @mixin section-title;
+
+        @media (--medium) {
+            @mixin adjustFontSize 34, 2.5;
+        }
+
+        @media (--large) {
+            @mixin adjustFontSize 38, 1.67, $breakpoint-1024px;
+        }
     }
 }
