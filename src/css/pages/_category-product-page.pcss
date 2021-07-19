@@ -7,6 +7,8 @@
 
     @media (--large) {
         @mixin adjustFontSize 40, 1.67, $breakpoint-1024px;
+        margin-top: 0;
+
     }
 }
 
@@ -51,9 +53,75 @@
 }
 
 .product-reviews-summary {
+    @mixin flex row, center, space-between, nowrap;
     order: 0;
     flex-basis: 100%;
     text-align: right;
+
+    @media (--large) {
+        flex: 1 0 100%;
+    }
+
+    & .rating-summary {
+        @mixin flex row, normal, normal, nowrap;
+
+        & .label {
+            @mixin no-display;
+        }
+
+        & .rating-result {
+            position: relative;
+
+            &::after  {
+                font-family: "icomoon" !important;
+                content: var(--icon__star3) var(--icon__star3) var(--icon__star3) var(--icon__star3) var(--icon__star3);
+                color: var(--color__button-primary-ghost-border);
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                font-size: 14px;
+                line-height: 1.75;
+            }
+
+            & > span {
+                display: block;
+                overflow: hidden;
+
+                &::after {
+                    font-family: "icomoon" !important;
+                    content: var(--icon__star1) var(--icon__star1) var(--icon__star1) var(--icon__star1) var(--icon__star1);
+                    color: var(--theme__color__secondary);
+                    display: inline-block;
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    z-index: 2;
+                    font-size: 14px;
+                    line-height: 1.75;
+                }
+            }
+
+            & > span span {
+                @mixin no-display;
+            }
+        }
+    }
+
+    & .reviews-actions {
+
+        @media (--large) {
+            @mixin flex row, center, normal, nowrap;
+            gap: pxtorem(26, 14);
+        }
+
+        & .view {
+            font-weight: var(--font-weight__bold);
+            text-decoration-line: underline;
+            text-transform: uppercase;
+            color: var(--color__text);
+        }
+    }
 }
 
 .price-box {
@@ -160,6 +228,7 @@
 
 .swatch-attribute-label {
     padding-bottom: pxtorem(8, 12);
+    margin-right: pxtorem(8, 12);
     display: inline-block;
     font-weight: var(--font-weight__bold);
 }
@@ -262,15 +331,19 @@
 
         &::after {
             position: absolute;
-            bottom: 40%;
+            bottom: 45%;
             right: pxtorem(40, 12);
             font-size: pxtorem(12, 12);
             content: "\e908";
             font-family: "icomoon" !important;
-            width: 20px;
-            height: 20px;
             transform: translateY(50%) rotate(45deg);
             transition: transform .4s ease;
+
+            @media (--large) {
+                bottom: 53%;
+                right: pxtorem(48, 12);
+                font-size: pxtorem(12, 14);
+            }
         }
 
         @media (--medium) {
@@ -284,7 +357,7 @@
             padding-top: pxtorem(18, 14);
         }
 
-        &.active {
+        &.active, &.active > .data.switch {
             color: var(--theme__color__secondary);
         }
 
@@ -298,9 +371,6 @@
             @media (--medium) {
                 @mixin adjustFontSize 16, 1;
 
-                &:active, &:focus, &:hover {
-                    color: orange;
-                }
             }
 
             & span {
@@ -314,6 +384,22 @@
 
             & .counter {
                 @mixin no-display;
+            }
+        }
+    }
+
+    & .items {
+        & .title:nth-child(3)::after {
+
+            @media (--large) {
+                right: pxtorem(122, 14);
+            }
+        }
+
+        & .title:nth-child(7)::after {
+
+            @media (--large) {
+                right: pxtorem(168, 14);
             }
         }
     }

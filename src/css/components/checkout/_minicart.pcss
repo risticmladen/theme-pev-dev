@@ -49,32 +49,42 @@
 }
 
 .my-cart {
-    display: none;
+    @mixin no-display;
 
     @media (--large) {
         display: block;
         height: pxtorem(15, 12);
+        width: auto;
         font-family: var(--font-stack__headings);
+        font-size: 1.25rem;
+        color: var(--color__text-white);
         position: absolute;
         top: 40%;
         left: 45%;
         transform: translate(-50%, -50%);
-        color: var(--color__text-white);
-        font-size: 1.25rem;
+        padding: unset;
+        margin: unset;
+        overflow: unset;
+        clip: unset;
+        border: unset;
     }
 }
 
-.showcart > span[class="icon-arrow-dropbown"] {
-
-    display: none;
+.showcart > i[class="icon-arrow-dropbown"] {
+    @mixin no-display;
 
     @media (--large) {
+        @mixin absolute 56%, auto, auto, 71%;
         display: block;
         height: pxtorem(15, 14);
-        @mixin absolute 60%, unset, unset, 71%;
+        width: unset;
         transform: translate(-50%, -50%);
-        color: var(--color__text-white);
         font-size: pxtorem(8, 14);
+        color: var(--color__text-white);
+        border: unset;
+        clip: unset;
+        margin: unset;
+        overflow: unset;
     }
 }
 

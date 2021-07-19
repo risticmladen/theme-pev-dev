@@ -4,9 +4,13 @@
     <body>
         <referenceContainer name="newsletter.container" display="false" />
 
-        <referenceBlock name="product.info.details">
-
-        </referenceBlock>
+        <referenceContainer name="product.info.details">
+            <block class="Magento\Cms\Block\Block" name="cms.installation.instructions" as="cmsInstallationInstructions">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">installation-instructions</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
         <move element="review_view" destination="product.info.details" after="product.attributes" />
     </body>
 
