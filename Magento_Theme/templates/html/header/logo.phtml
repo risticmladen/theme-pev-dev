@@ -2,7 +2,7 @@
 $isHomePage = $this->getData('isHomepage') ? true : false; // @codingStandardsIgnoreLine - not actually undefined
 $storeName = $block->getThemeName() ? $block->getThemeName() : $block->getLogoAlt();
 ?>
-<span data-action="toggle-nav" class="nav-toggle drawer show-for-small-only"><span class="icon-manu"></span></span>
+<span data-action="toggle-nav" class="nav-toggle drawer show-for-small-only"><i class="icon-manu"></i></span>
 <?php if ($isHomePage) : ?>
 <h1 class="logo">
     <?php else : ?>

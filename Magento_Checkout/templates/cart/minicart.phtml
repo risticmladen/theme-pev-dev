@@ -11,7 +11,7 @@
     <a class="action showcart drawer drawer--last" tabindex="0" role="button" href="<?= /** @noEscape */
     $block->getShoppingCartUrl() ?>"
        data-bind="scope: 'minicart_content'">
-        <span class="icon-cart"></span><span class="my-cart">MY CART</span><span class="icon-arrow-dropbown"></span>
+        <i class="icon-cart"></i><span class="my-cart">MY CART</span><i class="icon-arrow-dropbown"></i>
         <span class="counter qty empty counter--right-corner"
               data-bind="css: { empty: !!getCartParam('summary_count') == false }">
             <span class="counter-number"><!-- ko text: getCartParam('summary_count') --><!-- /ko --></span>

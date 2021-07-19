@@ -30,6 +30,7 @@
                     <?= /* @noEscape */ $html ?>
                 </div>
             <?php endforeach;?>
+            <?= $block->getChildHtml('cmsInstallationInstructions') ?>
         </div>
     </div>
 <?php endif; ?>

@@ -165,7 +165,7 @@ switch ($type = $block->getType()) {
                         <button type="button" class="action select" role="select-all"><span><?= /** @noEscape */ __('select all') ?></span></button>
                     </div>
                 <?php endif; ?>
-                <div class="swiper-container swiper-carousel swiper-container-<?= /** @noEscape */ $type ?> is-loading products wrapper">
+                <div class="swiper-container swiper-carousel swiper-container-upsell is-loading products wrapper">
                     <div class="products list items swiper-wrapper">
                         <?php foreach ($items as $_item): ?>
                             <?php $available = ''; ?>
@@ -245,8 +245,8 @@ switch ($type = $block->getType()) {
                                     <div class="actions">
                                         <button class="view-details">View details</button>
 
-                                        <span class="icon-whishlist"></span>
-                                        <span class="icon-compare"></span>
+                                        <i class="icon-whishlist"></i>
+                                        <i class="icon-compare"></i>
 
                                     </div>
                                 </div>
@@ -267,12 +267,12 @@ switch ($type = $block->getType()) {
                 'jquery',
                 'swiper'
             ], function ($, Swiper) {
-                new Swiper('.swiper-container-<?= /** @noEscape */ $type ?>', {
+                new Swiper('.swiper-container-upsell', {
                     spaceBetween: 24,
                     slidesPerView: 1,
                     navigation: {
-                        nextEl: '.swiper-container-<?= /** @noEscape */ $type ?> .swiper-button-next',
-                        prevEl: '.swiper-container-<?= /** @noEscape */ $type ?> .swiper-button-prev',
+                        nextEl: '.swiper-container-upsell .swiper-button-next',
+                        prevEl: '.swiper-container-upsell .swiper-button-prev',
                     },
                     breakpoints: {
                         540: {
@@ -287,7 +287,7 @@ switch ($type = $block->getType()) {
                     },
                     on: {
                         init: function () {
-                            $('.swiper-container-<?= /** @noEscape */ $type ?>').removeClass('is-loading');
+                            $('.swiper-container-upsell').removeClass('is-loading');
                         }
                     },
                     pagination: {

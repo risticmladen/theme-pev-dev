@@ -28,14 +28,13 @@
     z-index: 2;
 
     &::before{
+        @mixin absolute auto, auto, auto, -35%;
         content: "";
-        position: absolute;
         width: 100%;
         height: 100%;
         background: var(--color__button-primary);
         transform: skewX(-25deg);
         z-index: 1;
-        left: -40%;
 
         @media (--medium) {
             left: -35%;
@@ -48,15 +47,9 @@
 }
 
 .soft-top-products__description {
-    position: absolute;
-    top: 50%;
+    @mixin absolute 50%, auto, auto, 5%;
     transform: translateY(-50%);
-    left: 5%;
     z-index: 1;
-
-    @media (--medium) {
-        left: 5%;
-    }
 
     @media (--large) {
         left: 17%;
@@ -71,7 +64,7 @@
     width: pxtorem(200, 12);
 
     @media (--medium) {
-        @mixin adjustFontSize 72, 2;
+        @mixin adjustFontSize 72, 4;
         word-break: normal;
         width: auto;
         padding-bottom: pxtorem(4, 12);
@@ -84,8 +77,7 @@
 }
 
 .soft-top-products__cards-wrapper {
-    display: flex;
-    flex-direction: column;
+    @mixin flex column, normal, normal, nowrap;
     gap: pxtorem(16, 12);
     margin: 0 pxtorem(8, 12);
     position: relative;
@@ -105,9 +97,7 @@
 }
 
 .soft-top-products__card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @mixin flex column, center, normal, nowrap;
     gap: pxtorem(29, 12);
     background: var(--color__primary-white);
     box-shadow: inset 0px 13px 39px rgb(0 0 0 / 8%);
@@ -141,8 +131,8 @@
     z-index: 1;
 
     &::before {
+        @mixin absolute auto, auto, auto, auto;
         content: "";
-        position: absolute;
         width: 100%;
         height: 100%;
         z-index: -1;
@@ -158,9 +148,8 @@
 }
 
 .soft-top-products__info-wrapper {
-    display: flex;
+    @mixin flex row, normal, space-between, nowrap;
     width: 100%;
-    justify-content: space-between;
     padding-bottom: pxtorem(16, 12);
 
     @media (--medium) {
@@ -171,19 +160,22 @@
 }
 
 .soft-top-products__card-text {
-    display: none;
+    @mixin no-display;
 
     @media (--medium) {
-        display: block;
+        border: unset;
+        clip: auto;
+        height: auto;
+        margin: unset;
+        overflow: unset;
+        width: auto;
         position: relative;
         padding: 0 pxtorem(17, 12);
 
         &::before {
+            @mixin absolute pxtorem(6,12), auto, auto, pxtorem(10,12);
             content: "";
-            position: absolute;
-            border: 2px solid;
-            top: pxtorem(6, 12);
-            left: pxtorem(10, 12);
+            border: 2px solid var(--color__text);
         }
     }
 
@@ -209,23 +201,19 @@
 }
 
 .soft-top-products__title-wrapper {
+    @mixin flex row, center, center, nowrap;
     background: var(--theme__color__secondary);
     width: pxtorem(120, 12);
     height: pxtorem(31, 12);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
     margin-left: pxtorem(-4, 12);
 
     &::before {
+        @mixin absolute 0, auto, auto, pxtorem(6, 12);
         content: "";
-        position: absolute;
         width: 100%;
         height: 100%;
         background: var(--theme__color__secondary);
-        top: 0;
-        left: pxtorem(6, 12);
         transform: skewX(20deg);
     }
 
@@ -256,18 +244,15 @@
     }
 
     @media (--large) {
-        padding-left: pxtorem(68, 14);
         @mixin adjustFontSize 13, 0.67, $breakpoint-1024px;
+        padding-left: pxtorem(68, 14);
     }
 }
 
 .soft-top-products__the-replay::after {
-    font-family: "icomoon" !important;
-    content: "\e902";
+    @mixin icon-font-display var(--icon__arrow_dropbown);
+    @mixin absolute auto, auto, pxtorem(5, 12), pxtorem(78, 12);
     transform: rotate(-90deg);
-    position: absolute;
-    bottom: pxtorem(5, 12);
-    left: pxtorem(78, 12);
     font-size: pxtorem(4, 12);
 
     @media (--medium) {
@@ -275,18 +260,15 @@
     }
 
     @media (--large) {
-        bottom: pxtorem(4, 14);
+        bottom: pxtorem(5, 14);
         left: pxtorem(303, 14);
     }
 }
 
 .soft-top-products__the-flip-top::after {
-    font-family: "icomoon" !important;
-    content: "\e902";
+    @mixin icon-font-display var(--icon__arrow_dropbown);
+    @mixin absolute auto, auto, pxtorem(5, 12), pxtorem(57, 12);
     transform: rotate(-90deg);
-    position: absolute;
-    bottom: pxtorem(5, 12);
-    left: pxtorem(57, 12);
     font-size: pxtorem(4, 12);
 
     @media (--medium) {
@@ -294,26 +276,23 @@
     }
 
     @media (--large) {
-        bottom: pxtorem(4, 14);
+        bottom: pxtorem(5, 14);
         left: pxtorem(242, 14);
     }
 }
 
 .soft-top-products__the-sprint-top::after {
-    font-family: "icomoon" !important;
-    content: "\e902";
-    transform: rotate(-90deg);
-    position: absolute;
-    bottom: pxtorem(5, 12);
-    left: pxtorem(57, 12);
+    @mixin icon-font-display var(--icon__arrow_dropbown);
+    @mixin absolute auto, auto, pxtorem(5, 12), pxtorem(57, 12);
     font-size: pxtorem(4, 12);
+    transform: rotate(-90deg);
 
     @media (--medium) {
         left: pxtorem(174, 12);
     }
 
     @media (--large) {
-        bottom: pxtorem(4, 14);
+        bottom: pxtorem(5, 14);
         left: pxtorem(259, 14);
     }
 }
@@ -357,14 +336,13 @@
     z-index: 1;
 
     &::before{
+        @mixin absolute auto, -25%, auto, auto;
         content: "";
-        position: absolute;
         width: 100%;
         height: 100%;
         background: var(--theme__color__primary);
         transform: skewX(25deg);
         z-index: 1;
-        right: -25%;
 
         @media (--medium) {
             right: -35%;
@@ -377,10 +355,8 @@
 }
 
 .jeep-accessories__description {
-    position: absolute;
-    top: 50%;
+    @mixin absolute 50%, 5%, auto, auto;
     transform: translateY(-50%);
-    right: 5%;
     z-index: 1;
 
     @media (--medium) {
@@ -414,8 +390,7 @@
 }
 
 .jeep-accessories__cards-wrapper {
-    display: flex;
-    flex-direction: column;
+    @mixin flex column, normal, normal, nowrap;
     gap: pxtorem(16, 12);
     margin: 0 pxtorem(8, 12) pxtorem(64, 12) pxtorem(8, 12);
     position: relative;
@@ -434,8 +409,7 @@
 }
 
 .jeep-accessories__top-cards-wrapper {
-    display: flex;
-    flex-direction: column;
+    @mixin flex column, normal, normal, nowrap;
     gap: pxtorem(16, 12);
 
     @media (--medium) {
@@ -518,8 +492,7 @@
 }
 
 .jeep-accessories__bottom-cards-wrapper {
-    display: flex;
-    flex-direction: column;
+    @mixin flex column, normal, normal, nowrap;
     gap: pxtorem(16, 12);
 
     @media (--medium) {
@@ -593,9 +566,7 @@
 }
 
 .jeep-accessories__card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @mixin flex column, center, normal, nowrap;
     gap: pxtorem(29, 12);
     background: var(--color__primary-white);
     box-shadow: 0px 13px 39px rgb(0 0 0 / 8%);
@@ -641,8 +612,8 @@
     clip-path: polygon(0 -10px, 100% -10px, 100% 100%, 0 100%);
 
     &::before {
+        @mixin absolute pxtorem(60, 12), auto, auto, auto;
         content: "";
-        position: absolute;
         width: 100%;
         height: 100%;
         z-index: -1;
@@ -650,7 +621,6 @@
         mix-blend-mode: normal;
         opacity: 0.65;
         filter: blur(22.7133px);
-        top: pxtorem(60, 12);
     }
 
     @media (--medium) {
@@ -674,9 +644,8 @@
 }
 
 .jeep-accessories__info-wrapper {
-    display: flex;
+    @mixin flex row, normal, space-between, nowrap;
     width: 100%;
-    justify-content: space-between;
     padding-bottom: pxtorem(16, 12);
 
     @media (--medium) {
@@ -699,11 +668,9 @@
         padding: 0 pxtorem(17, 12);
 
         &::before {
+            @mixin absolute pxtorem(6, 12), auto, auto, pxtorem(10, 12);
             content: "";
-            position: absolute;
-            border: 2px solid;
-            top: pxtorem(6, 12);
-            left: pxtorem(10, 12);
+            border: 2px solid var(--color__text);
         }
     }
 
@@ -725,23 +692,19 @@
 }
 
 .jeep-accessories__title-wrapper {
+    @mixin flex row, center, center, nowrap;
     background: var(--theme__color__primary);
     min-width: pxtorem(120, 12);
     height: pxtorem(31, 12);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
     margin-left: pxtorem(-4, 12);
 
     &::before {
+        @mixin absolute 0, auto, auto, pxtorem(6, 12);
         content: "";
-        position: absolute;
         width: 100%;
         height: 100%;
         background: var(--theme__color__primary);
-        top: 0;
-        left: pxtorem(6, 12);
         transform: skewX(20deg);
     }
 
@@ -801,115 +764,97 @@
 }
 
 .jeep-accessories__sun_cap::after {
-    font-family: "icomoon" !important;
-    content: "\e902";
-    transform: rotate(-90deg);
-    position: absolute;
-    bottom: pxtorem(5, 12);
-    left: pxtorem(57, 12);
+    @mixin icon-font-display var(--icon__arrow_dropbown);
+    @mixin absolute auto, auto, pxtorem(5, 12), pxtorem(57, 12);
     font-size: pxtorem(4, 12);
+    transform: rotate(-90deg);
 
     @media (--medium) {
-        left: pxtorem(174, 12);
+        left: pxtorem(161, 12);
     }
 
     @media (--large) {
-        bottom: pxtorem(4, 14);
-        left: pxtorem(259, 14);
+        bottom: pxtorem(5, 14);
+        left: pxtorem(234, 14);
     }
 }
 
 .jeep-accessories__sun_cap_plus::after {
-    font-family: "icomoon" !important;
-    content: "\e902";
-    transform: rotate(-90deg);
-    position: absolute;
-    bottom: pxtorem(5, 12);
-    left: pxtorem(57, 12);
+    @mixin icon-font-display var(--icon__arrow_dropbown);
+    @mixin absolute auto, auto, pxtorem(5, 12), pxtorem(57, 12);
     font-size: pxtorem(4, 12);
+    transform: rotate(-90deg);
 
     @media (--medium) {
-        left: pxtorem(174, 12);
+        left: pxtorem(188, 12);
     }
 
     @media (--large) {
-        bottom: pxtorem(4, 14);
-        left: pxtorem(259, 14);
+        bottom: pxtorem(5, 14);
+        left: pxtorem(266, 14);
     }
 }
 
 .jeep-accessories__the_emergency_top::after {
-    font-family: "icomoon" !important;
-    content: "\e902";
-    transform: rotate(-90deg);
-    position: absolute;
-    bottom: pxtorem(5, 12);
-    left: pxtorem(78, 12);
+    @mixin icon-font-display var(--icon__arrow_dropbown);
+    @mixin absolute auto, auto, pxtorem(5, 12), pxtorem(78, 12);
     font-size: pxtorem(4, 12);
+    transform: rotate(-90deg);
 
     @media (--medium) {
-        left: pxtorem(174, 12);
+        left: pxtorem(202, 12);
     }
 
     @media (--large) {
-        bottom: pxtorem(4, 14);
-        left: pxtorem(259, 14);
+        bottom: pxtorem(5, 14);
+        left: pxtorem(255, 14);
     }
 }
 
 .jeep-accessories__cargo_cover::after {
-    font-family: "icomoon" !important;
-    content: "\e902";
-    transform: rotate(-90deg);
-    position: absolute;
-    bottom: pxtorem(5, 12);
-    left: pxtorem(57, 12);
+    @mixin icon-font-display var(--icon__arrow_dropbown);
+    @mixin absolute auto, auto, pxtorem(5, 12), pxtorem(57, 12);
     font-size: pxtorem(4, 12);
+    transform: rotate(-90deg);
 
     @media (--medium) {
-        left: pxtorem(174, 12);
+        left: pxtorem(188, 12);
     }
 
     @media (--large) {
-        bottom: pxtorem(4, 14);
-        left: pxtorem(259, 14);
+        bottom: pxtorem(5, 14);
+        left: pxtorem(239, 14);
     }
 }
 
 .jeep-accessories__canopy_cover::after {
-    font-family: "icomoon" !important;
-    content: "\e902";
-    transform: rotate(-90deg);
-    position: absolute;
-    bottom: pxtorem(5, 12);
-    left: pxtorem(57, 12);
+    @mixin icon-font-display var(--icon__arrow_dropbown);
+    @mixin absolute auto, auto, pxtorem(5, 12), pxtorem(57, 12);
     font-size: pxtorem(4, 12);
+    transform: rotate(-90deg);
 
     @media (--medium) {
-        left: pxtorem(174, 12);
+        left: pxtorem(194, 12);
     }
 
     @media (--large) {
-        bottom: pxtorem(4, 14);
-        left: pxtorem(259, 14);
+        bottom: pxtorem(5, 14);
+        left: pxtorem(245, 14);
     }
 }
 
 .jeep-accessories__cab_curtain::after {
-    font-family: "icomoon" !important;
-    content: "\e902";
-    transform: rotate(-90deg);
-    position: absolute;
-    bottom: pxtorem(5, 12);
-    left: pxtorem(57, 12);
+    @mixin icon-font-display var(--icon__arrow_dropbown);
+    @mixin absolute auto, auto, pxtorem(5, 12), pxtorem(57, 12);
     font-size: pxtorem(4, 12);
+    transform: rotate(-90deg);
 
     @media (--medium) {
-        left: pxtorem(174, 12);
+        left: pxtorem(183, 12);
     }
 
     @media (--large) {
-        bottom: pxtorem(4, 14);
-        left: pxtorem(259, 14);
+        bottom: pxtorem(5, 14);
+        left: pxtorem(233, 14);
     }
 }

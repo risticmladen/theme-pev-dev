@@ -55,7 +55,8 @@
 
     & .customer__service-contact-us-wrapper {
         order: 2;
-        flex-direction: column-reverse;
+        @mixin flex row, normal, center, wrap;
+
 
         @media (--medium) {
             flex-direction: row-reverse;
@@ -67,12 +68,15 @@
     }
 
     & .customer__service-contact-us-text {
-        display: block;
         order: 1;
+        display: block;
+        flex: 1 0 100%;
         align-self: center;
+        text-align: center;
         padding-bottom: pxtorem(8, 12);
 
         @media (--medium) {
+            flex: 1 0 0;
             padding-bottom: 0;
             padding-right: pxtorem(8, 12);
         }
@@ -82,12 +86,14 @@
         display: block;
         font-weight: var(--font-weight__bold);
         align-self: center;
+        order: 2;
     }
 
     & i {
+        order: 2;
         font-weight: var(--font-weight__bold);
-        padding-right: pxtorem(9, 12);
         font-size: pxtorem(16, 12);
+        padding-right: pxtorem(9, 12);
 
         @media (--large) {
             font-size: pxtorem(16, 14);
@@ -293,7 +299,7 @@
         padding-left: pxtorem(76, 12);
 
         &::before {
-            display: none;
+            @mixin no-display;
         }
     }
 
@@ -304,13 +310,13 @@
         padding-left: pxtorem(24, 12);
 
         &::after {
-            left: pxtorem(270, 12);
+            left: calc(90vw - pxtorem(8, 12));
         }
         @media (--medium) {
             padding-left: 0;
 
             &::before {
-                display: none;
+                @mixin no-display;
             }
         }
     }
