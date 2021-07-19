@@ -1,0 +1,62 @@
+<div data-block="minicart" class="minicart-wrapper"
+     data-role="dropdownDialog"
+     data-mage-init='{"ui-canvas": {
+        "trigger":".showcart",
+        "target":".block-minicart",
+        "close":".ui-canvas-close",
+        "overlay":".minicart-overlay",
+        "closeOnKey":".ui-canvas-close--key",
+        "closeOnEscape": "true"
+    }}'>
+    <a class="action showcart drawer drawer--last" tabindex="0" role="button" href="<?= /** @noEscape */
+    $block->getShoppingCartUrl() ?>"
+       data-bind="scope: 'minicart_content'">
+        <i class="icon-cart"></i><span class="my-cart">MY CART</span><i class="icon-arrow-dropbown"></i>
+        <span class="counter qty empty counter--right-corner"
+              data-bind="css: { empty: !!getCartParam('summary_count') == false }">
+            <span class="counter-number"><!-- ko text: getCartParam('summary_count') --><!-- /ko --></span>
+            <span class="counter-label">
+            <!-- ko if: getCartParam('summary_count') -->
+                <!-- ko text: getCartParam('summary_count') --><!-- /ko -->
+                <!-- ko i18n: 'items' --><!-- /ko -->
+                <!-- /ko -->
+            </span>
+        </span>
+    </a>
+    <?php if ($block->getIsNeedToDisplaySideBar()) : ?>
+        <div class="block block-minicart ui-canvas ui-canvas--side ui-canvas--right">
+
+            <div id="minicart-content-wrapper" data-bind="scope: 'minicart_content'">
+                <!-- ko template: getTemplate() --><!-- /ko -->
+            </div>
+            <?= $block->getChildHtml('minicart.addons') ?>
+            <a class="action skip ui-canvas-close--key" href="#"><span><?= /** @noEscape */ __("Close Modal") ?></span></a>
+        </div>
+        <div class="overlay minicart-overlay"></div>
+    <?php else : ?>
+        <script> <?php // @codingStandardsIgnoreLine - MUST BEREFACTORED ?>
+            require(['jquery'], function ($) {
+                $('a.action.showcart').click(function () {
+                    $(document.body).trigger('processStart');
+                });
+            });
+        </script>
+    <?php endif ?>
+    <script> <?php // @codingStandardsIgnoreLine - MUST BEREFACTORED ?>
+        window.checkout = <?= /** @noEscape */ $block->getSerializedConfig() ?>;
+    </script>
+    <script type="text/x-magento-init">
+    {
+        "[data-block='minicart']": {
+            "Magento_Ui/js/core/app": <?= /** @noEscape */
+        $block->getJsLayout() ?>
+        },
+        "*": {
+            "Magento_Ui/js/block-loader": "<?= /** @noEscape */
+        $block->getViewFileUrl('images/loader-svg.svg') ?>"
+        }
+    }
+    </script>
+</div>
+
+

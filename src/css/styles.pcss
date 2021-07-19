@@ -1,0 +1,68 @@
+/**
+ * Based on 7-1 architecture pattern
+ * ---------------------------------
+ * The `abstracts/` folder gathers all tools and helpers used across the project. Every global variable, function, mixin and placeholder should be put in here.
+ * Might also be called `utilities/` or `helpers/`, depending on what you prefer.
+ * The rule of thumb for this folder is that it should not output a single line of CSS when compiled on its own: _variables.scss, _mixins.scss, _functions.scss, _placeholders.scss
+
+ * The `vendors/` folder contains all the CSS files from external libraries and frameworks.
+
+ * The `base/` folder folder holds what we might call the boilerplate code for the project.
+ * In there, you might find the reset file, some typographic rules, and probably a stylesheet defining some standard styles for commonly used HTML elements.
+ *
+ * The `components/` folder (also called modules) is more focused on UI elements.
+ * It contains all kind of specific elements like a slider, loader, navigation, modal and basically anything along those lines.
+ *
+ * The `layout/` folder folder contains everything that takes part in laying out the site or application.
+ * This folder could have stylesheets for the main parts of the site and the grid system.
+ *
+ * The `pages/` folder contains page specific styles.
+ *
+ * The `themes/` folder contains styles for dealing with themes.
+ *
+ */
+
+
+/** 1. Abstracts **/
+@import "abstracts/_mixins.pcss";
+@import "abstracts/_variables.pcss";
+
+/** 2. Vendor **/
+/** @import "vendor/_normalize.pcss";
+@import "vendor/owl/_owl.carousel.pcss";
+@import "vendor/owl/_owl.theme.default.pcss";
+@import "vendor/_products-carousel.pcss";
+@import "vendor/magento-modules/page-builder/_page-builder.pcss"; **/
+@import "vendor/swiper/_swiper.pcss";
+@import "vendor/swiper/_swiper-override.pcss";
+
+/** 3. Base **/
+@import "base/_page.pcss";
+@import "base/_common.pcss";
+@import "base/_typography.pcss";
+@import "base/_utilities.pcss"; /* Only single property CSS classes */
+
+/** 4. Layout **/
+
+/** 5. Components **/
+@import "components/_breadcrumbs.pcss";
+@import "components/_buttons.pcss";
+@import "components/_form-elements.pcss";
+@import "components/_footer.pcss";
+@import "components/_header.pcss";
+@import "components/_minicart.pcss";
+@import "components/_navigation.pcss";
+@import "components/_off-canvas.pcss";
+@import "components/_search.pcss";
+@import "components/_ui-canvas.pcss";
+@import "components/_ui-accordion.pcss";
+@import "components/checkout/_minicart.pcss";
+
+/** 6. Pages **/
+@import "pages/_homepage.pcss";
+@import "pages/_category-product-page.pcss";
+@import "pages/_shoping-cart.pcss";
+@import "pages/_checkout.pcss";
+
+/** 7. Themes **/
+@import "themes/_theme.pcss";

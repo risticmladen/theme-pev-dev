@@ -1,0 +1,73 @@
+<?php
+/**
+ * Product media data template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Gallery
+ */
+
+$galleryItems = json_decode($block->getGalleryImagesJson());
+$mainImages = '';
+$galleryThumbnails = '';
+?>
+<div class="gallery-placeholder _block-content-loading gallery-placeholder--default" data-gallery-role="gallery-placeholder">
+
+    <!-- Slider main container -->
+    <div class="swiper-container gallery-top margin b-1">
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev icon-left-indicator"></div>
+
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper swiper-wrapper--gallery-top">
+            <!-- Slides -->
+            <?php
+            $counter = 0;
+            foreach ($galleryItems as $item):
+                $imgClass = "swiper-lazy";
+                $imgSrc = "data-src";
+
+                if ($counter === 0):
+                    $imgClass = "";
+                    $imgSrc = "src";
+                endif;
+                ?>
+
+                <div class="swiper-slide">
+                    <img class="<?= $block->escapeHtml($imgClass) ?> swiper-slide--img"
+                    <?= $block->escapeHtml($imgSrc) ?>="<?= $block->escapeHtml($item->img) ?>"
+                    alt="<?= $block->escapeHtml($item->caption) ?>"/>
+                </div>
+                <?php
+                $counter ++;
+            endforeach; ?>
+        </div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-next icon-right-indicator"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="swiper-container swiper-container-thumbs gallery-thumbs margin b-1 is-loading">
+        <div class="swiper-wrapper swiper-wrapper--gallery-thumbs">
+            <!-- Slides -->
+            <?php
+            $counter = 0;
+            foreach ($galleryItems as $item): ?>
+                <div class="swiper-slide">
+                    <img src="<?= $block->escapeHtml($item->thumb) ?>"
+                         alt="<?= $block->escapeHtml($item->caption) ?>"/>
+                </div>
+                <?php
+                $counter ++;
+            endforeach; ?>
+        </div>
+    </div>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        ".gallery-placeholder": {
+            "product-page-gallery": {
+                "initialGallery": <?= $block->getGalleryImagesJson() ?>
+            }
+        }
+    }
+</script>

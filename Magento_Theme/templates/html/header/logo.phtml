@@ -1,0 +1,19 @@
+<?php
+$isHomePage = $this->getData('isHomepage') ? true : false; // @codingStandardsIgnoreLine - not actually undefined
+$storeName = $block->getThemeName() ? $block->getThemeName() : $block->getLogoAlt();
+?>
+<span data-action="toggle-nav" class="nav-toggle drawer show-for-small-only"><i class="icon-manu"></i></span>
+<?php if ($isHomePage) : ?>
+<h1 class="logo">
+    <?php else : ?>
+    <a class="logo" href="<?= /** @noEscape */ $block->getUrl('') ?>" title="<?= /** @noEscape */ $storeName ?>">
+        <?php endif ?>
+        <img class="logo-img" src="<?= /** @noEscape */ $block->getViewFileUrl('images/pavementends-logo.svg') ?>"
+             title="<?= $block->escapeHtmlAttr($block->getLogoAlt()) ?>"
+             alt="<?= $block->escapeHtmlAttr($block->getLogoAlt()) ?>"
+        />
+        <?php if ($isHomePage) : ?>
+</h1>
+<?php else : ?>
+    </a>
+<?php endif ?>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="checkout"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.top.wrapper" remove="true" />
+        <referenceContainer name="header-wrapper" remove="true" />
+        <referenceContainer name="top.search" remove="true" />
+        <referenceContainer name="newsletter.container" remove="true" />
+        <referenceBlock name="page.main.title" remove="true" />
+        <referenceBlock name="footer-links" remove="true" />
+        <referenceBlock name="footer.cms.navigation.block" remove="true" />
+        <referenceBlock name="cms.customer.service.footer.block" remove="true" />
+
+        <referenceContainer name="main" htmlClass="column column-main checkout-column-main" />
+
+    </body>
+</page>

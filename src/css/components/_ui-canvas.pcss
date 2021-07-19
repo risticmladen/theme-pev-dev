@@ -1,0 +1,33 @@
+.ui-canvas {
+    position: fixed;
+    z-index: 4;
+    top: pxtorem(120, 12);
+    height: 100%;
+    background: var(--color__primary-white);
+    margin-right: pxtorem(8, 12);
+    margin-left: pxtorem(8, 12);
+}
+
+.ui-canvas--right {
+    left: 0;
+    right: 0;
+    transform: translate3D(110%, -5px, 0);
+    transition: all .4s;
+
+    &.active {
+        transform: translate3D(0,0,0);
+
+        @media (--large) {
+            transform: translate3D(-42px, -5px, 0);
+        }
+
+    }
+
+    @media (--medium) {
+        min-height: pxtorem(480, 12);
+        top: pxtorem(128, 12);
+        width: pxtorem(436, 12);
+        right: pxtorem(20, 12);
+        left: auto;
+    }
+}

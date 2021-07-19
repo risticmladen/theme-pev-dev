@@ -1,0 +1,23 @@
+.minisearch__input {
+    width: 100%;
+    min-width: 180px;
+    height: pxtorem(24px, 12);
+    border: 0.1rem solid var(--theme__color__secondary);
+}
+
+.input-text {
+    @mixin adjustFontSize 12px, 1;
+    display: inline-block;
+    width: 100%;
+    height: pxtorem(40, 12);
+    border: none;
+
+    @media (--large) {
+        height: pxtorem(44, 14);
+
+        &:focus-visible {
+            border-right: none;
+        }
+    }
+}
+

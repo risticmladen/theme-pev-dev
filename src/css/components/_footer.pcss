@@ -1,0 +1,355 @@
+.page-footer {
+    background: var(--theme__color__primary);
+    color: var(--color__text-header-links);
+    padding: pxtorem(32, 12) 0 pxtorem(40, 12);
+
+    @media (--medium) {
+        padding-top: pxtorem(48, 12);
+        padding-bottom: pxtorem(48, 12);
+    }
+
+    @media (--large) {
+        padding-top: 0;
+    }
+}
+
+.footer {
+    & .nav-toggle {
+        display: none;
+    }
+
+    & .footer-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (--medium) {
+            padding-top: pxtorem(24, 12);
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @media (--large) {
+            order: 2;
+            grid-column: 1 / -1;
+        }
+    }
+
+    & .customer__service-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        order: 0;
+        padding-top: pxtorem(32, 12);
+        padding-bottom: pxtorem(32, 12);
+        gap: pxtorem(24, 12);
+
+        @media (--medium) {
+            flex-direction: row;
+            flex-basis: 100%;
+            justify-content: center;
+            gap: pxtorem(42, 12);
+        }
+    }
+
+    & .customer__service-contact-us-wrapper {
+        order: 2;
+        @mixin flex row, normal, center, wrap;
+
+
+        @media (--medium) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    & .customer__service--where-to-buy {
+        display: none;
+    }
+
+    & .customer__service-contact-us-text {
+        order: 1;
+        display: block;
+        flex: 1 0 100%;
+        align-self: center;
+        text-align: center;
+        padding-bottom: pxtorem(8, 12);
+
+        @media (--medium) {
+            flex: 1 0 0;
+            padding-bottom: 0;
+            padding-right: pxtorem(8, 12);
+        }
+    }
+
+    & .customer__service-contact-us-number {
+        display: block;
+        font-weight: var(--font-weight__bold);
+        align-self: center;
+        order: 2;
+    }
+
+    & i {
+        order: 2;
+        font-weight: var(--font-weight__bold);
+        font-size: pxtorem(16, 12);
+        padding-right: pxtorem(9, 12);
+
+        @media (--large) {
+            font-size: pxtorem(16, 14);
+        }
+    }
+
+    & .logo {
+        padding-bottom: pxtorem(25, 12);
+        filter: brightness(0) invert(1);
+        z-index: 0;
+
+        @media (--medium) {
+            padding-bottom: 0;
+        }
+    }
+
+    & p {
+        align-self: flex-start;
+    }
+
+    & .customer__service-list a {
+        @mixin adjustFontSize 11, 1;
+    }
+
+    & .customer__service-list-item {
+        & i {
+            display: none;
+        }
+        @media (--medium) {
+            @mixin adjustFontSize 12, 1;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                height: pxtorem(21, 12);
+                border-left: 1px solid;
+                left: pxtorem(-21, 12);
+                top: pxtorem(-3, 12);
+                transform: skewX(-25deg);
+            }
+        }
+    }
+
+    & .customer__service-list-item:first-child::before {
+
+        @media (--medium) {
+            display: none;
+        }
+    }
+
+    & .nav-2 {
+        padding-top: pxtorem(24, 12);
+        border-bottom: none;
+
+        @media (--medium) {
+            padding-top: 0;
+
+            & .jeep-accessories-list {
+                display: grid;
+                grid-template-columns: pxtorem(115, 12) 1fr;
+                grid-column-gap: pxtorem(92, 12);
+            }
+        }
+
+        @media (--large) {
+            & .jeep-accessories-list {
+                column-gap: pxtorem(95, 14);
+                grid-template-columns: pxtorem(135, 14) 1fr;
+            }
+        }
+    }
+
+    & .level0::after {
+        display: none;
+    }
+
+    & .level-top-item-title {
+        color: var(--color__text-header-links);
+        @mixin adjustFontSize 12, 2;
+        font-family: var(--font-stack__base);
+
+        @media (--large) {
+            font-size: pxtorem(14, 14);
+        }
+    }
+
+    & .level0 .submenu {
+        padding-left: pxtorem(48, 12);
+
+        @media (--medium) {
+            padding-left: 0;
+        }
+    }
+
+    & .level-top.parent .level0.submenu {
+        position: static;
+        z-index: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0);
+
+        & .level-top-item-image {
+            display: none;
+        }
+
+        @media (--medium) {
+            flex-direction: column;
+            padding-top: pxtorem(16, 12);
+            padding-bottom: pxtorem(24, 12);
+        }
+    }
+
+    & .level0.nav-1 a[class="level-top"] {
+        @mixin adjustFontSize 20, 1.5;
+        color: var(--color__text-header-links);
+        width: auto;
+    }
+
+    & .level0.nav-2 a[class="level-top"] {
+        @mixin adjustFontSize 20, 1.5;
+        color: var(--color__text-header-links);
+        width: auto;
+    }
+
+    & .parent {
+        @media (--medium) {
+            height: auto;
+        }
+
+        @media (--large) {
+            padding: 0;
+        }
+    }
+
+    & .soft-top-products-list {
+        @media (--medium) {
+            gap: 0;
+        }
+    }
+
+    & .jeep-accessories-list {
+        @media (--medium) {
+            gap: 0;
+        }
+    }
+
+    & .links {
+        @media (--large) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-top: pxtorem(107, 14);
+        }
+    }
+
+    & .customer__service-promo-text {
+        @media (--large) {
+            display: none;
+        }
+    }
+
+    & .image-shadow {
+        display: none;
+    }
+
+    & .soft-top-products-list .level1 {
+        & .level-top-item-link {
+            &:hover::before {
+                display: none;
+            }
+        }
+    }
+}
+
+.footer-navigation {
+    @media (--medium) {
+        display: flex;
+        margin-left: pxtorem(64, 12);
+        margin-right: pxtorem(64, 12);
+        border-bottom: 1px solid var(--color__text-header-links);
+        gap: pxtorem(83, 12);
+    }
+
+    @media (--large) {
+        order: 1;
+        margin: 0;
+        border-bottom: none;
+        margin-left: pxtorem(64, 14);
+        margin-right: pxtorem(64, 14);
+    }
+}
+
+.footer-navigation > .category-item {
+    list-style: none;
+    border-bottom: 1px solid var(--color__primary-white);
+    margin-right: pxtorem(8, 12);
+    margin-left: pxtorem(8, 12);
+
+    @media(--medium) {
+        border-bottom: 0;
+        margin: 0;
+        height: auto;
+        padding-left: pxtorem(76, 12);
+
+        &::before {
+            @mixin no-display;
+        }
+    }
+
+    & a[class="level-top"] {
+        @mixin adjustFontSize 22, 1.5;
+        text-transform: uppercase;
+        color: var(--color__text-header-links);
+        padding-left: pxtorem(24, 12);
+
+        &::after {
+            left: calc(90vw - pxtorem(8, 12));
+        }
+        @media (--medium) {
+            padding-left: 0;
+
+            &::before {
+                @mixin no-display;
+            }
+        }
+    }
+}
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: pxtorem(60, 12);
+
+    @media (--medium) {
+        flex-direction: row;
+        gap: pxtorem(44, 12);
+        padding-left: pxtorem(76, 12);
+    }
+
+    @media (--large) {
+        order: 0;
+        padding-top: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: pxtorem(16, 14);
+        margin-right: pxtorem(87, 14);
+        border-right: 1px solid;
+        padding-left: pxtorem(230, 14);
+    }
+}
+
+.text-wrapper {
+    padding: 0 pxtorem(28, 12);
+
+    @media (--medium) {
+        padding: 0;
+    }
+}
