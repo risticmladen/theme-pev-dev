@@ -306,12 +306,14 @@ a[class="level-top"] {
 .jeep-accessories-list .level1 {
     & .level-top-item-link {
         &:hover::before {
-            content: "";
-            @mixin absolute unset, unset, pxtorem(-24, 12), 0;
-            height: 10%;
-            border-bottom: 10px solid var(--color__button-secondary);
-            border-left: pxtorem(115, 12) solid transparent;
-            border-right: pxtorem(115, 12) solid transparent;
+            @media (--medium) {
+                content: "";
+                @mixin absolute unset, unset, pxtorem(-24, 12), 0;
+                height: 10%;
+                border-bottom: 10px solid var(--color__button-secondary);
+                border-left: pxtorem(115, 12) solid transparent;
+                border-right: pxtorem(115, 12) solid transparent;
+            }
 
             @media (--large) {
                 @mixin absolute unset, unset, pxtorem(-24, 14), 0;

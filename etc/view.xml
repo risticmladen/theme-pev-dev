@@ -124,8 +124,8 @@
             </image>
             <!--minicart block - product image-->
             <image id="mini_cart_product_thumbnail" type="thumbnail">
-                <width>140</width>
-                <height>140</height>
+                <width>80</width>
+                <height>80</height>
             </image>
             <image id="related_products_list" type="small_image">
                 <width>140</width>

@@ -4,17 +4,18 @@
     background-color: var(--color__button-cta-bg);
     border: 2px solid var(--color__button-cta-bg);
     position: relative;
+}
 
-    &:hover {
-        background-color: var(--color__primary-white);
+.block-minicart {
+    & .minicart-subtotal {
+        text-align: right;
 
-        & .my-cart, & .icon-arrow-dropbown, & .icon-cart {
-            color: var(--color__button-cta-hover);
-        }
+        & .price-container {
+            margin-top: pxtorem(8, 12);
 
-        & .counter {
-            background-color: var(--color__button-cta-bg);
-            color: var(--color__button-secondary-hover);
+            @media (--large) {
+                margin-top: pxtorem(8, 14);
+            }
         }
     }
 }
@@ -25,7 +26,7 @@
 
 #minicart-content-wrapper {
     @mixin flex row, normal, space-between, wrap;
-    padding-top: pxtorem(15, 12);
+    padding-top: pxtorem(16, 12);
 }
 
 .minicart-items-counter {
@@ -57,12 +58,12 @@
 
 .view-and-edit {
     order: 4;
-    margin: 0 auto;
+    margin: pxtorem(16,12) auto 0;
     text-decoration-line: underline;
     text-transform: uppercase;
 
     @media (--large) {
-        margin-top: pxtorem(100, 14);
+        margin-top: pxtorem(16, 14);
     }
 }
 
@@ -132,6 +133,16 @@ strong[class="subtitle"] {
 
 .view-details {
     width: 100%;
+
+    & .icon-arrow-dropbown {
+        font-size: pxtorem(5, 12);
+        position: relative;
+        top: -1px;
+
+        @media (--large) {
+            font-size: pxtorem(5, 14);
+        }
+    }
 }
 
 .product-options {
@@ -164,13 +175,24 @@ strong[class="subtitle"] {
 }
 
 .minicart-product-actions {
-    @mixin flex row, center, normal, nowrap;
+    display: flex;
     align-self: flex-end;
-    height: pxtorem(40, 12);
+    margin-right: pxtorem(8, 12);
     gap: pxtorem(24, 12);
-    transform: translateY(pxtorem(-60, 12));
+    transform: translateY(pxtorem(-49, 12));
+
+    @media (--large) {
+        margin-right: pxtorem(8, 14);
+        gap: pxtorem(24, 14);
+        transform: translateY(pxtorem(-49, 14));
+    }
 
     & a {
         color: var(--color__text);
+        font-size: pxtorem(16, 12);
+
+        @media (--large) {
+            font-size: pxtorem(16, 14);
+        }
     }
 }
