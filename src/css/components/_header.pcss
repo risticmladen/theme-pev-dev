@@ -48,14 +48,34 @@
     align-items: center;
     gap: pxtorem(8, 12);
 
+    @media (--medium) {
+        gap: pxtorem(16, 12);
+    }
+
     @media (--large) {
-        gap: pxtorem(8, 14);
+        gap: pxtorem(16, 14);
     }
 }
 
 .header-top__page-info-contact {
     & i {
         line-height: 1;
+
+        @media (--medium) {
+            font-weight: var(--font-weight__bold);
+        }
+    }
+
+    @media (--medium) {
+        display: flex;
+        align-items: center;
+        gap: pxtorem(8, 12);
+    }
+}
+
+.customer__service-contact-us-number {
+    @media (--medium) {
+        font-weight: var(--font-weight__bold);
     }
 }
 
@@ -64,6 +84,10 @@
     flex-grow: 1;
     list-style-type: none;
     gap: pxtorem(8, 12);
+
+    @media (--medium) {
+        gap: pxtorem(20, 12);
+    }
 
     @media (--large) {
         gap: pxtorem(8, 14);
@@ -83,22 +107,39 @@
 
     &::before {
         @mixin icon-font-display var(--icon__radiobutton);
-        font-size: 2px;
+        font-size: pxtorem(2, 12);
         font-weight: var(--font-weight__bold);
         position: absolute;
         left: pxtorem(-4, 12);
-        top: pxtorem(5, 12);
+        top: pxtorem(6, 12);
+
+        @media (--medium) {
+            left: pxtorem(-12, 12);
+            font-size: pxtorem(4, 12);
+        }
 
         @media (--large) {
-            left: pxtorem(-4, 14);
-            top: pxtorem(5, 14);
+            left: pxtorem(-8, 14);
+            top: pxtorem(6, 14);
         }
     }
 
     & a {
-        @mixin adjustFontSize 10, 1;
+        font-size: pxtorem(10, 12);
+        line-height: pxtorem(16, 12);
         text-decoration: underline;
         text-transform: uppercase;
+
+        @media (--medium) {
+            font-size: pxtorem(12, 12);
+            font-weight: var(--font-weight__bold);
+        }
+    }
+}
+
+.header-top__page-info-item--about-us::before {
+    @media (--medium) {
+        left: pxtorem(-10, 12);
     }
 }
 
