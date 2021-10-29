@@ -1,0 +1,157 @@
+.breadcrumbs {
+    @mixin no-display;
+}
+
+.category-view {
+    @mixin flex row, center, flex-start, nowrap;
+    height: pxtorem(57, 12);
+    margin-left: pxtorem(8, 12);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: pxtorem(24, 12);
+
+    &::before {
+        @mixin absolute 0, -10%, auto, auto;
+        content: "";
+        width: 60%;
+        height: 100%;
+        background: var(--color__button-primary);
+        transform: skewX(-25deg);
+
+    }
+
+    & .page-title {
+        @mixin adjustFontSize 22, 1.5;
+        font-family: var(--font-stack__headings);
+        color: var(--theme__color__secondary);
+        text-transform: uppercase;
+    }
+
+    & .category-image {
+        @mixin no-display;
+    }
+
+    & .category-description {
+        @mixin no-display;
+    }
+}
+
+.filter-title.action {
+    @mixin adjustFontSize 16,1;
+    @mixin flex row, center, center, nowrap;
+    font-family: var(--font-stack__headings);
+    color: var(--color__button-primary);
+    text-transform: uppercase;
+    background: var(--theme__color__primary);
+    width: pxtorem(144, 12);
+    height: pxtorem(40,12);
+    margin-left: pxtorem(8, 12);
+
+    & strong {
+        font-weight: var(--font-weight__normal);
+    }
+}
+
+.toolbar-sorter {
+    @mixin absolute pxtorem(185, 12), 5%, auto, auto;
+
+}
+
+.sorter-options {
+    @mixin adjustFontSize 12, 1;
+    font-weight: var(--font-weight__normal);
+    color: var(--color__text);
+    background: transparent;
+    border: 2px solid var(--color__button-primary-bg);
+    width: pxtorem(116, 12);
+    height: pxtorem(40, 12);
+    padding-left: pxtorem(8, 12);
+}
+
+.sorter-action {
+    margin-left: pxtorem(8, 12);
+}
+
+.filter-content {
+    @mixin absolute 0, auto, auto, 0;
+    @mixin flex column, normal, normal, nowrap;
+    z-index: 4;
+    transform: translateX(100%);
+    transition: transform .4s ease;
+    height: 100vh;
+    width: 100%;
+    padding: pxtorem(32, 12) 0 0;
+    background: linear-gradient(to bottom, var(--color__text) pxtorem(80, 12), var(--color__primary-white) pxtorem(80, 12), var(--color__primary-white) 100%);
+
+    &.active {
+        transform: translateX(0);
+    }
+
+    & .ui-close {
+        @mixin absolute auto, auto, auto, auto;
+        border: none;
+        background: transparent;
+        align-self: flex-end;
+        color: var(--color__button-primary);
+        padding-right: pxtorem(24, 12);
+    }
+
+    & .filter-subtitle {
+        @mixin adjustFontSize 22, 1.5;
+        font-family: var(--font-stack__headings);
+        color: var(--color__button-primary);
+        text-transform: uppercase;
+        padding: 0 0 pxtorem(24, 12) pxtorem(24, 12);
+    }
+}
+
+.catalog-category-view {
+    & .filter-options-title {
+        @mixin adjustFontSize 18, 1.5;
+        font-family: var(--font-stack__headings);
+        color: var(--color__text);
+        text-transform: uppercase;
+        background: var(--color__button-primary-bg-hover);
+        min-height: pxtorem(56, 12);
+        padding: pxtorem(16, 12) pxtorem(40, 12) 0;
+        position: relative;
+
+        &::before {
+            @mixin absolute pxtorem(16, 12), pxtorem(40, 12), auto, auto;
+            @mixin icon-font-display var(--icon__close);
+        }
+
+        &::after {
+            @mixin absolute auto, auto, 0, pxtorem(8, 12);
+            content: "";
+            border: 1px solid var(--color__primary-white);
+            width: calc(100% - pxtorem(16, 12));
+            text-align: center;
+
+        }
+    }
+
+    & .filter-options-content {
+        padding-left: pxtorem(40, 12);
+        background: var(--color__primary-white);
+
+        & a {
+            @mixin adjustFontSize 12, 2;
+            font-weight: var(--font-weight__bold);
+            color: var(--color__text);
+        }
+
+        & .count {
+            font-weight: var(--font-weight__normal);
+        }
+    }
+}
+
+.modes {
+    @mixin no-display;
+}
+
+.toolbar-amount {
+    padding-left: pxtorem(16, 12);
+    font-weight: var(--font-weight__bold);
+}

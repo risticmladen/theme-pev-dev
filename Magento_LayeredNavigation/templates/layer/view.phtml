@@ -1,0 +1,68 @@
+<?php if ($block->canShowBlock()) : ?>
+    <div class="block filter"
+         id="layered-filter-block"
+         data-mage-init='{"nav-toggle": { "trigger":".filter-title","target":".filter-content","close":".ui-close"}}'>
+        <?php $filtered = count($block->getLayer()->getState()->getFilters()) ?>
+        <div class="block-title filter-title action secondary hidden-l" data-count="<?= /** @noEscape */ $filtered // @codingStandardsIgnoreLine - not actually undefined ?>">
+            <strong data-role="title">
+                <?= /** @noEscape */ __('Shop By ') ?>
+                <span class="icon-plus-circle"></span>
+            </strong>
+        </div>
+        <div class="block-content filter-content">
+            <button type="button" class="ui-close hidden-l icon-left"></button>
+            <?= $block->getChildHtml('state') ?>
+
+            <?php if ($block->getLayer()->getState()->getFilters()) : ?>
+                <div class="block-actions filter-actions">
+                    <a href="<?= /** @noEscape */ $block->getClearUrl() ?>"
+                       class="action clear filter-clear">
+                        <span><?= /** @noEscape */ __('Clear All') ?></span>
+                    </a>
+                </div>
+            <?php endif; ?>
+            <?php $wrapOptions = false; ?>
+            <?php foreach ($block->getFilters() as $filter) : ?>
+        <?php if ($filter->getItemsCount()) : ?>
+        <?php if (!$wrapOptions) : ?>
+            <strong role="heading"
+                    aria-level="2"
+                    class="block-subtitle filter-subtitle">
+                <?= /** @noEscape */ __('Shopping Options') ?>
+            </strong>
+            <div class="filter-options" id="narrow-by-list" data-role="content">
+                <?php  $wrapOptions = true;
+                endif; ?>
+                <div data-role="collapsible" class="filter-options-item ui-accordion">
+                    <div data-role="title"
+                         class="filter-options-title ui-accordion-title">
+                        <?= /** @noEscape */ __($filter->getName()) ?>
+                    </div>
+                    <div data-role="content"
+                         class="filter-options-content ui-accordion-content ui-accordion-content--animated">
+                        <?= /** @noEscape */ $block->getChildBlock('renderer')->render($filter) ?>
+                    </div>
+                </div>
+                <?php endif; ?>
+                <?php endforeach; ?>
+                <?php if ($wrapOptions) : ?>
+            </div>
+        <?php else : ?>
+            <script><?php // @codingStandardsIgnoreLine - MUST BEREFACTORED ?>
+                require([
+                    'jquery'
+                ], function ($) {
+                    $('#layered-filter-block').addClass('filter-no-options');
+                });
+            </script>
+            <?php endif; ?>
+        </div>
+        <script type="text/x-magento-init">
+        {
+            "*": {
+                "ui-simple-toggle": { "trigger":".filter-options-title","target":".filter-options-content" }
+            }
+        }
+        </script>
+    </div>
+<?php endif; ?>

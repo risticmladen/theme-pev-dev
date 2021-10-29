@@ -2,7 +2,7 @@
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 
     <body>
-        <referenceContainer name="newsletter.container" display="false" />
+        <referenceContainer name="newsletter.container" remove="true" />
 
         <referenceContainer name="product.info.details">
             <block class="Magento\Cms\Block\Block" name="cms.installation.instructions" as="cmsInstallationInstructions">
@@ -12,6 +12,7 @@
             </block>
         </referenceContainer>
         <move element="review_view" destination="product.info.details" after="product.attributes" />
+
     </body>
 
 </page>

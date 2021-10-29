@@ -24,11 +24,10 @@
 
        <move element="navigation.sections" destination="header.panel"  after="logo" />
 
-
         <referenceContainer name="header.container">
-            <container name="header.top.wrapper" htmlTag="div" htmlClass="header-top-wrapper">
-                <container name="header.top.customer.service" htmlTag="div" htmlClass="header-top__customer-service">
-                    <container name="customer.service.contact.us" htmlTag="div" htmlClass="customer-service__contact-us">
+            <container name="header.top" htmlTag="div" htmlClass="header-top">
+                <container name="header.top.content" htmlTag="div" htmlClass="header-top__content container">
+                    <container name="header.top.page.info" htmlTag="div" htmlClass="header-top__page-info">
                         <block class="Magento\Cms\Block\Block" name="customer-service">
                             <arguments>
                                 <argument name="block_id" xsi:type="string">customer-service</argument>
@@ -36,7 +35,7 @@
                         </block>
                     </container>
 
-                    <container name="customer.service.account.info" htmlTag="div" htmlClass="customer-service-account-info" />
+                    <container name="header.top.page.account" htmlTag="div" htmlClass="header-top__account" />
                 </container>
             </container>
         </referenceContainer>
@@ -44,9 +43,7 @@
         <container name="header.mainbar.wrapper" htmlTag="div" htmlClass="header-mainbar-wrapper" />
 
         <referenceBlock name="top.links">
-
             <referenceBlock name="register-link" remove="true"/>
-
             <referenceBlock name="my-account-link">
                 <arguments>
                     <argument name="class" xsi:type="string">header-dropdown-my-account</argument>
@@ -70,13 +67,13 @@
                    name="top.links.js"  />
         </referenceContainer>
 
-
-
-        <move element="top-links-wrapper" destination="customer.service.account.info"  before="-"/>
+        <move element="top-links-wrapper" destination="header.top.page.account"  before="-"/>
         <move element="header.panel" destination="header.mainbar.wrapper" before="-" />
         <move element="header.top.wrapper" destination="header.container"  before="-"/>
         <move element="header.mainbar.wrapper" destination="header.container" after="header.top.wrapper" />
 
         <referenceContainer name="skip_to_content" remove="true" />
+
+        <referenceContainer name="header.panel" htmlClass="header-mainbar header-mainbar--default container" />
     </body>
 </page>

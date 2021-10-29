@@ -179,8 +179,8 @@
 
     /* Fonts */
 
-    --font-stack__base: "Titillium Web";
-    --font-stack__headings: "Bebas Neue";
+    --font-stack__base: "Titillium Web", sans-serif;
+    --font-stack__headings: "Bebas Neue", sans-serif;
     --font-weight__normal: 400;
     --font-weight__bold: 700;
 
@@ -197,18 +197,13 @@
     /** Tablet Up **/
 
     @media (--medium) {
-        :root {
-            --gutter: calc(var(--space-factor) * 1.5 * 1px);
-        }
+        --gutter: calc(var(--space-factor) * 1.5 * 1px);
     }
 
     /** Desktop Up **/
 
     @media (--large) {
-        :root {
-            --gutter: calc(var(--space-factor) * 2 * 1px);
-        }
+        --gutter: calc(var(--space-factor) * 2 * 1px);
     }
-
 }
 

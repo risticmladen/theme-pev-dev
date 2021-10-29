@@ -6,15 +6,6 @@
         <referenceContainer name="main.content" htmlClass="page-main" />
 
         <referenceBlock name="footer_links">
-
-            <referenceBlock name="privacy-policy-link" remove="true" />
-            <referenceBlock name="search-term-popular-link" remove="true" />
-            <referenceBlock name="contact-us-link" remove="true" />
-            <referenceBlock name="catalog-search-advanced-link" remove="true" />
-            <referenceBlock name="sales-guest-form-link" remove="true" />
-            <referenceBlock name="copyright" remove="true"/>
-            <referenceBlock name="report.bugs" remove="true"/>
-
             <block name="footer.cms.navigation.block" as="footerCmsNavigationBlock"
                    template="Magento_Theme::html/footer/links/footer-navigation.phtml">
                 <block class="Magento\Cms\Block\Block" name="footer-soft-top-products" as="footerSoftTopProducts">
@@ -29,7 +20,6 @@
                 </block>
             </block>
 
-
             <block name="footer.logo.text" template="Magento_Theme::html/footer/footer-text.phtml">
                 <block class="Magento\Theme\Block\Html\Header\Logo" name="footer-logo"/>
             </block>
@@ -43,5 +33,13 @@
                 </block>
             </block>
         </referenceBlock>
+
+        <referenceBlock name="privacy-policy-link" remove="true" />
+        <referenceBlock name="search-term-popular-link" remove="true" />
+        <referenceBlock name="contact-us-link" remove="true" />
+        <referenceBlock name="catalog-search-advanced-link" remove="true" />
+        <referenceBlock name="sales-guest-form-link" remove="true" />
+        <referenceBlock name="copyright" remove="true"/>
+        <referenceBlock name="report.bugs" remove="true"/>
     </body>
 </page>
