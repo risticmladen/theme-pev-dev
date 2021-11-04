@@ -4,12 +4,17 @@
 
 .header__search {
     margin-left: auto;
+
+    @media (--large) {
+        padding-left: pxtorem(355, 14);
+    }
 }
 
 .block-search {
-    border: 2px solid var(--color__button-primary-bg);
     width: pxtorem(40, 12);
     height: pxtorem(40, 12);
+    background: var(--color__primary-white);
+    border: 2px solid var(--color__button-primary-bg);
     margin-right: pxtorem(8, 12);
 
     @media (--medium) {
@@ -65,8 +70,4 @@
         padding: 0;
 
     }
-}
-
-.minisearch__input::placeholder {
-    padding-left: pxtorem(12, 12);
 }

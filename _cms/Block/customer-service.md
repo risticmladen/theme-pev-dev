@@ -2,9 +2,9 @@
 - **Identifier:** customer-service
 
 <div class="header-top__page-info-contact">
-    <span class="show-for-medium customer__service-contact-us-text">Contact our Customer Service</span>
+    <span class="customer__service-contact-us-text">Contact our Customer Service</span>
     <i class="icon-call"></i>
-    <span class="show-for-medium customer__service-contact-us-number">(800) 845-3567</span>
+    <span class="customer__service-contact-us-number">(800) 845-3567</span>
 </div>
 <ul class="header-top__page-info-list">
     <li class="header-top__page-info-item header-top__page-info-item--about-us"><a href="#">About Us</a></li>

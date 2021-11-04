@@ -21,6 +21,7 @@
 
 .header-mainbar-wrapper {
     box-shadow: 0px pxtorem(4, 12) pxtorem(24, 12) rgb(0 0 0 / 16%);
+    position: relative;
 
     @media (--large) {
         box-shadow: 0px pxtorem(4, 14) pxtorem(24, 14) rgb(0 0 0 / 16%);
@@ -53,11 +54,21 @@
     }
 
     @media (--large) {
-        gap: pxtorem(16, 14);
+        gap: pxtorem(36, 14);
     }
 }
 
 .header-top__page-info-contact {
+    @media (--medium) {
+        display: flex;
+        align-items: center;
+        gap: pxtorem(8, 12);
+    }
+
+    @media (--large) {
+        gap: pxtorem(9, 14);
+    }
+
     & i {
         line-height: 1;
 
@@ -65,15 +76,19 @@
             font-weight: var(--font-weight__bold);
         }
     }
+}
 
-    @media (--medium) {
-        display: flex;
-        align-items: center;
-        gap: pxtorem(8, 12);
+.customer__service-contact-us-text {
+    @media (--medium__max) {
+        display: none;
     }
 }
 
 .customer__service-contact-us-number {
+    @media (--medium__max) {
+        display: none;
+    }
+
     @media (--medium) {
         font-weight: var(--font-weight__bold);
     }
@@ -90,7 +105,7 @@
     }
 
     @media (--large) {
-        gap: pxtorem(8, 14);
+        gap: pxtorem(36, 14);
     }
 
     & .header-top__page-info-item--search-terms,
@@ -119,7 +134,7 @@
         }
 
         @media (--large) {
-            left: pxtorem(-8, 14);
+            left: pxtorem(-22, 14);
             top: pxtorem(6, 14);
         }
     }
@@ -144,22 +159,93 @@
 }
 
 .account-sign-in {
-    font-size: pxtorem(12, 12);
+    font-size: pxtorem(16, 12);
+    line-height: pxtorem(16, 12);
     color: var(--color__text-white);
     text-transform: uppercase;
+    font-family: var(--font-stack__headings);
     background: var(--color__button-primary-bg);
     border: none;
 
+    @media (--medium) {
+        width: 100%;
+        height: 100%;
+        text-align: left;
+        padding-left: pxtorem(24, 12);
+    }
+
     @media (--large) {
-        font-size: pxtorem(12, 14);
+        font-size: pxtorem(18, 14);
+        line-height: pxtorem(24, 14);
+        padding-left: pxtorem(24, 14);
+    }
+
+    &.active {
+        @media (--medium) {
+            background: var(--color__button-primary-bg-hover);
+            color: var(--color__text);
+        }
+
+        & .icon-arrow-dropbown {
+            @media (--medium) {
+                transform: rotate(180deg);
+                top: pxtorem(-4, 12);
+            }
+
+            @media (--large) {
+                top: pxtorem(-4, 14);
+            }
+        }
     }
 
     & .icon-account-icon {
         padding-right: pxtorem(2, 12);
 
-        @media (--large) {
-            padding-right: pxtorem(2, 14);
+        @media (--medium) {
+            padding-right: pxtorem(9, 12);
+            font-size: pxtorem(16, 12);
         }
+
+        @media (--large) {
+            padding-right: pxtorem(9, 14);
+            font-size: pxtorem(16, 14);
+        }
+    }
+
+    & .icon-arrow-dropbown {
+        display: inline-block;
+        @media (--medium) {
+            position: relative;
+            top: pxtorem(-2, 14);
+            left: pxtorem(9, 12);
+            font-size: pxtorem(5, 12);
+        }
+
+        @media (--large) {
+            top: pxtorem(-2, 14);
+            left: pxtorem(9, 14);
+            font-size: pxtorem(8, 14);
+        }
+    }
+}
+
+.header-top__account {
+    @media (--medium) {
+        flex-basis: pxtorem(150, 12);
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+    }
+
+    @media (--large) {
+        flex-basis: pxtorem(150, 14);
+    }
+}
+
+.top-links__wrapper {
+    @media (--medium) {
+        flex-grow: 1;
+        align-self: stretch;
     }
 }
 
@@ -167,62 +253,60 @@
     min-height: pxtorem(72, 12);
     display: flex;
     align-items: center;
+
+    @media (--medium) {
+        min-height: pxtorem(96, 12);
+    }
+
+    @media (--large) {
+        min-height: pxtorem(96, 14);
+    }
 }
 
 .nav-toggle {
-    background-color: var(--color__button-primary);
-    width: pxtorem(40, 12);
-    height: pxtorem(40, 12);
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: pxtorem(40, 12);
+    height: pxtorem(40, 12);
+    border-radius: 50%;
     margin-right: pxtorem(17, 12);
+    background-color: var(--color__button-primary);
 }
 
 .nav-close {
     position: absolute;
     top: pxtorem(48, 12);
     right: 0;
-    background-color: var(--color__button-primary-bg);
     color: var(--color__button-primary);
+    background-color: var(--color__button-primary-bg);
 }
 
 .header__links {
-    width: 50vw;
-    padding-left: pxtorem(35, 12);
-    background-color: var(--color__field-bg);
     list-style: none;
-    margin-top: pxtorem(32, 12);
-
-    & a {
-        color: var(--color__text);
-        text-transform: uppercase;
-        @mixin adjustFontSize 12, 2.5;
-    }
+    padding: pxtorem(32, 12) pxtorem(35, 12) 0;
+    background-color: var(--color__field-bg);
 
     @media (--medium) {
         width: pxtorem(150, 12);
-        padding-left: pxtorem(24, 12);
-        background-color: var(--color__field-bg);
-        list-style: none;
-        margin-top: pxtorem(12, 12);
+        padding: 0 pxtorem(24, 12);
     }
 
     @media (--large) {
         width: pxtorem(150, 14);
-        padding-left: pxtorem(24, 14);
-        margin-top: pxtorem(12, 14);
+        padding: 0 pxtorem(24, 14);
     }
-}
-
-.level0 .level1 {
-    font-size: pxtorem(12, 12);
-    line-height: pxtorem(40, 12);;
-    text-transform: uppercase;
 
     & a {
+        font-size: pxtorem(12, 12);
+        line-height: pxtorem(40, 12);
         color: var(--color__text);
+        text-transform: uppercase;
+
+        @media (--large) {
+            font-size: pxtorem(12, 14);
+            line-height: pxtorem(40, 14);
+        }
     }
 }
 
@@ -232,9 +316,23 @@
     font-weight: var(--font-weight__bold);
     color: var(--theme__color__secondary);
     text-decoration-line: underline;
-    display: inline-block;
-    position: relative;
     visibility: hidden;
+
+    @media (--medium__max) {
+        display: inline-block;
+        position: relative;
+    }
+
+    @media (--medium) {
+        position: absolute;
+        right: pxtorem(41, 12);
+        bottom: pxtorem(-27, 12);
+    }
+
+    @media (--large) {
+        right: pxtorem(41, 14);
+        bottom: pxtorem(-27, 14);
+    }
 
     &::after {
         @mixin icon-font-display var(--icon__arrow_dropbown);
@@ -253,10 +351,7 @@
 
 .level0.opened {
     & .view-all-products-text {
-        @media (--medium__max) {
-            margin-bottom: pxtorem(24, 12);
-            visibility: visible;
-        }
+        visibility: visible;
     }
 }
 

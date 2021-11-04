@@ -10,8 +10,150 @@
 
     @media (--large) {
         padding-top: 0;
+        padding-bottom: pxtorem(48, 14);
     }
 }
+
+.footer {
+    & .nav-toggle {
+        display: none;
+    }
+
+    &.links {
+        @mixin flex column, stretch, center, nowrap;
+    }
+
+    & .level0.parent {
+        margin: 0 pxtorem(8, 12) pxtorem(24, 12);
+        padding: 0 0 pxtorem(24, 12) pxtorem(24, 12);
+        list-style: none;
+        position: relative;
+
+        @media (--medium) {
+            margin: 0;
+            padding: 0;
+            height: auto;
+            flex-basis: auto;
+        }
+
+        & .level-top {
+            color: var(--color__text-header-links);
+            position: static;
+
+            @media (--medium) {
+                width: auto;
+                height: auto;
+            }
+
+            & span {
+                @media (--medium) {
+                    padding-top: 0;
+                }
+            }
+
+            &::after {
+                top: 0;
+                right: pxtorem(32, 12);
+                left: auto;
+            }
+        }
+
+        & .level-top-item-link {
+            color: var(--color__text-header-links);
+        }
+
+        &.opened {
+            padding-bottom: 0;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    & .view-all-products-text {
+        display: none;
+    }
+}
+
+.footer-wrapper {
+    @mixin flex column, center, normal, nowrap;
+
+    @media (--medium__max) {
+        margin: 0 pxtorem(28, 12);
+    }
+
+    & .logo {
+        margin-bottom: pxtorem(24, 12);
+    }
+
+    & .logo-img {
+        height: pxtorem(48, 12);
+        filter: brightness(0) invert(1);
+    }
+
+    & .text-wrapper {
+        margin-bottom: pxtorem(32, 12);
+    }
+}
+
+.footer-menu {
+    @mixin flex column, center, normal, nowrap;
+
+    @media (--medium__max) {
+        gap: pxtorem(32, 12);
+    }
+
+    & .header-top__page-info-list {
+        order: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: pxtorem(32, 12);
+    }
+
+    & .header-top__page-info-contact {
+        order: 1;
+        text-align: center;
+    }
+
+    & .header-top__page-info-item {
+        & a {
+            font-size: pxtorem(11, 12);
+            font-weight: var(--font-weight__bold);
+        }
+
+        &::before {
+            display: none;
+        }
+    }
+
+    & .header-top__page-info-item--where-to-buy {
+        display: none;
+    }
+
+    & .header-top__page-info-item--search-terms,
+    & .header-top__page-info-item--privacy-policy,
+    & .header-top__page-info-item--installation-videos {
+        display: flex;
+    }
+
+    & .customer__service-contact-us-text {
+        display: block;
+        margin-bottom: pxtorem(8, 12);
+    }
+
+    & .icon-call {
+        font-weight: var(--font-weight__bold);
+    }
+
+    & .customer__service-contact-us-number {
+        display: inline-block;
+        margin-left: pxtorem(9, 12);
+        font-weight: var(--font-weight__bold);
+    }
+}
+
+/*
 
 .footer {
     & .nav-toggle {
@@ -353,3 +495,6 @@
         padding: 0;
     }
 }
+
+
+ */
