@@ -129,7 +129,10 @@ define(
             });
             offCanvasItem.each(function (i, el) {
                 $(el).click(function (ev) {
-                    ev.preventDefault();
+                    if ($(this).hasClass("level-top")) {
+                        ev.preventDefault();
+                    }
+
                     var $parentLi = $(el).parent();
 
                     $parentLi.toggleClass('opened');

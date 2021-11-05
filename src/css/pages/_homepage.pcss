@@ -428,7 +428,7 @@
         }
 
         @media (--large) {
-            max-width: pxtorem(636, 14);
+            flex-basis: pxtorem(636, 14);
             flex-direction: row-reverse;
             align-items: flex-start;
             padding-top: pxtorem(40, 14);
@@ -498,6 +498,7 @@
     @media (--medium) {
         margin-top: pxtorem(14, 12);
         flex-flow: row wrap;
+        justify-content: center;
     }
 
     @media (--large) {
@@ -512,8 +513,9 @@
         }
 
         @media (--large) {
-            flex: 1;
+            flex-basis: pxtorem(293, 14);
             flex-flow: column wrap;
+            justify-content: space-between;
         }
     }
 
@@ -576,13 +578,12 @@
 
     @media (--medium) {
         gap: pxtorem(9, 12);
-        max-width: pxtorem(230, 12);
         max-width: unset;
-        flex-basis: 49%;
+        flex-basis: pxtorem(352, 12);
     }
 
     @media (--large) {
-        max-width: pxtorem(408, 14);
+        flex-basis: pxtorem(408, 14);
     }
 }
 
