@@ -1,19 +1,19 @@
 .button {
+    @mixin adjustFontSize 16, 1;
+    color: var(--color__button-text);
+    font-family: var(--font-stack__headings);
+    text-transform: uppercase;
+    text-align: center;
     width: 100%;
     height: pxtorem(40, 12);
     padding: pxtorem(12, 12) pxtorem(24, 12);
-    text-transform: uppercase;
-    text-align: center;
-    font-family: var(--font-stack__headings);
-    @mixin adjustFontSize 16, 1;
     background-color: var(--color__button-bg);
-    color: var(--color__button-text);
     cursor: pointer;
 
     @media(--large) {
+        @mixin adjustFontSize 18, 1, $breakpoint-1024px;
         height: pxtorem(48, 14);
         padding: pxtorem(16, 14) pxtorem(24, 14);
-        @mixin adjustFontSize 18, 1, $breakpoint-1024px;
     }
 }
 

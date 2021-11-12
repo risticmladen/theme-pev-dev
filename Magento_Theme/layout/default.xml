@@ -2,6 +2,13 @@
 <page layout="1columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <update handle="default_head_blocks"/>
     <body>
+        <referenceBlock name="privacy-policy-link" remove="true" />
+        <referenceBlock name="search-term-popular-link" remove="true" />
+        <referenceBlock name="contact-us-link" remove="true" />
+        <referenceBlock name="catalog-search-advanced-link" remove="true" />
+        <referenceBlock name="sales-guest-form-link" remove="true" />
+        <referenceBlock name="copyright" remove="true"/>
+        <referenceBlock name="report.bugs" remove="true"/>
 
         <referenceContainer name="main.content" htmlClass="page-main" />
 
@@ -33,13 +40,5 @@
                 </block>
             </block>
         </referenceBlock>
-
-        <referenceBlock name="privacy-policy-link" remove="true" />
-        <referenceBlock name="search-term-popular-link" remove="true" />
-        <referenceBlock name="contact-us-link" remove="true" />
-        <referenceBlock name="catalog-search-advanced-link" remove="true" />
-        <referenceBlock name="sales-guest-form-link" remove="true" />
-        <referenceBlock name="copyright" remove="true"/>
-        <referenceBlock name="report.bugs" remove="true"/>
     </body>
 </page>

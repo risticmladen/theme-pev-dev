@@ -1,6 +1,372 @@
 .section__soft-top-products {
-    overflow: hidden;
+    & .banner__background {
+        background: var(--color__soft-top-products-banner-bg);
+    }
+
+    & .banner__image-wrapper {
+        background: rgba(224, 135, 44, 0.85);
+        transform: translateX(40%);
+    }
+
+    & .banner__title {
+        margin-top: pxtorem(24, 12);
+        margin-left: pxtorem(24, 12);
+        color: var(--theme__color__secondary);
+
+        @media (--medium) {
+            margin-top: pxtorem(60, 12);
+            margin-left: pxtorem(40, 12);
+        }
+    }
+
+    & .banner__subtitle {
+        @media (--medium) {
+            margin-left: pxtorem(40, 12);
+        }
+    }
 }
+
+.banner__wrapper {
+    min-height: pxtorem(112, 12);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+
+    @media (--medium) {
+        filter: none;
+    }
+}
+
+.cards__wrapper {
+    @media (--medium__max) {
+        background: var(--color__cards-bg);
+        padding-bottom: pxtorem(32, 12);
+    }
+
+    @media (--medium) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: pxtorem(18, 12);
+        margin-left: pxtorem(24, 12);
+        margin-right: pxtorem(24, 12);
+    }
+}
+
+.banner__background {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    z-index: 1;
+
+    @media (--medium) {
+        width: 60%;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: pxtorem(-75, 12);
+        height: 100%;
+        border-bottom: pxtorem(273, 12) solid transparent;
+        border-left: pxtorem(75, 12) solid var(--color__soft-top-products-banner-bg);
+
+        @media (--medium) {
+            border-bottom: pxtorem(333, 12) solid transparent;;
+        }
+    }
+}
+
+.banner__title {
+    display: block;
+    width: 100%;
+    font-size: pxtorem(35, 12);
+    line-height: pxtorem(35, 12);
+    font-family: var(--font-stack__headings);
+    position: relative;
+    z-index: 1;
+
+    @media (--medium) {
+        font-size: pxtorem(72, 12);
+        line-height: pxtorem(72, 12);
+        margin-bottom: pxtorem(4, 12);
+    }
+}
+
+.banner__subtitle {
+    @media (--medium__max) {
+        display: none;
+    }
+
+    @media (--medium) {
+        display: block;
+    }
+}
+
+.banner__image {
+    mix-blend-mode: multiply;
+}
+
+.card {
+    min-height: pxtorem(254, 12);
+    margin: 0 pxtorem(8, 12) pxtorem(16, 12);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: var(--color__primary-white);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @media (--medium) {
+        box-shadow: 0px 13px 39px rgba(0, 0, 0, 0.08);
+        margin-top: pxtorem(-12, 12);
+        z-index: 2;
+        height: pxtorem(338, 12);
+    }
+}
+
+.card__image-wrapper {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: pxtorem(200, 12);
+        height: 100%;
+        z-index: -1;
+        background: linear-gradient(0deg, #FFFFFF 35.42%, #5B5B5B 66.81%);
+        mix-blend-mode: normal;
+        opacity: 0.65;
+        filter: blur(22.7133px);
+        transform: matrix(0.99, 0.12, 0.12, -0.99, 0, 0) translateY(pxtorem(-30, 12));
+    }
+}
+
+.card__image {
+    position: relative;
+}
+
+.card__info-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    @media (--medium) {
+        z-index: 1;
+        flex-direction: column;
+
+    }
+}
+
+.card__title-background {
+    flex-basis: pxtorem(110, 12);
+    height: pxtorem(31, 12);
+    background: var(--color__soft-top-products-card-title-bg);
+    position: relative;
+    right: pxtorem(4, 12);
+
+    @media (--medium) {
+        flex-basis: auto;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: -10px;
+        top: 0;
+        height: 100%;
+        border-right: 10px solid transparent;
+        border-bottom: 31px solid var(--color__soft-top-products-card-title-bg);
+    }
+}
+
+.card--sprint-top {
+    & .card__title-background {
+        flex-basis: pxtorem(138, 12);
+
+        @media (--medium) {
+            flex-basis: auto;
+        }
+    }
+}
+
+.card__title {
+    font-size: pxtorem(22, 12);
+    line-height: pxtorem(24, 12);
+    font-family: var(--font-stack__headings);
+    text-transform: uppercase;
+    color: var(--color__text-header-links);
+    padding: pxtorem(6, 12) 0 0 pxtorem(16, 12);
+    display: block;
+}
+
+.card__view-more {
+    flex-basis: 45%;
+    display: block;
+    font-size: pxtorem(11, 12);
+    font-weight: var(--font-weight__bold);
+    line-height: pxtorem(16, 12);
+    color: var(--color__cta-dark-green);
+    text-decoration-line: underline;
+    text-transform: uppercase;
+
+    & .icon-arrow-dropbown {
+        display: inline-block;
+        text-decoration-line: none;
+        font-size: pxtorem(6, 12);
+        padding-left: pxtorem(8, 12);
+        position: relative;
+        bottom: 1px;
+
+        &::before {
+            transform: rotate(270deg);
+            display: block;
+        }
+    }
+}
+
+.card__description {
+    @media (--medium__max) {
+        display: none;
+    }
+}
+
+.section__jeep-accessories {
+    & .banner__background {
+        left: 30%;
+        width: 70%;
+        background: var(--color__jeep-accessories-banner-bg);
+
+        &::after {
+            position: absolute;
+            top: 0;
+            left: pxtorem(-75, 12);
+            border-top: pxtorem(333, 12) solid var(--color__jeep-accessories-banner-bg);
+            border-bottom: 0;
+            border-left: pxtorem(75, 12) solid transparent;
+        }
+    }
+
+    & .banner__image-wrapper {
+        background: rgba(130, 130, 130, 0.65);
+    }
+
+    & .banner__title {
+        margin-top: pxtorem(24, 12);
+        color: var(--color__text-header-links);
+    }
+
+    & .card__title-background {
+        background: var(--color__jeep-accessories-card-title-bg);
+
+        &::after {
+            border-bottom: 31px solid var(--color__jeep-accessories-card-title-bg);
+        }
+    }
+}
+
+.card--sun-cap {
+    & .card__title-background {
+        flex-basis: pxtorem(86, 12);
+    }
+}
+
+.card--sun-cap-plus {
+    & .card__title-background {
+        flex-basis: pxtorem(123, 12);
+    }
+}
+
+.card--emergency-top {
+    & .card__title-background {
+        flex-basis: pxtorem(158, 12);
+    }
+}
+
+.card--cargo-cover {
+    & .card__title-background {
+        flex-basis: pxtorem(118, 12);
+    }
+}
+
+.card--canopy-cover {
+    & .card__title-background {
+        flex-basis: pxtorem(128, 12);
+    }
+}
+
+.card--cab-curtain {
+    & .card__title-background {
+        flex-basis: pxtorem(118, 12);
+    }
+}
+
+.section__soft-top-accessories {
+    & .banner__wrapper {
+        height: pxtorem(250, 12);
+    }
+
+    & .banner__image-wrapper {
+        background: rgba(245, 245, 245, 0.65);
+        height: 100%;
+    }
+
+    & .banner__image {
+        transform: translate(80%, 30%) scale(2);
+        mix-blend-mode: screen;
+    }
+
+    & .banner__background {
+        width: 60%;
+        background: var(--color__soft-top-products-banner-bg);
+
+        &::after {
+            border-bottom: pxtorem(370, 12) solid transparent;
+        }
+
+        & > * {
+            width: calc(100% + pxtorem(50, 12));
+            position: relative;
+            z-index: 1;
+            margin-left: pxtorem(24, 12);
+        }
+    }
+
+    & .banner__title {
+        font-size: pxtorem(50, 12);
+        line-height: pxtorem(50,12);
+        margin-top: pxtorem(32, 12);
+        margin-bottom: pxtorem(3, 12);
+    }
+
+    & .banner__subtitle {
+        display: block;
+        font-size: pxtorem(26, 12);
+        line-height: pxtorem(26, 12);
+        font-weight: bold;
+        color: var(--theme__color__secondary);
+        text-transform: uppercase;
+        margin-bottom: pxtorem(24, 12);
+    }
+
+    & .button {
+        background-color: transparent;
+
+        &::before {
+            @mixin icon-font-display var(--icon__download);
+            position: absolute;
+            left: pxtorem(37, 12);
+            top: pxtorem(10, 12);
+        }
+    }
+}
+
+/*
 
 .soft-top-products__text {
     display: none;
@@ -299,14 +665,14 @@
 
 .section__jeep-accessories {
     overflow: hidden;
-    margin-top: pxtorem(32, 12);
+    margin-bottom: pxtorem(32, 12);
 
     @media (--medium) {
-        margin-top: pxtorem(64, 12);
+        margin-bottom: pxtorem(64, 12);
     }
 
     @media (--large) {
-        margin-top: pxtorem(126, 14);
+        margin-bottom: pxtorem(126, 14);
     }
 }
 
@@ -392,7 +758,7 @@
 .jeep-accessories__cards-wrapper {
     @mixin flex column, normal, normal, nowrap;
     gap: pxtorem(16, 12);
-    margin: 0 pxtorem(8, 12) pxtorem(64, 12) pxtorem(8, 12);
+    margin: 0 pxtorem(8, 12) 0 pxtorem(8, 12);
     position: relative;
     z-index: 1;
 
@@ -404,7 +770,7 @@
     @media (--large) {
         gap: pxtorem(45, 14);
         max-width: pxtorem(1320, 14);
-        margin: pxtorem(-16, 14) auto pxtorem(64, 12);
+        margin: pxtorem(-16, 14) auto pxtorem(64, 14);
     }
 }
 
@@ -443,6 +809,7 @@
             width: auto;
             height: pxtorem(180, 12);
             clip-path: unset;
+            align-self: center;
 
             &::before {
                 top: pxtorem(35, 12);
@@ -456,8 +823,7 @@
 
         @media (--large) {
             & img {
-                transform: scale(2);
-                margin-top: pxtorem(70, 14);
+                transform: scale(1.8);
             }
         }
     }
@@ -575,7 +941,6 @@
     margin-top: pxtorem(-8, 12);
     margin-bottom: pxtorem(10, 12);
 
-
     @media (--medium) {
         gap: pxtorem(9, 12);
         max-width: unset;
@@ -584,6 +949,12 @@
 
     @media (--large) {
         flex-basis: pxtorem(408, 14);
+    }
+
+    &:last-child {
+        @media (--medium__max) {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -859,3 +1230,64 @@
         left: pxtorem(233, 14);
     }
 }
+
+.section__soft-top-accessories {
+    overflow: hidden;
+    margin-bottom: pxtorem(32, 12);
+
+    @media (--medium) {
+        margin-bottom: pxtorem(64, 12);
+    }
+
+    @media (--large) {
+        margin-bottom: pxtorem(126, 14);
+    }
+}
+
+.soft-top-accessories__banner-wrapper {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -72px;
+        z-index: 1;
+        background: var(--color__button-primary);
+        width: 100%;
+        height: 100%;
+        transform: skewX(-25deg);
+    }
+}
+
+.soft-top-accessories__banner-description {
+}
+
+.soft-top-accessories__banner-title {
+    font-size: pxtorem(50, 12);
+    line-height: pxtorem(50, 12);
+    margin: pxtorem(32, 12) 0 pxtorem(3, 12) pxtorem(24, 12);
+}
+
+.soft-top-accessories__banner-subtitle {
+    font-size: pxtorem(26, 12);
+    line-height: pxtorem(26, 12);
+    text-transform: uppercase;
+    font-weight: var(--font-weight__bold);
+    color: var(--theme__color__secondary);
+    display: block;
+    margin: 0 0 pxtorem(24, 12) pxtorem(24, 12);
+}
+
+.soft-top-accessories__image-wrapper {
+    background: rgba(245, 245, 245, 0.65);
+    transform: translateX(55%);
+}
+
+.soft-top-accessories__image {
+    mix-blend-mode: screen;
+}
+
+ */

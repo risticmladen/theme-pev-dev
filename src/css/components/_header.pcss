@@ -22,6 +22,8 @@
 .header-mainbar-wrapper {
     box-shadow: 0px pxtorem(4, 12) pxtorem(24, 12) rgb(0 0 0 / 16%);
     position: relative;
+    background: var(--color__primary-white);
+
 
     @media (--large) {
         box-shadow: 0px pxtorem(4, 14) pxtorem(24, 14) rgb(0 0 0 / 16%);
@@ -317,6 +319,8 @@
     color: var(--theme__color__secondary);
     text-decoration-line: underline;
     visibility: hidden;
+    opacity: 0;
+    transition: all .4s ease;
 
     @media (--medium__max) {
         display: inline-block;
@@ -352,6 +356,7 @@
 .level0.opened {
     & .view-all-products-text {
         visibility: visible;
+        opacity: 1;
     }
 }
 

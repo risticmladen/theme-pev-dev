@@ -19,16 +19,17 @@ define(
         jsToggleTitle = $('.js-toggle-title'),
         jsToggleContent = $('.js-toggle-content');
         var bodyStyles = window.getComputedStyle(document.documentElement);
-        var bpLarge = bodyStyles.getPropertyValue('--large');
+        var bpLarge = bodyStyles.getPropertyValue('--medium');
         // IE Fallback
         if ((typeof bpLarge !== 'undefined') && (bpLarge === '')) {
-            bpLarge = '1024px';
+            bpLarge = '768px';
         }
         //style = getComputedStyle(document.body),
         //console.log(style.getPropertyValue('--viewport-off-canvas'));
     mediaCheck({
         media: '(min-width:' + bpLarge + ')',
         entry: $.proxy(function () {
+            $('.nav-sections-item-title:first-child').click();
             navToggle.off('click');
             offCanvasOverlay.off('click');
             offCanvasClose.off('click');

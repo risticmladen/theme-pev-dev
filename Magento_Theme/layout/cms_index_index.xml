@@ -5,21 +5,27 @@
         <referenceBlock name="page.main.title" remove="true" />
         <referenceContainer name="newsletter.container" remove="true" />
 
-        <!-- First section Soft Top Products  -->
-        <referenceContainer name="main.content" htmlClass="main-page-wrapper">
+        <referenceContainer name="main.content" htmlClass="main-page-wrapper" />
+        <referenceContainer name="main">
+            <!-- First section Soft Top Products  -->
             <block class="Magento\Cms\Block\Block" name="first-section-soft-top-products">
                 <arguments>
                     <argument name="block_id" xsi:type="string">first-section-soft-top-products</argument>
                 </arguments>
             </block>
+
             <!-- Second section Jeep Accessories  -->
             <block class="Magento\Cms\Block\Block" name="second-section-jeep-accessories">
                 <arguments>
                     <argument name="block_id" xsi:type="string">second-section-jeep-accessories</argument>
                 </arguments>
             </block>
+
+            <block class="Magento\Cms\Block\Block" name="third-section-soft-top-accessories">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">third-section-soft-top-accessories</argument>
+                </arguments>
+            </block>
         </referenceContainer>
-
-
     </body>
 </page>

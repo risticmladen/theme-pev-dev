@@ -29,7 +29,7 @@
 
     & .level0.parent {
         margin: 0 pxtorem(8, 12) pxtorem(24, 12);
-        padding: 0 0 pxtorem(24, 12) pxtorem(24, 12);
+        padding: 0 0 0 pxtorem(24, 12);
         list-style: none;
         position: relative;
 
@@ -99,10 +99,11 @@
                 min-height: auto;
             }
         }
-    }
 
-    & .view-all-products-text {
-        display: none;
+        & .view-all-products-text {
+            visibility: hidden;
+            opacity: 0;
+        }
     }
 }
 

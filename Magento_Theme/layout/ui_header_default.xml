@@ -1,12 +1,12 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
+        <referenceContainer name="skip_to_content" remove="true" />
+        <referenceBlock name="catalog.topnav" remove="true" />
 
         <referenceContainer name="page.top">
-            <referenceBlock name="catalog.topnav" remove="true" />
             <referenceBlock name="store.menu">
                 <block name="cms.navigation.block" as="cmsNavigationBlock"
-                       class="Magento\Framework\View\Element\Template"
                        template="Magento_Theme::html/header/links/navigation.phtml">
                     <block class="Magento\Cms\Block\Block" name="soft-top-products" as="softTopProducts">
                         <arguments>
@@ -71,8 +71,6 @@
         <move element="header.panel" destination="header.mainbar.wrapper" before="-" />
         <move element="header.top.wrapper" destination="header.container"  before="-"/>
         <move element="header.mainbar.wrapper" destination="header.container" after="header.top.wrapper" />
-
-        <referenceContainer name="skip_to_content" remove="true" />
 
         <referenceContainer name="header.panel" htmlClass="header-mainbar header-mainbar--default container" />
     </body>
